@@ -31,27 +31,3 @@
     {%- endif -%}
   </span>
 </div>
-
-{%- style -%}
-  .cod-delivery {
-    display: flex;
-    gap: 1.2rem;
-    align-items: flex-start;
-    padding: 1.4rem;
-    border-radius: var(--cod-radius);
-    border: 1px dashed rgba(var(--cod-success), 0.5);
-    background: rgba(var(--cod-success), 0.05);
-    font-size: 1.35rem;
-    line-height: 1.5;
-  }
-
-  .cod-delivery__icon {
-    flex: 0 0 auto;
-    color: rgb(var(--cod-success));
-    display: grid;
-    place-items: center;
-  }
-
-  .cod-delivery__icon svg { width: 2.4rem; height: 2.4rem; }
-  .cod-delivery__note { opacity: 0.75; font-size: 1.25rem; }
-{%- endstyle -%}

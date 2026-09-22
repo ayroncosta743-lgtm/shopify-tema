@@ -25,24 +25,95 @@
     "marquee": {
       "type": "cod-marquee",
       "blocks": {
-        "m1": { "type": "item", "settings": { "text": "PAGO CONTRA ENTREGA EN TODA COLOMBIA", "icon": "cash" } },
-        "m2": { "type": "item", "settings": { "text": "ENVÍO GRATIS", "icon": "truck" } },
-        "m3": { "type": "item", "settings": { "text": "GARANTÍA DE 30 DÍAS", "icon": "shield" } },
-        "m4": { "type": "item", "settings": { "text": "DESPACHO EL MISMO DÍA", "icon": "zap" } }
+        "m1": {
+          "type": "item",
+          "settings": {
+            "text": "PAGO CONTRA ENTREGA EN TODA COLOMBIA",
+            "icon": "cash"
+          }
+        },
+        "m2": {
+          "type": "item",
+          "settings": {
+            "text": "ENVÍO GRATIS",
+            "icon": "truck"
+          }
+        },
+        "m3": {
+          "type": "item",
+          "settings": {
+            "text": "GARANTÍA DE 30 DÍAS",
+            "icon": "shield"
+          }
+        },
+        "m4": {
+          "type": "item",
+          "settings": {
+            "text": "DESPACHO EL MISMO DÍA",
+            "icon": "zap"
+          }
+        }
       },
-      "block_order": ["m1", "m2", "m3", "m4"],
-      "settings": { "speed": 26, "color_scheme": "scheme-3" }
+      "block_order": [
+        "m1",
+        "m2",
+        "m3",
+        "m4"
+      ],
+      "settings": {
+        "speed": 26,
+        "color_scheme": "scheme-3"
+      }
     },
     "trust_bar": {
       "type": "cod-trust-bar",
       "blocks": {
-        "b1": { "type": "item", "settings": { "icon": "cash", "title": "Pago contra entrega", "text": "Pagas en efectivo al recibir" } },
-        "b2": { "type": "item", "settings": { "icon": "truck", "title": "Envío gratis", "text": "A toda Colombia" } },
-        "b3": { "type": "item", "settings": { "icon": "return", "title": "Cambios fáciles", "text": "30 días para cambiar" } },
-        "b4": { "type": "item", "settings": { "icon": "chat", "title": "Te acompañamos", "text": "Soporte real por WhatsApp" } }
+        "b1": {
+          "type": "item",
+          "settings": {
+            "icon": "cash",
+            "title": "Pago contra entrega",
+            "text": "Pagas en efectivo al recibir"
+          }
+        },
+        "b2": {
+          "type": "item",
+          "settings": {
+            "icon": "truck",
+            "title": "Envío gratis",
+            "text": "A toda Colombia"
+          }
+        },
+        "b3": {
+          "type": "item",
+          "settings": {
+            "icon": "return",
+            "title": "Cambios fáciles",
+            "text": "30 días para cambiar"
+          }
+        },
+        "b4": {
+          "type": "item",
+          "settings": {
+            "icon": "chat",
+            "title": "Te acompañamos",
+            "text": "Soporte real por WhatsApp"
+          }
+        }
       },
-      "block_order": ["b1", "b2", "b3", "b4"],
-      "settings": { "heading": "", "show_divider": true, "color_scheme": "scheme-1", "padding_top": 32, "padding_bottom": 32 }
+      "block_order": [
+        "b1",
+        "b2",
+        "b3",
+        "b4"
+      ],
+      "settings": {
+        "heading": "",
+        "show_divider": true,
+        "color_scheme": "scheme-1",
+        "padding_top": 32,
+        "padding_bottom": 32
+      }
     },
     "featured_collection": {
       "type": "featured-collection",
@@ -64,7 +135,6 @@
         "show_secondary_image": true,
         "show_vendor": false,
         "show_rating": false,
-        "enable_quick_add": false,
         "columns_mobile": "2",
         "swipe_on_mobile": true,
         "padding_top": 40,
@@ -74,11 +144,33 @@
     "steps": {
       "type": "cod-steps",
       "blocks": {
-        "s1": { "type": "step", "settings": { "title": "Elige tu producto", "text": "Escoge el modelo, el color y la talla que quieres." } },
-        "s2": { "type": "step", "settings": { "title": "Llena tus datos", "text": "Nombre, celular y dirección. Te confirmamos por WhatsApp." } },
-        "s3": { "type": "step", "settings": { "title": "Recibes y pagas", "text": "Pagas en efectivo cuando el pedido llega a tu casa." } }
+        "s1": {
+          "type": "step",
+          "settings": {
+            "title": "Elige tu producto",
+            "text": "Escoge el modelo, el color y la talla que quieres."
+          }
+        },
+        "s2": {
+          "type": "step",
+          "settings": {
+            "title": "Llena tus datos",
+            "text": "Nombre, celular y dirección. Te confirmamos por WhatsApp."
+          }
+        },
+        "s3": {
+          "type": "step",
+          "settings": {
+            "title": "Recibes y pagas",
+            "text": "Pagas en efectivo cuando el pedido llega a tu casa."
+          }
+        }
       },
-      "block_order": ["s1", "s2", "s3"],
+      "block_order": [
+        "s1",
+        "s2",
+        "s3"
+      ],
       "settings": {
         "eyebrow": "ASÍ DE FÁCIL",
         "heading": "Comprar aquí toma 1 minuto",
@@ -94,11 +186,42 @@
     "testimonials": {
       "type": "cod-testimonials",
       "blocks": {
-        "r1": { "type": "review", "settings": { "rating": 5, "name": "Carolina M.", "city": "Bogotá", "verified": true, "text": "Llegó en 2 días y pagué al recibir. Súper cómodos, ya pedí otro par." } },
-        "r2": { "type": "review", "settings": { "rating": 5, "name": "Andrés G.", "city": "Medellín", "verified": true, "text": "Desconfiaba porque lo vi en TikTok, pero me escribieron por WhatsApp y todo fue real." } },
-        "r3": { "type": "review", "settings": { "rating": 5, "name": "Daniela R.", "city": "Cali", "verified": true, "text": "La talla quedó perfecta y la calidad es muy buena para el precio." } }
+        "r1": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "name": "Carolina M.",
+            "city": "Bogotá",
+            "verified": true,
+            "text": "Llegó en 2 días y pagué al recibir. Súper cómodos, ya pedí otro par."
+          }
+        },
+        "r2": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "name": "Andrés G.",
+            "city": "Medellín",
+            "verified": true,
+            "text": "Desconfiaba porque lo vi en TikTok, pero me escribieron por WhatsApp y todo fue real."
+          }
+        },
+        "r3": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "name": "Daniela R.",
+            "city": "Cali",
+            "verified": true,
+            "text": "La talla quedó perfecta y la calidad es muy buena para el precio."
+          }
+        }
       },
-      "block_order": ["r1", "r2", "r3"],
+      "block_order": [
+        "r1",
+        "r2",
+        "r3"
+      ],
       "settings": {
         "eyebrow": "MILES DE COLOMBIANOS YA COMPRARON",
         "heading": "Opiniones reales",
@@ -132,12 +255,42 @@
     "faq": {
       "type": "cod-faq",
       "blocks": {
-        "f1": { "type": "faq", "settings": { "open_by_default": true, "question": "¿De verdad pago cuando lo recibo?", "answer": "<p>Sí. No pedimos tarjeta ni transferencia. Haces el pedido, nosotros lo despachamos y pagas en efectivo al transportador cuando te lo entrega en tu casa.</p>" } },
-        "f2": { "type": "faq", "settings": { "question": "¿Cuánto tarda en llegar?", "answer": "<p>Entre 1 y 4 días hábiles según tu ciudad. Las ciudades principales suelen recibir en 24 a 48 horas.</p>" } },
-        "f3": { "type": "faq", "settings": { "question": "¿Hacen envíos a todo el país?", "answer": "<p>Sí, enviamos a toda Colombia: Bogotá, Medellín, Cali, Barranquilla, Bucaramanga, Cartagena, Pereira y municipios.</p>" } },
-        "f4": { "type": "faq", "settings": { "question": "¿Cómo sé que esto es real?", "answer": "<p>Somos una tienda registrada, te confirmamos el pedido por WhatsApp con una persona real y solo pagas cuando el producto está en tus manos.</p>" } }
+        "f1": {
+          "type": "faq",
+          "settings": {
+            "open_by_default": true,
+            "question": "¿De verdad pago cuando lo recibo?",
+            "answer": "<p>Sí. No pedimos tarjeta ni transferencia. Haces el pedido, nosotros lo despachamos y pagas en efectivo al transportador cuando te lo entrega en tu casa.</p>"
+          }
+        },
+        "f2": {
+          "type": "faq",
+          "settings": {
+            "question": "¿Cuánto tarda en llegar?",
+            "answer": "<p>Entre 1 y 4 días hábiles según tu ciudad. Las ciudades principales suelen recibir en 24 a 48 horas.</p>"
+          }
+        },
+        "f3": {
+          "type": "faq",
+          "settings": {
+            "question": "¿Hacen envíos a todo el país?",
+            "answer": "<p>Sí, enviamos a toda Colombia: Bogotá, Medellín, Cali, Barranquilla, Bucaramanga, Cartagena, Pereira y municipios.</p>"
+          }
+        },
+        "f4": {
+          "type": "faq",
+          "settings": {
+            "question": "¿Cómo sé que esto es real?",
+            "answer": "<p>Somos una tienda registrada, te confirmamos el pedido por WhatsApp con una persona real y solo pagas cuando el producto está en tus manos.</p>"
+          }
+        }
       },
-      "block_order": ["f1", "f2", "f3", "f4"],
+      "block_order": [
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ],
       "settings": {
         "eyebrow": "RESOLVEMOS TUS DUDAS",
         "heading": "Preguntas frecuentes",

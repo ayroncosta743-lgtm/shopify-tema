@@ -12,30 +12,3 @@
     <span class="cod-mini-guarantee__text">{{ block.settings.text }}</span>
   </span>
 </div>
-
-{%- style -%}
-  .cod-mini-guarantee {
-    display: flex;
-    gap: 1.2rem;
-    align-items: center;
-    padding: 1.4rem;
-    border-radius: var(--cod-radius);
-    background: rgba(var(--color-foreground), 0.05);
-    font-size: 1.35rem;
-    line-height: 1.45;
-  }
-
-  .cod-mini-guarantee__icon {
-    flex: 0 0 auto;
-    width: 4rem;
-    height: 4rem;
-    display: grid;
-    place-items: center;
-    border-radius: 50%;
-    background: rgb(var(--cod-success));
-    color: #fff;
-  }
-
-  .cod-mini-guarantee__icon svg { width: 2.2rem; height: 2.2rem; }
-  .cod-mini-guarantee__text { opacity: 0.78; }
-{%- endstyle -%}

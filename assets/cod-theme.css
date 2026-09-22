@@ -117,6 +117,13 @@
 }
 .cod-btn--auto { width: auto; }
 
+/* Los SVG de cod-icon no traen medidas propias: se las da el contenedor */
+.cod-btn svg {
+  width: 2.2rem;
+  height: 2.2rem;
+  flex: 0 0 auto;
+}
+
 .cod-btn__sub {
   display: block;
   font-size: 1.15rem;
@@ -400,6 +407,11 @@
   color: rgb(var(--color-foreground));
 }
 
+.cod-sticky-bar__cta svg {
+  width: 1.8rem;
+  height: 1.8rem;
+}
+
 .cod-sticky-bar__cta {
   flex: 0 0 auto;
   width: auto;
@@ -483,6 +495,12 @@ body.cod-sticky-visible .cod-whatsapp { bottom: calc(8.5rem + env(safe-area-inse
   display: flex;
   gap: 3rem;
   align-items: center;
+  flex: 0 0 auto;
+}
+
+.cod-marquee svg {
+  width: 1.8rem;
+  height: 1.8rem;
   flex: 0 0 auto;
 }
 
@@ -580,6 +598,12 @@ body.cod-sticky-visible .cod-whatsapp { bottom: calc(8.5rem + env(safe-area-inse
 
 .cod-review__name { font-weight: 800; display: block; }
 .cod-review__meta { opacity: 0.65; font-size: 1.2rem; }
+
+.cod-review__verified svg {
+  width: 1.4rem;
+  height: 1.4rem;
+  flex: 0 0 auto;
+}
 
 .cod-review__verified {
   display: inline-flex;
@@ -1028,4 +1052,118 @@ fieldset.product-form__input input[type='radio'] + label {
 
 @media screen and (min-width: 750px) {
   .cod-hide-desktop { display: none !important; }
+}
+
+/* --------------------------------------------------------------------------
+   19. Piezas de la ficha de producto
+   (antes repartidas en bloques {% style %} dentro de cada snippet)
+   -------------------------------------------------------------------------- */
+
+.cod-price-block__note {
+  margin: -0.4rem 0 0;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: rgb(var(--cod-success));
+}
+
+.cod-checklist__heading {
+  margin: 0 0 0.4rem;
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.03rem;
+}
+
+.cod-buy-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  margin: 1rem 0 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  opacity: 0.75;
+  text-align: center;
+}
+
+.cod-buy-note svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  flex: 0 0 auto;
+}
+
+.cod-delivery {
+  display: flex;
+  gap: 1.2rem;
+  align-items: flex-start;
+  padding: 1.4rem;
+  border-radius: var(--cod-radius);
+  border: 1px dashed rgba(var(--cod-success), 0.5);
+  background: rgba(var(--cod-success), 0.05);
+  font-size: 1.35rem;
+  line-height: 1.5;
+}
+
+.cod-delivery__icon {
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  color: rgb(var(--cod-success));
+}
+
+.cod-delivery__icon svg {
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+.cod-delivery__note {
+  opacity: 0.75;
+  font-size: 1.25rem;
+}
+
+.cod-mini-guarantee {
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+  padding: 1.4rem;
+  border-radius: var(--cod-radius);
+  background: rgba(var(--color-foreground), 0.05);
+  font-size: 1.35rem;
+  line-height: 1.45;
+}
+
+.cod-mini-guarantee__icon {
+  flex: 0 0 auto;
+  width: 4rem;
+  height: 4rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgb(var(--cod-success));
+  color: #fff;
+}
+
+.cod-mini-guarantee__icon svg {
+  width: 2.2rem;
+  height: 2.2rem;
+}
+
+.cod-mini-guarantee__text {
+  opacity: 0.78;
+}
+
+.cod-product-countdown {
+  margin-top: 1.4rem;
+  padding: 1.2rem;
+  border-radius: var(--cod-radius);
+  background: rgba(var(--cod-primary), 0.07);
+  text-align: center;
+}
+
+.cod-product-countdown__label {
+  display: block;
+  margin-bottom: 0.8rem;
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: rgb(var(--cod-primary));
 }
