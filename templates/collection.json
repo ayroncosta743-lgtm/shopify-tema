@@ -28,49 +28,6 @@
         "padding_bottom": 36
       }
     },
-    "marquee": {
-      "type": "cod-marquee",
-      "blocks": {
-        "m1": {
-          "type": "item",
-          "settings": {
-            "text": "PAGO CONTRA ENTREGA",
-            "icon": "cash"
-          }
-        },
-        "m2": {
-          "type": "item",
-          "settings": {
-            "text": "ENVÍO GRATIS A TODA COLOMBIA",
-            "icon": "truck"
-          }
-        },
-        "m3": {
-          "type": "item",
-          "settings": {
-            "text": "GARANTÍA DE 30 DÍAS",
-            "icon": "shield"
-          }
-        },
-        "m4": {
-          "type": "item",
-          "settings": {
-            "text": "DESPACHO EL MISMO DÍA",
-            "icon": "zap"
-          }
-        }
-      },
-      "block_order": [
-        "m1",
-        "m2",
-        "m3",
-        "m4"
-      ],
-      "settings": {
-        "speed": 26,
-        "color_scheme": "scheme-3"
-      }
-    },
     "trust_bar": {
       "type": "cod-trust-bar",
       "blocks": {
@@ -123,7 +80,6 @@
     }
   },
   "order": [
-    "marquee",
     "banner",
     "product-grid",
     "trust_bar"

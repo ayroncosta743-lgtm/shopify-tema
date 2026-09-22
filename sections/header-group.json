@@ -5,11 +5,11 @@
     "announcement-bar": {
       "type": "announcement-bar",
       "settings": {
-        "color_scheme": "scheme-4",
+        "color_scheme": "scheme-3",
         "show_line_separator": false,
         "show_social": false,
         "auto_rotate": true,
-        "change_slides_speed": 4,
+        "change_slides_speed": 6,
         "enable_country_selector": false,
         "enable_language_selector": false
       },
@@ -17,30 +17,19 @@
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
-            "text": "🚚 ENVÍO GRATIS A TODA COLOMBIA · PAGAS AL RECIBIR",
+            "text": "Envío gratis a toda Colombia · Pagas cuando recibes",
             "link": ""
           }
         },
         "announcement-bar-1": {
           "type": "announcement",
           "settings": {
-            "text": "💵 PAGO CONTRA ENTREGA · SIN TARJETA NI ANTICIPOS",
-            "link": ""
-          }
-        },
-        "announcement-bar-2": {
-          "type": "announcement",
-          "settings": {
-            "text": "🔥 OFERTA POR TIEMPO LIMITADO · ÚLTIMAS UNIDADES",
+            "text": "Garantía de 30 días en todos los pedidos",
             "link": ""
           }
         }
       },
-      "block_order": [
-        "announcement-bar-0",
-        "announcement-bar-1",
-        "announcement-bar-2"
-      ]
+      "block_order": ["announcement-bar-0", "announcement-bar-1"]
     },
     "header": {
       "type": "header",
@@ -56,13 +45,10 @@
         "enable_language_selector": false,
         "mobile_logo_position": "center",
         "margin_bottom": 0,
-        "padding_top": 16,
-        "padding_bottom": 16
+        "padding_top": 24,
+        "padding_bottom": 24
       }
     }
   },
-  "order": [
-    "announcement-bar",
-    "header"
-  ]
+  "order": ["announcement-bar", "header"]
 }

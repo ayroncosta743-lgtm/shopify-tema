@@ -36,7 +36,7 @@
         data-cod-sticky-cta="{{ section.settings.target_selector | default: '#CodOrderForm' }}"
         data-cod-sticky-submit="{{ section.settings.trigger_add_to_cart }}"
       >
-        {{ settings.cod_sticky_label | default: 'PEDIR AHORA' }}
+        {{ settings.cod_sticky_label | default: 'Pedir ahora' }}
       </a>
     </div>
   </cod-sticky-bar>
@@ -55,7 +55,7 @@
     { "type": "text", "id": "watch_selector", "default": ".product-form__submit", "label": "Elemento a vigilar", "info": "La barra aparece cuando este elemento sale de la pantalla." },
     { "type": "text", "id": "target_selector", "default": "#CodOrderForm", "label": "Destino del botón", "info": "Selector CSS al que se desplaza al hacer clic." },
     { "type": "checkbox", "id": "trigger_add_to_cart", "default": false, "label": "Pulsar «agregar al carrito» tras desplazarse", "info": "Déjalo desactivado si usas el formulario de contra entrega." },
-    { "type": "checkbox", "id": "pulse", "default": true, "label": "Animar el botón" }
+    { "type": "checkbox", "id": "pulse", "default": false, "label": "Animar el botón" }
   ],
   "presets": [{ "name": "COD · Barra fija" }]
 }

@@ -107,7 +107,7 @@
   },
   "products": {
     "product": {
-      "add_to_cart": "PEDIR AHORA · PAGO CONTRA ENTREGA",
+      "add_to_cart": "Pedir ahora · Pago contra entrega",
       "description": "Descripción",
       "on_sale": "En oferta",
       "quantity": {
@@ -131,7 +131,7 @@
         "unit_price": "Precio unitario"
       },
       "share": "Compartir este producto",
-      "sold_out": "AGOTADO POR AHORA",
+      "sold_out": "Agotado por ahora",
       "unavailable": "No disponible",
       "vendor": "Proveedor",
       "video_exit_message": "{{ title }} abre el video en pantalla completa en la misma ventana.",
@@ -165,7 +165,7 @@
       "variant_sold_out_or_unavailable": "Variante agotada o no disponible",
       "inventory_in_stock": "Disponible para envío inmediato",
       "inventory_in_stock_show_count": "{{ quantity }} disponibles · despacho inmediato",
-      "inventory_low_stock": "¡Últimas unidades!",
+      "inventory_low_stock": "Últimas unidades",
       "inventory_low_stock_show_count": "¡Solo quedan {{ quantity }} unidades!",
       "inventory_out_of_stock": "Agotado temporalmente",
       "inventory_out_of_stock_continue_selling": "En existencias",
@@ -290,7 +290,7 @@
       "caption": "Artículos en el carrito",
       "remove_title": "Eliminar {{ title }}",
       "note": "Instrucciones especiales del pedido",
-      "checkout": "FINALIZAR PEDIDO",
+      "checkout": "Finalizar pedido",
       "empty": "Aún no has agregado nada",
       "product_disclosure": "Aviso sobre el producto",
       "product_disclosures": "Avisos sobre el producto",
@@ -562,7 +562,7 @@
       "you_save": "Ahorras {{ amount }}",
       "pay_on_delivery": "Pagas cuando lo recibes en tu casa",
       "no_card_needed": "Sin tarjeta · Sin anticipos",
-      "order_now": "PEDIR AHORA",
+      "order_now": "Pedir ahora",
       "select_options": "Elige tus opciones arriba",
       "delivery_estimate": "Recíbelo entre el {{ from_date }} y el {{ to_date }}"
     },

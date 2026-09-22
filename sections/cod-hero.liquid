@@ -29,14 +29,16 @@
 
   <div class="cod-hero__content">
     {%- if section.settings.badge != blank -%}
-      <span class="cod-badge cod-badge--accent">
-        {% render 'cod-icon', icon: 'fire' %}
-        {{ section.settings.badge }}
-      </span>
+      <div class="cod-hero__badge">
+        <span class="cod-badge cod-badge--accent">
+          {% render 'cod-icon', icon: 'check-circle' %}
+          {{ section.settings.badge }}
+        </span>
+      </div>
     {%- endif -%}
 
     {%- if section.settings.eyebrow != blank -%}
-      <p class="cod-eyebrow cod-mt-sm">{{ section.settings.eyebrow }}</p>
+      <p class="cod-eyebrow">{{ section.settings.eyebrow }}</p>
     {%- endif -%}
 
     {%- if section.settings.heading != blank -%}
@@ -105,7 +107,7 @@
     {%- endif -%}
 
     {%- if section.settings.footnote != blank -%}
-      <p class="cod-mt-sm" style="font-size: 1.3rem; opacity: 0.8;">{{ section.settings.footnote }}</p>
+      <p class="cod-hero__footnote">{{ section.settings.footnote }}</p>
     {%- endif -%}
   </div>
 </div>
@@ -125,8 +127,8 @@
     { "type": "range", "id": "overlay_opacity", "min": 0, "max": 90, "step": 5, "default": 45, "unit": "%", "label": "Oscurecer fondo" },
     { "type": "range", "id": "min_height", "min": 40, "max": 100, "step": 5, "default": 75, "unit": "vh", "label": "Alto de la portada" },
     { "type": "header", "content": "Contenido" },
-    { "type": "text", "id": "badge", "default": "OFERTA POR TIEMPO LIMITADO", "label": "Etiqueta superior" },
-    { "type": "text", "id": "eyebrow", "default": "ENVÍO A TODA COLOMBIA", "label": "Línea pequeña" },
+    { "type": "text", "id": "badge", "default": "Pago contra entrega en toda Colombia", "label": "Etiqueta superior" },
+    { "type": "text", "id": "eyebrow", "default": "Envíos a todo el país", "label": "Línea pequeña" },
     { "type": "text", "id": "heading", "default": "Pídelo hoy y paga cuando llegue a tu casa", "label": "Titular" },
     { "type": "richtext", "id": "subheading", "default": "<p>Sin tarjeta, sin anticipos y sin riesgo. Recibes primero, pagas después.</p>", "label": "Subtítulo" },
     { "type": "text", "id": "footnote", "default": "Despachamos el mismo día · Entrega de 1 a 4 días hábiles", "label": "Nota al pie" },
@@ -139,11 +141,11 @@
     { "type": "range", "id": "rating_value", "min": 3, "max": 5, "step": 0.1, "default": 4.8, "label": "Calificación" },
     { "type": "text", "id": "rating_text", "default": "4.8/5 · +2.400 clientes felices", "label": "Texto junto a las estrellas" },
     { "type": "header", "content": "Botón" },
-    { "type": "text", "id": "cta_label", "default": "LO QUIERO AHORA", "label": "Texto del botón" },
+    { "type": "text", "id": "cta_label", "default": "Pedir ahora", "label": "Texto del botón" },
     { "type": "text", "id": "cta_sublabel", "default": "Pago contra entrega · Envío gratis", "label": "Texto secundario del botón" },
     { "type": "url", "id": "cta_link", "label": "Enlace del botón" },
     { "type": "text", "id": "cta_scroll_target", "label": "O desplazar hasta (selector CSS)", "info": "Ej: #CodOrderForm para bajar al formulario de pedido." },
-    { "type": "checkbox", "id": "cta_pulse", "default": true, "label": "Animar el botón" },
+    { "type": "checkbox", "id": "cta_pulse", "default": false, "label": "Animar el botón" },
     { "type": "header", "content": "Estilo" },
     { "type": "color_scheme", "id": "color_scheme", "default": "scheme-3", "label": "Esquema de color" }
   ],

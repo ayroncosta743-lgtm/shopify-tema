@@ -14,10 +14,10 @@
       },
       "block_order": ["f1", "f2", "f3", "f4", "f5", "f6", "f7", "f8"],
       "settings": {
-        "eyebrow": "CENTRO DE AYUDA",
+        "eyebrow": "Centro de ayuda",
         "heading": "Preguntas frecuentes",
         "subheading": "<p>Si tu duda no está aquí, escríbenos por WhatsApp y te respondemos de una.</p>",
-        "cta_label": "VER PRODUCTOS",
+        "cta_label": "Ver productos",
         "cta_link": "shopify://collections/all",
         "color_scheme": "scheme-1",
         "padding_top": 48,

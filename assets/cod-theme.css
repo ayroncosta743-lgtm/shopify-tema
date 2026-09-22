@@ -1,78 +1,83 @@
 /* ==========================================================================
    COD THEME — Capa de conversión para Dawn
-   Tienda 100% Colombia · Pago contra entrega · Tráfico frío de TikTok
+   Tienda colombiana · Pago contra entrega · Tráfico de TikTok
    --------------------------------------------------------------------------
-   Todas las variables se inyectan desde layout/theme.liquid a partir de
-   la configuración del tema (Personalizar > Configuración > Conversión COD).
+   Lenguaje visual: sereno y de confianza. Verde profundo, crema y dorado.
+   La persuasión viene de la claridad y las garantías, no del ruido: sin
+   parpadeos, sin mayúsculas gritadas, sin contadores de presión.
+
+   Las variables se inyectan desde layout/theme.liquid según la
+   configuración del tema (Personalizar > Configuración > Conversión COD).
    ========================================================================== */
 
 :root {
-  --cod-radius: 12px;
-  --cod-radius-lg: 18px;
+  --cod-radius-sm: 6px;
+  --cod-radius: 10px;
+  --cod-radius-lg: 16px;
   --cod-radius-pill: 999px;
-  --cod-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
-  --cod-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
-  --cod-shadow-lg: 0 14px 40px rgba(0, 0, 0, 0.18);
-  --cod-gutter: 1.6rem;
-  --cod-sticky-height: 0px;
-  --cod-font-black: 900;
+
+  /* Sombras suaves: insinúan profundidad sin ensuciar el crema */
+  --cod-shadow-sm: 0 1px 3px rgba(22, 48, 43, 0.06);
+  --cod-shadow: 0 4px 16px rgba(22, 48, 43, 0.08);
+  --cod-shadow-lg: 0 12px 36px rgba(22, 48, 43, 0.12);
+
+  --cod-gutter: 2rem;
+  --cod-hairline: 1px solid rgba(var(--color-foreground), 0.12);
 }
 
 /* --------------------------------------------------------------------------
-   1. Tipografía agresiva
+   1. Tipografía
    -------------------------------------------------------------------------- */
 
 .cod-eyebrow {
-  display: inline-block;
+  display: block;
   font-size: 1.2rem;
-  font-weight: 800;
-  letter-spacing: 0.18rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: rgb(var(--cod-primary));
-  margin: 0 0 0.8rem;
+  color: rgba(var(--color-foreground), 0.55);
+  margin: 0 0 1.4rem;
 }
 
 .cod-title {
   font-family: var(--font-heading-family);
-  font-weight: var(--cod-font-black);
-  line-height: 1.05;
-  letter-spacing: -0.04rem;
-  text-transform: uppercase;
-  margin: 0 0 1.2rem;
-  font-size: clamp(2.6rem, 7vw, 4.6rem);
+  font-style: var(--font-heading-style);
+  font-weight: var(--font-heading-weight);
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  margin: 0 0 1.6rem;
+  font-size: clamp(2.8rem, 5.5vw, 4.4rem);
 }
 
 .cod-title--sm {
-  font-size: clamp(2.2rem, 5.5vw, 3.2rem);
+  font-size: clamp(2.4rem, 4vw, 3.2rem);
 }
 
 .cod-subtitle {
-  font-size: clamp(1.5rem, 3.6vw, 1.9rem);
-  line-height: 1.5;
-  margin: 0 auto 2rem;
-  max-width: 62rem;
-  opacity: 0.86;
+  font-size: clamp(1.5rem, 2.2vw, 1.8rem);
+  line-height: 1.65;
+  margin: 0 auto 2.4rem;
+  max-width: 58ch;
+  color: rgba(var(--color-foreground), 0.72);
 }
 
+.cod-section__head--left .cod-subtitle { margin-left: 0; }
+
+/* Subrayado dorado fino, en lugar de resaltador chillón */
 .cod-highlight {
-  background: linear-gradient(transparent 58%, rgba(var(--cod-accent), 0.75) 58%);
-  padding: 0 0.3rem;
+  background-image: linear-gradient(rgb(var(--cod-accent)), rgb(var(--cod-accent)));
+  background-repeat: no-repeat;
+  background-size: 100% 2px;
+  background-position: 0 92%;
+  padding-bottom: 0.1em;
 }
 
 .cod-text-primary { color: rgb(var(--cod-primary)); }
 .cod-text-success { color: rgb(var(--cod-success)); }
 
 /* --------------------------------------------------------------------------
-   2. Botones de acción (CTA)
+   2. Botones
    -------------------------------------------------------------------------- */
-
-.cod-btn,
-.product-form__submit.button,
-.shopify-payment-button__button--unbranded {
-  font-weight: 900 !important;
-  text-transform: uppercase;
-  letter-spacing: 0.06rem;
-}
 
 .cod-btn {
   --cod-btn-bg: rgb(var(--cod-primary));
@@ -80,271 +85,211 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.8rem;
+  flex-wrap: wrap;
+  gap: 0 1rem;
   width: 100%;
-  min-height: 5.6rem;
-  padding: 1.6rem 2.4rem;
+  min-height: 5.4rem;
+  padding: 1.6rem 2.8rem;
   border: 0;
   border-radius: var(--cod-radius);
   background: var(--cod-btn-bg);
   color: var(--cod-btn-fg);
   font-family: var(--font-body-family);
-  font-size: clamp(1.6rem, 4.2vw, 1.9rem);
-  line-height: 1.15;
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1.25;
   text-align: center;
   text-decoration: none;
   cursor: pointer;
-  box-shadow: var(--cod-shadow);
-  transition: transform 0.12s ease, box-shadow 0.2s ease, filter 0.2s ease;
+  box-shadow: var(--cod-shadow-sm);
+  transition: background-color 0.25s ease, box-shadow 0.25s ease, transform 0.15s ease;
 }
 
 .cod-btn:hover {
-  filter: brightness(1.06);
-  box-shadow: var(--cod-shadow-lg);
+  box-shadow: var(--cod-shadow);
   color: var(--cod-btn-fg);
+  transform: translateY(-1px);
 }
 
-.cod-btn:active { transform: translateY(2px); }
+.cod-btn:active { transform: translateY(0); }
 
-.cod-btn--success { --cod-btn-bg: rgb(var(--cod-success)); --cod-btn-fg: 255, 255, 255; color: #fff; }
-.cod-btn--dark { --cod-btn-bg: #111; color: #fff; }
-.cod-btn--whatsapp { --cod-btn-bg: #25d366; color: #fff; }
-.cod-btn--outline {
-  background: transparent;
-  color: rgb(var(--cod-primary));
-  border: 2px solid rgb(var(--cod-primary));
-  box-shadow: none;
-}
-.cod-btn--auto { width: auto; }
-
-/* Los SVG de cod-icon no traen medidas propias: se las da el contenedor */
 .cod-btn svg {
-  width: 2.2rem;
-  height: 2.2rem;
+  width: 2rem;
+  height: 2rem;
   flex: 0 0 auto;
 }
 
+.cod-btn--success { --cod-btn-bg: rgb(var(--cod-success)); --cod-btn-fg: #ffffff; }
+.cod-btn--dark { --cod-btn-bg: rgb(var(--cod-dark)); --cod-btn-fg: #ffffff; }
+.cod-btn--accent { --cod-btn-bg: rgb(var(--cod-accent)); --cod-btn-fg: #231f16; }
+.cod-btn--whatsapp { --cod-btn-bg: #1f8f52; --cod-btn-fg: #ffffff; }
+
+.cod-btn--outline {
+  background: transparent;
+  color: rgb(var(--cod-primary));
+  border: 1px solid rgba(var(--cod-primary), 0.4);
+  box-shadow: none;
+}
+
+.cod-btn--outline:hover {
+  background: rgba(var(--cod-primary), 0.05);
+  color: rgb(var(--cod-primary));
+}
+
+.cod-btn--auto { width: auto; min-width: 24rem; }
+
 .cod-btn__sub {
-  display: block;
-  font-size: 1.15rem;
-  font-weight: 600;
-  letter-spacing: 0.04rem;
+  flex: 0 0 100%;
+  margin-top: 0.4rem;
+  font-size: 1.2rem;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  opacity: 0.85;
+}
+
+/* El botón de compra de Dawn hereda el mismo lenguaje */
+.product-form__submit {
+  min-height: 5.6rem;
+  font-size: 1.6rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.02em;
+  border-radius: var(--cod-radius);
   text-transform: none;
-  opacity: 0.88;
-  margin-top: 0.3rem;
 }
-
-/* Pulso de atención — se desactiva si el usuario pide menos movimiento */
-@keyframes cod-pulse {
-  0%   { transform: scale(1); box-shadow: 0 0 0 0 rgba(var(--cod-primary), 0.55); }
-  70%  { transform: scale(1.015); box-shadow: 0 0 0 16px rgba(var(--cod-primary), 0); }
-  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(var(--cod-primary), 0); }
-}
-
-.cod-btn--pulse { animation: cod-pulse 2.2s infinite; }
 
 @media (prefers-reduced-motion: reduce) {
-  .cod-btn--pulse,
-  .cod-marquee__track,
-  .cod-blink { animation: none !important; }
-  .cod-btn { transition: none; }
-}
-
-/* Botón principal de producto heredado de Dawn */
-.product-form__submit {
-  min-height: 5.8rem;
-  font-size: clamp(1.6rem, 4.4vw, 1.9rem) !important;
-  border-radius: var(--cod-radius);
+  .cod-btn,
+  .cod-btn:hover { transition: none; transform: none; }
+  .cod-marquee__track { animation: none; }
 }
 
 /* --------------------------------------------------------------------------
-   3. Insignias y confianza (contra entrega)
+   3. Insignias y confianza
    -------------------------------------------------------------------------- */
 
 .cod-badge {
   display: inline-flex;
   align-items: center;
-  gap: 0.6rem;
-  padding: 0.6rem 1.2rem;
+  gap: 0.7rem;
+  padding: 0.7rem 1.4rem;
   border-radius: var(--cod-radius-pill);
-  font-size: 1.25rem;
-  font-weight: 800;
-  line-height: 1.2;
-  text-transform: uppercase;
-  letter-spacing: 0.04rem;
+  border: 1px solid rgba(var(--color-foreground), 0.14);
+  background: transparent;
+  font-size: 1.3rem;
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: 0.01em;
   white-space: nowrap;
+  color: rgba(var(--color-foreground), 0.82);
 }
 
-.cod-badge svg { width: 1.6rem; height: 1.6rem; flex: 0 0 auto; }
+.cod-badge svg { width: 1.7rem; height: 1.7rem; flex: 0 0 auto; }
 
-.cod-badge--cod { background: rgba(var(--cod-success), 0.13); color: rgb(var(--cod-success)); }
-.cod-badge--urgent { background: rgba(var(--cod-primary), 0.12); color: rgb(var(--cod-primary)); }
-.cod-badge--accent { background: rgba(var(--cod-accent), 0.85); color: #171717; }
-.cod-badge--neutral { background: rgba(0, 0, 0, 0.06); color: inherit; }
+.cod-badge--cod {
+  border-color: rgba(var(--cod-success), 0.35);
+  background: rgba(var(--cod-success), 0.06);
+  color: rgb(var(--cod-success));
+}
+
+.cod-badge--accent {
+  border-color: transparent;
+  background: rgb(var(--cod-accent));
+  color: #231f16;
+  font-weight: 600;
+}
+
+.cod-badge--neutral { background: rgba(var(--color-foreground), 0.04); }
 
 .cod-badge-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.8rem;
-  margin: 1.4rem 0;
+  gap: 0.9rem;
+  margin: 1.8rem 0;
 }
 
-/* Tira de garantías con iconos */
+/* Tira de garantías */
 .cod-assurance {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
-  gap: 1.2rem;
-  padding: 1.6rem;
-  border: 2px solid rgba(var(--cod-success), 0.28);
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 2.4rem 3.2rem;
+  padding: 3rem 2.8rem;
+  border: var(--cod-hairline);
   border-radius: var(--cod-radius-lg);
-  background: rgba(var(--cod-success), 0.05);
+  background: rgba(var(--color-foreground), 0.015);
 }
 
 .cod-assurance__item {
   display: flex;
-  align-items: center;
-  gap: 1rem;
-  font-size: 1.35rem;
-  line-height: 1.35;
-  font-weight: 600;
+  align-items: flex-start;
+  gap: 1.4rem;
+  font-size: 1.4rem;
+  line-height: 1.5;
 }
 
 .cod-assurance__icon {
   flex: 0 0 auto;
-  width: 3.6rem;
-  height: 3.6rem;
+  width: 3.2rem;
+  height: 3.2rem;
   display: grid;
   place-items: center;
   border-radius: 50%;
-  background: rgb(var(--cod-success));
-  color: #fff;
+  border: 1px solid rgba(var(--cod-success), 0.3);
+  background: rgba(var(--cod-success), 0.07);
+  color: rgb(var(--cod-success));
 }
 
-.cod-assurance__icon svg { width: 2rem; height: 2rem; }
+.cod-assurance__icon svg { width: 1.7rem; height: 1.7rem; }
+.cod-assurance__item strong { font-weight: 600; }
 
 /* --------------------------------------------------------------------------
-   4. Urgencia: contador y escasez
+   4. Marquesina (opcional, discreta)
    -------------------------------------------------------------------------- */
 
-.cod-countdown {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.8rem;
-  flex-wrap: wrap;
-}
-
-.cod-countdown__unit {
-  min-width: 6.4rem;
-  padding: 0.9rem 0.6rem;
-  border-radius: var(--cod-radius);
-  background: #111;
-  color: #fff;
-  text-align: center;
-  font-variant-numeric: tabular-nums;
-}
-
-.cod-countdown__unit--flat {
-  background: rgba(0, 0, 0, 0.08);
-  color: inherit;
-}
-
-.cod-countdown__value {
-  display: block;
-  font-size: clamp(2.2rem, 6vw, 3.2rem);
-  font-weight: 900;
-  line-height: 1;
-}
-
-.cod-countdown__label {
-  display: block;
-  margin-top: 0.4rem;
-  font-size: 1rem;
-  font-weight: 700;
-  letter-spacing: 0.1rem;
-  text-transform: uppercase;
-  opacity: 0.75;
-}
-
-.cod-countdown__sep {
-  font-size: 2.4rem;
-  font-weight: 900;
-  opacity: 0.4;
-}
-
-@keyframes cod-blink { 50% { opacity: 0.35; } }
-.cod-blink { animation: cod-blink 1.1s steps(1) infinite; }
-
-/* Barra de existencias */
-.cod-stock { margin: 1.6rem 0; }
-
-.cod-stock__head {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 1rem;
-  font-size: 1.3rem;
-  font-weight: 700;
-  margin-bottom: 0.7rem;
-}
-
-.cod-stock__bar {
-  position: relative;
-  height: 1rem;
-  border-radius: var(--cod-radius-pill);
-  background: rgba(0, 0, 0, 0.1);
+.cod-marquee {
   overflow: hidden;
+  padding: 1.4rem 0;
+  font-size: 1.3rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  border-top: var(--cod-hairline);
+  border-bottom: var(--cod-hairline);
 }
 
-.cod-stock__fill {
-  position: absolute;
-  inset: 0 auto 0 0;
-  border-radius: inherit;
-  background: linear-gradient(90deg, rgb(var(--cod-primary)), rgb(var(--cod-accent)));
-  transition: width 0.6s ease;
+.cod-marquee__track {
+  display: flex;
+  width: max-content;
+  gap: 4rem;
+  animation: cod-marquee-scroll var(--cod-marquee-speed, 40s) linear infinite;
 }
 
-.cod-stock__note {
-  margin: 0.7rem 0 0;
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: rgb(var(--cod-primary));
-}
+.cod-marquee__group { display: flex; gap: 4rem; align-items: center; flex: 0 0 auto; }
 
-/* Prueba social en vivo */
-.cod-livecount {
+.cod-marquee__item {
   display: inline-flex;
   align-items: center;
-  gap: 0.7rem;
-  font-size: 1.3rem;
-  font-weight: 700;
-  padding: 0.7rem 1.2rem;
-  border-radius: var(--cod-radius-pill);
-  background: rgba(var(--cod-primary), 0.08);
-  color: rgb(var(--cod-primary));
+  gap: 1rem;
+  white-space: nowrap;
 }
 
-.cod-livecount__dot {
-  width: 0.9rem;
-  height: 0.9rem;
+.cod-marquee__item::after {
+  content: '';
+  width: 0.4rem;
+  height: 0.4rem;
   border-radius: 50%;
-  background: currentColor;
-  box-shadow: 0 0 0 0 currentColor;
-  animation: cod-pulse-dot 1.8s infinite;
+  background: rgba(var(--color-foreground), 0.3);
+  margin-left: 4rem;
 }
 
-@keyframes cod-pulse-dot {
-  0%   { box-shadow: 0 0 0 0 rgba(var(--cod-primary), 0.5); }
-  70%  { box-shadow: 0 0 0 0.9rem rgba(var(--cod-primary), 0); }
-  100% { box-shadow: 0 0 0 0 rgba(var(--cod-primary), 0); }
-}
+.cod-marquee svg { width: 1.7rem; height: 1.7rem; flex: 0 0 auto; }
 
-@media (prefers-reduced-motion: reduce) {
-  .cod-livecount__dot { animation: none; }
+@keyframes cod-marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
 
 /* --------------------------------------------------------------------------
-   5. Barra fija de compra (sticky add to cart)
+   5. Barra fija de compra
    -------------------------------------------------------------------------- */
 
 .cod-sticky-bar {
@@ -355,78 +300,70 @@
   z-index: 60;
   display: flex;
   align-items: center;
-  gap: 1.2rem;
-  padding: 1rem 1.4rem calc(1rem + env(safe-area-inset-bottom));
+  gap: 1.6rem;
+  padding: 1.2rem 2rem calc(1.2rem + env(safe-area-inset-bottom));
   background: rgb(var(--color-background));
-  border-top: 1px solid rgba(var(--color-foreground), 0.12);
-  box-shadow: 0 -6px 24px rgba(0, 0, 0, 0.14);
+  border-top: var(--cod-hairline);
+  box-shadow: 0 -2px 18px rgba(22, 48, 43, 0.07);
   transform: translateY(105%);
-  transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .cod-sticky-bar.is-visible { transform: translateY(0); }
 
 .cod-sticky-bar__media {
   flex: 0 0 auto;
-  width: 5rem;
-  height: 5rem;
-  border-radius: var(--cod-radius);
+  width: 4.8rem;
+  height: 4.8rem;
+  border-radius: var(--cod-radius-sm);
   object-fit: cover;
-  background: rgba(0, 0, 0, 0.05);
 }
 
-.cod-sticky-bar__info {
-  flex: 1 1 auto;
-  min-width: 0;
-}
+.cod-sticky-bar__info { flex: 1 1 auto; min-width: 0; }
 
 .cod-sticky-bar__title {
   display: block;
   font-size: 1.3rem;
-  font-weight: 700;
-  line-height: 1.25;
+  font-weight: 500;
+  line-height: 1.3;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  color: rgba(var(--color-foreground), 0.7);
 }
 
 .cod-sticky-bar__price {
   display: flex;
   align-items: baseline;
-  gap: 0.6rem;
-  font-size: 1.6rem;
-  font-weight: 900;
-  color: rgb(var(--cod-primary));
+  gap: 0.8rem;
+  font-size: 1.7rem;
+  font-weight: 600;
 }
 
 .cod-sticky-bar__compare {
-  font-size: 1.2rem;
-  font-weight: 600;
+  font-size: 1.3rem;
+  font-weight: 400;
   text-decoration: line-through;
-  opacity: 0.5;
-  color: rgb(var(--color-foreground));
-}
-
-.cod-sticky-bar__cta svg {
-  width: 1.8rem;
-  height: 1.8rem;
+  opacity: 0.45;
 }
 
 .cod-sticky-bar__cta {
   flex: 0 0 auto;
   width: auto;
-  min-width: 14rem;
-  min-height: 4.8rem;
-  padding: 1.2rem 1.8rem;
+  min-width: 16rem;
+  min-height: 4.6rem;
+  padding: 1.2rem 2.2rem;
   font-size: 1.5rem;
 }
 
+.cod-sticky-bar__cta svg { width: 1.7rem; height: 1.7rem; }
+
 @media screen and (max-width: 480px) {
+  .cod-sticky-bar { padding-inline: 1.6rem; gap: 1.2rem; }
   .cod-sticky-bar__media { display: none; }
-  .cod-sticky-bar__cta { min-width: 0; flex: 1 1 55%; }
+  .cod-sticky-bar__cta { min-width: 0; flex: 1 1 52%; }
 }
 
-/* Deja aire al final para que la barra no tape contenido */
 body.cod-has-sticky-bar { padding-bottom: 7.5rem; }
 
 @media screen and (min-width: 990px) {
@@ -440,125 +377,77 @@ body.cod-has-sticky-bar { padding-bottom: 7.5rem; }
 
 .cod-whatsapp {
   position: fixed;
-  right: 1.6rem;
-  bottom: calc(1.6rem + env(safe-area-inset-bottom));
+  right: 2rem;
+  bottom: calc(2rem + env(safe-area-inset-bottom));
   z-index: 55;
   display: inline-flex;
   align-items: center;
-  gap: 0.8rem;
-  padding: 1.1rem 1.6rem;
+  gap: 0.9rem;
+  padding: 1.2rem 1.8rem;
   border-radius: var(--cod-radius-pill);
-  background: #25d366;
+  background: rgb(var(--cod-dark));
   color: #fff;
   font-size: 1.4rem;
-  font-weight: 800;
+  font-weight: 500;
   text-decoration: none;
-  box-shadow: 0 8px 22px rgba(37, 211, 102, 0.42);
-  transition: transform 0.2s ease, bottom 0.28s ease;
+  box-shadow: var(--cod-shadow);
+  transition: transform 0.2s ease, bottom 0.3s ease, box-shadow 0.2s ease;
 }
 
-.cod-whatsapp:hover { transform: scale(1.05); color: #fff; }
-.cod-whatsapp svg { width: 2.4rem; height: 2.4rem; }
+.cod-whatsapp:hover {
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: var(--cod-shadow-lg);
+}
 
-.cod-whatsapp--icon-only { padding: 1.4rem; }
+.cod-whatsapp svg { width: 2.2rem; height: 2.2rem; }
+.cod-whatsapp--icon-only { padding: 1.5rem; }
 .cod-whatsapp--icon-only .cod-whatsapp__label { display: none; }
 
-/* Sube el botón cuando la barra fija está visible */
-body.cod-sticky-visible .cod-whatsapp { bottom: calc(8.5rem + env(safe-area-inset-bottom)); }
+body.cod-sticky-visible .cod-whatsapp { bottom: calc(9rem + env(safe-area-inset-bottom)); }
 
 @media screen and (max-width: 749px) {
   .cod-whatsapp__label { display: none; }
-  .cod-whatsapp { padding: 1.4rem; }
+  .cod-whatsapp { padding: 1.5rem; }
 }
 
 /* --------------------------------------------------------------------------
-   7. Marquesina (barra de anuncios en movimiento)
-   -------------------------------------------------------------------------- */
-
-.cod-marquee {
-  overflow: hidden;
-  padding: 0.9rem 0;
-  font-weight: 800;
-  font-size: 1.35rem;
-  letter-spacing: 0.05rem;
-  text-transform: uppercase;
-}
-
-.cod-marquee__track {
-  display: flex;
-  width: max-content;
-  gap: 3rem;
-  animation: cod-marquee-scroll var(--cod-marquee-speed, 26s) linear infinite;
-}
-
-.cod-marquee__group {
-  display: flex;
-  gap: 3rem;
-  align-items: center;
-  flex: 0 0 auto;
-}
-
-.cod-marquee svg {
-  width: 1.8rem;
-  height: 1.8rem;
-  flex: 0 0 auto;
-}
-
-.cod-marquee__item {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.8rem;
-  white-space: nowrap;
-}
-
-.cod-marquee__item::after {
-  content: '★';
-  opacity: 0.55;
-  margin-left: 3rem;
-}
-
-@keyframes cod-marquee-scroll {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
-}
-
-/* --------------------------------------------------------------------------
-   8. Testimonios / reseñas
+   7. Reseñas
    -------------------------------------------------------------------------- */
 
 .cod-stars {
   display: inline-flex;
-  gap: 0.2rem;
-  color: #ffb400;
+  gap: 0.3rem;
+  color: rgb(var(--cod-accent));
   line-height: 1;
 }
 
-.cod-stars svg { width: 1.7rem; height: 1.7rem; }
-.cod-stars--lg svg { width: 2.2rem; height: 2.2rem; }
+.cod-stars svg { width: 1.6rem; height: 1.6rem; }
+.cod-stars--lg svg { width: 1.9rem; height: 1.9rem; }
 
 .cod-rating-line {
   display: flex;
   align-items: center;
-  gap: 0.8rem;
+  gap: 1rem;
   flex-wrap: wrap;
-  font-size: 1.35rem;
-  font-weight: 700;
+  font-size: 1.4rem;
+  color: rgba(var(--color-foreground), 0.75);
 }
 
 .cod-reviews {
   display: grid;
-  gap: 1.6rem;
-  grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+  gap: 2.4rem;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
 }
 
 .cod-review {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  padding: 2rem;
+  gap: 1.6rem;
+  padding: 3rem 2.8rem;
   border-radius: var(--cod-radius-lg);
-  background: rgba(var(--color-foreground), 0.04);
-  border: 1px solid rgba(var(--color-foreground), 0.08);
+  border: var(--cod-hairline);
+  background: rgb(var(--color-background));
   height: 100%;
 }
 
@@ -571,16 +460,19 @@ body.cod-sticky-visible .cod-whatsapp { bottom: calc(8.5rem + env(safe-area-inse
 
 .cod-review__text {
   margin: 0;
-  font-size: 1.5rem;
-  line-height: 1.55;
+  font-size: 1.55rem;
+  line-height: 1.7;
+  color: rgba(var(--color-foreground), 0.85);
 }
 
 .cod-review__author {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 1.2rem;
   margin-top: auto;
-  font-size: 1.3rem;
+  padding-top: 1.6rem;
+  border-top: var(--cod-hairline);
+  font-size: 1.35rem;
 }
 
 .cod-review__avatar {
@@ -588,33 +480,27 @@ body.cod-sticky-visible .cod-whatsapp { bottom: calc(8.5rem + env(safe-area-inse
   height: 4rem;
   border-radius: 50%;
   object-fit: cover;
-  background: rgba(var(--cod-primary), 0.15);
+  background: rgba(var(--cod-primary), 0.08);
   display: grid;
   place-items: center;
-  font-weight: 900;
+  font-weight: 600;
   color: rgb(var(--cod-primary));
   flex: 0 0 auto;
 }
 
-.cod-review__name { font-weight: 800; display: block; }
-.cod-review__meta { opacity: 0.65; font-size: 1.2rem; }
-
-.cod-review__verified svg {
-  width: 1.4rem;
-  height: 1.4rem;
-  flex: 0 0 auto;
-}
+.cod-review__name { font-weight: 600; display: block; }
+.cod-review__meta { opacity: 0.6; font-size: 1.25rem; }
 
 .cod-review__verified {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  font-size: 1.15rem;
-  font-weight: 700;
+  gap: 0.5rem;
+  font-size: 1.2rem;
   color: rgb(var(--cod-success));
 }
 
-/* Carrusel horizontal en móvil */
+.cod-review__verified svg { width: 1.4rem; height: 1.4rem; flex: 0 0 auto; }
+
 @media screen and (max-width: 749px) {
   .cod-reviews--scroll {
     display: flex;
@@ -626,187 +512,213 @@ body.cod-sticky-visible .cod-whatsapp { bottom: calc(8.5rem + env(safe-area-inse
     -webkit-overflow-scrolling: touch;
   }
 
-  .cod-reviews--scroll > * {
-    flex: 0 0 82%;
-    scroll-snap-align: center;
-  }
+  .cod-reviews--scroll > * { flex: 0 0 84%; scroll-snap-align: center; }
 }
 
 /* --------------------------------------------------------------------------
-   9. Pasos / cómo comprar
+   8. Pasos
    -------------------------------------------------------------------------- */
 
 .cod-steps {
   display: grid;
-  gap: 1.6rem;
-  grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
-  counter-reset: cod-step;
+  gap: 3.2rem;
+  grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
 }
 
-.cod-step {
-  position: relative;
-  padding: 2.4rem 2rem 2rem;
-  border-radius: var(--cod-radius-lg);
-  background: rgba(var(--color-foreground), 0.035);
-  text-align: center;
-}
+.cod-step { text-align: center; }
 
 .cod-step__num {
-  width: 4.4rem;
-  height: 4.4rem;
-  margin: 0 auto 1.2rem;
+  width: 4.8rem;
+  height: 4.8rem;
+  margin: 0 auto 1.8rem;
   display: grid;
   place-items: center;
   border-radius: 50%;
-  background: rgb(var(--cod-primary));
-  color: rgb(var(--cod-primary-contrast));
+  border: 1px solid rgba(var(--cod-primary), 0.25);
+  background: transparent;
+  color: rgb(var(--cod-primary));
+  font-family: var(--font-heading-family);
   font-size: 1.9rem;
-  font-weight: 900;
+  font-weight: 500;
 }
 
 .cod-step__title {
-  margin: 0 0 0.6rem;
-  font-size: 1.7rem;
-  font-weight: 800;
+  margin: 0 0 0.8rem;
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.005em;
 }
 
-.cod-step__text { margin: 0; font-size: 1.4rem; line-height: 1.5; opacity: 0.8; }
+.cod-step__text {
+  margin: 0;
+  font-size: 1.45rem;
+  line-height: 1.65;
+  color: rgba(var(--color-foreground), 0.7);
+}
 
 /* --------------------------------------------------------------------------
-   10. Beneficios con icono
+   9. Beneficios
    -------------------------------------------------------------------------- */
 
 .cod-benefits {
   display: grid;
-  gap: 1.4rem;
-  grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+  gap: 2.4rem;
+  grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
 }
 
 .cod-benefit {
   display: flex;
+  flex-direction: column;
   gap: 1.4rem;
-  align-items: flex-start;
-  padding: 1.8rem;
+  padding: 3rem 2.6rem;
   border-radius: var(--cod-radius-lg);
-  border: 1px solid rgba(var(--color-foreground), 0.1);
+  border: var(--cod-hairline);
   background: rgb(var(--color-background));
 }
 
 .cod-benefit__icon {
   flex: 0 0 auto;
-  width: 4.4rem;
-  height: 4.4rem;
+  width: 4rem;
+  height: 4rem;
   display: grid;
   place-items: center;
-  border-radius: var(--cod-radius);
-  background: rgba(var(--cod-primary), 0.1);
+  border-radius: 50%;
+  background: rgba(var(--cod-primary), 0.06);
   color: rgb(var(--cod-primary));
 }
 
-.cod-benefit__icon svg { width: 2.4rem; height: 2.4rem; }
-.cod-benefit__title { margin: 0 0 0.4rem; font-size: 1.6rem; font-weight: 800; }
-.cod-benefit__text { margin: 0; font-size: 1.4rem; line-height: 1.5; opacity: 0.78; }
+.cod-benefit__icon svg { width: 2rem; height: 2rem; }
 
-/* Lista de bullets con check */
-.cod-checklist { list-style: none; margin: 1.6rem 0; padding: 0; display: grid; gap: 1rem; }
+.cod-benefit__title {
+  margin: 0 0 0.5rem;
+  font-size: 1.65rem;
+  font-weight: 600;
+}
+
+.cod-benefit__text {
+  margin: 0;
+  font-size: 1.45rem;
+  line-height: 1.65;
+  color: rgba(var(--color-foreground), 0.7);
+}
+
+/* Lista con palomita */
+.cod-checklist { list-style: none; margin: 2rem 0; padding: 0; display: grid; gap: 1.2rem; }
 
 .cod-checklist li {
   display: flex;
-  gap: 1rem;
+  gap: 1.2rem;
   align-items: flex-start;
   font-size: 1.5rem;
-  line-height: 1.45;
+  line-height: 1.55;
+  color: rgba(var(--color-foreground), 0.82);
 }
 
 .cod-checklist li::before {
   content: '';
   flex: 0 0 auto;
-  width: 2.2rem;
-  height: 2.2rem;
-  margin-top: 0.1rem;
+  width: 2rem;
+  height: 2rem;
+  margin-top: 0.15rem;
   border-radius: 50%;
   background: rgb(var(--cod-success));
-  -webkit-mask: var(--cod-check-mask) center / 1.3rem no-repeat;
-  mask: var(--cod-check-mask) center / 1.3rem no-repeat;
+  -webkit-mask: var(--cod-check-mask) center / 1.1rem no-repeat;
+  mask: var(--cod-check-mask) center / 1.1rem no-repeat;
   box-shadow: inset 0 0 0 99px rgb(var(--cod-success));
 }
 
+.cod-checklist__heading {
+  margin: 0 0 0.6rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(var(--color-foreground), 0.55);
+}
+
 /* --------------------------------------------------------------------------
-   11. Comparativa nosotros / otros
+   10. Comparativa
    -------------------------------------------------------------------------- */
 
 .cod-compare {
   width: 100%;
-  border-collapse: separate;
-  border-spacing: 0;
-  border-radius: var(--cod-radius-lg);
-  overflow: hidden;
-  box-shadow: var(--cod-shadow-sm);
-  font-size: 1.4rem;
+  border-collapse: collapse;
+  font-size: 1.45rem;
 }
 
 .cod-compare th,
 .cod-compare td {
-  padding: 1.4rem 1.2rem;
+  padding: 1.8rem 1.6rem;
   text-align: center;
-  border-bottom: 1px solid rgba(var(--color-foreground), 0.08);
+  border-bottom: var(--cod-hairline);
 }
 
 .cod-compare th:first-child,
-.cod-compare td:first-child { text-align: left; font-weight: 700; }
-
-.cod-compare thead th {
-  background: #111;
-  color: #fff;
-  font-weight: 800;
-  text-transform: uppercase;
-  font-size: 1.25rem;
-  letter-spacing: 0.05rem;
+.cod-compare td:first-child {
+  text-align: left;
+  font-weight: 500;
+  color: rgba(var(--color-foreground), 0.85);
 }
 
-.cod-compare thead th.is-us { background: rgb(var(--cod-primary)); color: rgb(var(--cod-primary-contrast)); }
-.cod-compare td.is-us { background: rgba(var(--cod-primary), 0.06); font-weight: 700; }
-.cod-compare .cod-yes { color: rgb(var(--cod-success)); font-weight: 900; }
-.cod-compare .cod-no { color: rgba(var(--color-foreground), 0.4); font-weight: 900; }
+.cod-compare thead th {
+  background: transparent;
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(var(--color-foreground), 0.5);
+  border-bottom-width: 2px;
+}
+
+.cod-compare thead th.is-us {
+  color: rgb(var(--cod-primary));
+  border-bottom-color: rgb(var(--cod-primary));
+}
+
+.cod-compare td.is-us {
+  background: rgba(var(--cod-primary), 0.035);
+  font-weight: 500;
+}
+
+.cod-compare .cod-yes { color: rgb(var(--cod-success)); font-size: 1.8rem; }
+.cod-compare .cod-no { color: rgba(var(--color-foreground), 0.25); font-size: 1.8rem; }
 
 .cod-compare-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
 
 /* --------------------------------------------------------------------------
-   12. FAQ / objeciones
+   11. Preguntas frecuentes
    -------------------------------------------------------------------------- */
 
-.cod-faq { display: grid; gap: 1rem; max-width: 76rem; margin: 0 auto; }
+.cod-faq { display: grid; max-width: 74rem; margin: 0 auto; }
 
 .cod-faq__item {
-  border: 1px solid rgba(var(--color-foreground), 0.12);
-  border-radius: var(--cod-radius);
-  background: rgb(var(--color-background));
-  overflow: hidden;
+  border-bottom: var(--cod-hairline);
+  background: transparent;
 }
 
-.cod-faq__item[open] { border-color: rgba(var(--cod-primary), 0.5); }
+.cod-faq__item:first-child { border-top: var(--cod-hairline); }
 
 .cod-faq__q {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1.2rem;
-  padding: 1.6rem 1.8rem;
-  font-size: 1.55rem;
-  font-weight: 800;
+  gap: 2rem;
+  padding: 2.2rem 0.4rem;
+  font-size: 1.6rem;
+  font-weight: 500;
   cursor: pointer;
   list-style: none;
+  transition: color 0.2s ease;
 }
 
+.cod-faq__q:hover { color: rgb(var(--cod-primary)); }
 .cod-faq__q::-webkit-details-marker { display: none; }
 
 .cod-faq__icon {
   flex: 0 0 auto;
-  width: 2.4rem;
-  height: 2.4rem;
+  width: 1.8rem;
+  height: 1.8rem;
   position: relative;
-  border-radius: 50%;
-  background: rgba(var(--cod-primary), 0.12);
 }
 
 .cod-faq__icon::before,
@@ -814,39 +726,41 @@ body.cod-sticky-visible .cod-whatsapp { bottom: calc(8.5rem + env(safe-area-inse
   content: '';
   position: absolute;
   inset: 50% auto auto 50%;
-  width: 1.1rem;
-  height: 0.2rem;
-  background: rgb(var(--cod-primary));
+  width: 1.4rem;
+  height: 1px;
+  background: rgba(var(--color-foreground), 0.6);
   transform: translate(-50%, -50%);
-  transition: transform 0.2s ease, opacity 0.2s ease;
+  transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
 .cod-faq__icon::after { transform: translate(-50%, -50%) rotate(90deg); }
-.cod-faq__item[open] .cod-faq__icon::after { opacity: 0; transform: translate(-50%, -50%) rotate(0); }
+.cod-faq__item[open] .cod-faq__icon::after { opacity: 0; transform: translate(-50%, -50%); }
+.cod-faq__item[open] .cod-faq__q { color: rgb(var(--cod-primary)); }
 
 .cod-faq__a {
-  padding: 0 1.8rem 1.8rem;
-  font-size: 1.45rem;
-  line-height: 1.6;
-  opacity: 0.85;
+  padding: 0 0.4rem 2.4rem;
+  font-size: 1.5rem;
+  line-height: 1.75;
+  color: rgba(var(--color-foreground), 0.72);
+  max-width: 62ch;
 }
 
 .cod-faq__a > :first-child { margin-top: 0; }
 .cod-faq__a > :last-child { margin-bottom: 0; }
 
 /* --------------------------------------------------------------------------
-   13. Garantía
+   12. Garantía
    -------------------------------------------------------------------------- */
 
 .cod-guarantee {
   display: flex;
-  gap: 2.4rem;
+  gap: 3.6rem;
   align-items: center;
   flex-wrap: wrap;
-  padding: 2.8rem;
+  padding: 4rem 3.6rem;
   border-radius: var(--cod-radius-lg);
-  border: 2px dashed rgba(var(--cod-success), 0.45);
-  background: rgba(var(--cod-success), 0.05);
+  border: 1px solid rgba(var(--cod-success), 0.22);
+  background: rgba(var(--cod-success), 0.035);
 }
 
 .cod-guarantee__seal {
@@ -857,251 +771,236 @@ body.cod-sticky-visible .cod-whatsapp { bottom: calc(8.5rem + env(safe-area-inse
   place-items: center;
   text-align: center;
   border-radius: 50%;
-  background: rgb(var(--cod-success));
-  color: #fff;
-  font-weight: 900;
-  line-height: 1.1;
+  border: 1px solid rgba(var(--cod-success), 0.3);
+  background: rgb(var(--color-background));
+  color: rgb(var(--cod-success));
+  line-height: 1.15;
   padding: 1rem;
-  box-shadow: 0 10px 26px rgba(var(--cod-success), 0.35);
 }
 
 .cod-guarantee__seal img { width: 100%; height: 100%; object-fit: contain; border-radius: 50%; }
-.cod-guarantee__num { display: block; font-size: 3.4rem; }
-.cod-guarantee__unit { display: block; font-size: 1.15rem; text-transform: uppercase; letter-spacing: 0.08rem; }
-.cod-guarantee__body { flex: 1 1 28rem; }
-.cod-guarantee__title { margin: 0 0 0.8rem; font-size: clamp(1.9rem, 4.5vw, 2.4rem); font-weight: 900; }
-.cod-guarantee__text { margin: 0; font-size: 1.45rem; line-height: 1.6; opacity: 0.85; }
+
+.cod-guarantee__num {
+  display: block;
+  font-family: var(--font-heading-family);
+  font-size: 3.6rem;
+  font-weight: 500;
+}
+
+.cod-guarantee__unit {
+  display: block;
+  font-size: 1.1rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.75;
+}
+
+.cod-guarantee__body { flex: 1 1 30rem; }
+
+.cod-guarantee__title {
+  margin: 0 0 1rem;
+  font-family: var(--font-heading-family);
+  font-size: clamp(2rem, 3vw, 2.6rem);
+  font-weight: var(--font-heading-weight);
+  line-height: 1.25;
+}
+
+.cod-guarantee__text {
+  margin: 0;
+  font-size: 1.5rem;
+  line-height: 1.7;
+  color: rgba(var(--color-foreground), 0.75);
+}
 
 @media screen and (max-width: 749px) {
-  .cod-guarantee { flex-direction: column; text-align: center; padding: 2rem; }
+  .cod-guarantee { flex-direction: column; text-align: center; padding: 3rem 2rem; }
 }
 
 /* --------------------------------------------------------------------------
-   14. Hero de campaña (TikTok)
+   13. Portada
    -------------------------------------------------------------------------- */
 
 .cod-hero { position: relative; overflow: hidden; }
 
-.cod-hero__media {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
+.cod-hero__media { position: absolute; inset: 0; width: 100%; height: 100%; }
 .cod-hero__media video,
 .cod-hero__media img { width: 100%; height: 100%; object-fit: cover; }
 
-.cod-hero__overlay { position: absolute; inset: 0; background: #000; }
+.cod-hero__overlay { position: absolute; inset: 0; background: rgb(var(--cod-dark)); }
 
 .cod-hero__content {
   position: relative;
   z-index: 2;
-  max-width: 72rem;
+  max-width: 68rem;
   margin: 0 auto;
-  padding: clamp(4rem, 10vw, 9rem) var(--cod-gutter);
+  padding: clamp(6rem, 12vw, 11rem) var(--cod-gutter);
   text-align: center;
 }
+
+/* Cada pieza en su propia línea: el badge y el antetítulo no se pisan */
+.cod-hero__badge { display: block; margin-bottom: 2rem; }
 
 .cod-hero__price {
   display: flex;
   align-items: baseline;
   justify-content: center;
-  gap: 1.2rem;
+  gap: 1.4rem;
   flex-wrap: wrap;
-  margin: 1.6rem 0 2rem;
+  margin: 2rem 0 2.8rem;
 }
 
-.cod-hero__price-now { font-size: clamp(3rem, 8vw, 4.4rem); font-weight: 900; line-height: 1; }
-.cod-hero__price-was { font-size: clamp(1.7rem, 4vw, 2.2rem); text-decoration: line-through; opacity: 0.6; }
+.cod-hero__price-now {
+  font-family: var(--font-heading-family);
+  font-size: clamp(2.8rem, 5vw, 3.8rem);
+  font-weight: 500;
+  line-height: 1;
+}
 
-.cod-hero__cta-wrap { max-width: 42rem; margin: 0 auto; }
+.cod-hero__price-was {
+  font-size: clamp(1.6rem, 2.5vw, 1.9rem);
+  text-decoration: line-through;
+  opacity: 0.55;
+}
+
+.cod-hero__cta-wrap { max-width: 34rem; margin: 0 auto; }
+
+.cod-hero__footnote {
+  margin: 2rem 0 0;
+  font-size: 1.3rem;
+  letter-spacing: 0.02em;
+  opacity: 0.7;
+}
 
 /* --------------------------------------------------------------------------
-   15. Precios en la página de producto
+   14. Precio en la ficha de producto
    -------------------------------------------------------------------------- */
 
 .cod-price-block {
   display: flex;
   align-items: baseline;
   flex-wrap: wrap;
-  gap: 1rem;
-  margin: 0.4rem 0 1rem;
+  gap: 1.2rem;
+  margin: 0.6rem 0 1rem;
 }
 
 .cod-price-block__now {
-  font-size: clamp(2.8rem, 7vw, 3.6rem);
-  font-weight: 900;
+  font-family: var(--font-heading-family);
+  font-size: clamp(2.6rem, 4.5vw, 3.2rem);
+  font-weight: 500;
   line-height: 1;
-  color: rgb(var(--cod-primary));
 }
 
 .cod-price-block__was {
-  font-size: 1.8rem;
+  font-size: 1.7rem;
   text-decoration: line-through;
-  opacity: 0.5;
+  opacity: 0.45;
 }
 
 .cod-price-block__save {
-  padding: 0.4rem 1rem;
+  padding: 0.4rem 1.1rem;
   border-radius: var(--cod-radius-pill);
-  background: rgb(var(--cod-primary));
-  color: rgb(var(--cod-primary-contrast));
-  font-size: 1.25rem;
-  font-weight: 900;
-  text-transform: uppercase;
+  border: 1px solid rgba(var(--cod-accent), 0.6);
+  background: rgba(var(--cod-accent), 0.14);
+  color: rgba(var(--color-foreground), 0.85);
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.cod-price-block__note {
+  margin: -0.2rem 0 0;
+  font-size: 1.35rem;
+  color: rgb(var(--cod-success));
 }
 
 /* --------------------------------------------------------------------------
-   16. Formulario COD / EasySell
+   15. Formulario COD
    -------------------------------------------------------------------------- */
 
 .cod-form-shell {
-  border: 3px solid rgb(var(--cod-primary));
+  border: 1px solid rgba(var(--cod-primary), 0.25);
   border-radius: var(--cod-radius-lg);
-  padding: 2rem;
+  padding: 3.2rem 2.8rem;
   background: rgb(var(--color-background));
   box-shadow: var(--cod-shadow);
   scroll-margin-top: 8rem;
 }
 
-.cod-form-shell__head { text-align: center; margin-bottom: 1.6rem; }
+.cod-form-shell__head { text-align: center; margin-bottom: 2.4rem; }
 
 .cod-form-shell__title {
-  margin: 0 0 0.6rem;
-  font-size: clamp(1.8rem, 5vw, 2.2rem);
-  font-weight: 900;
-  text-transform: uppercase;
+  margin: 1.4rem 0 0.8rem;
+  font-family: var(--font-heading-family);
+  font-size: clamp(2rem, 3.5vw, 2.4rem);
+  font-weight: var(--font-heading-weight);
+  line-height: 1.25;
 }
 
-.cod-form-shell__note { margin: 0; font-size: 1.35rem; opacity: 0.8; }
+.cod-form-shell__note {
+  margin: 0;
+  font-size: 1.4rem;
+  line-height: 1.6;
+  color: rgba(var(--color-foreground), 0.7);
+}
 
 .cod-form-shell__placeholder {
-  padding: 3rem 2rem;
-  border: 2px dashed rgba(var(--color-foreground), 0.25);
+  padding: 4rem 2rem;
+  border: 1px dashed rgba(var(--color-foreground), 0.25);
   border-radius: var(--cod-radius);
   text-align: center;
   font-size: 1.4rem;
-  opacity: 0.75;
+  line-height: 1.6;
+  color: rgba(var(--color-foreground), 0.6);
 }
 
-/* Cuando el modo COD está activo ocultamos todo rastro de checkout normal */
+.cod-form-shell__or {
+  margin: 2.4rem 0 1.4rem;
+  text-align: center;
+  font-size: 1.25rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(var(--color-foreground), 0.45);
+}
+
+.cod-form-shell__trust { margin: 2.4rem 0 0; font-size: 1.4rem; }
+
+/* En modo COD no queda rastro del checkout normal */
 body.cod-mode .cart-count-bubble,
 body.cod-mode .cart-notification,
 body.cod-mode .shopify-payment-button,
 body.cod-mode .cart__dynamic-checkout-buttons,
 body.cod-mode .additional-checkout-buttons,
-body.cod-mode .product-form__submit + .shopify-payment-button,
 body.cod-mode .cod-hide { display: none !important; }
 
 body.cod-hide-cart-icon .header__icon--cart { display: none !important; }
 
 /* --------------------------------------------------------------------------
-   17. Galería y layout de producto
+   16. Piezas de la ficha de producto
    -------------------------------------------------------------------------- */
-
-.cod-gallery-badge {
-  position: absolute;
-  top: 1.2rem;
-  left: 1.2rem;
-  z-index: 3;
-}
-
-.product__info-container > * + * { margin-top: 1.4rem; }
-
-/* Selectores de variante más grandes para el dedo */
-.product-form__input .form__label { font-weight: 800; font-size: 1.4rem; }
-
-fieldset.product-form__input input[type='radio'] + label {
-  min-height: 4.6rem;
-  min-width: 4.6rem;
-  font-weight: 700;
-  font-size: 1.45rem;
-}
-
-.quantity { min-height: 5rem; }
-
-/* --------------------------------------------------------------------------
-   18. Utilidades de sección
-   -------------------------------------------------------------------------- */
-
-.cod-section { padding: clamp(3.2rem, 7vw, 6.4rem) 0; }
-.cod-section__inner { max-width: var(--page-width); margin: 0 auto; padding: 0 var(--cod-gutter); }
-.cod-section__inner--narrow { max-width: 84rem; }
-.cod-section__head { text-align: center; margin-bottom: clamp(2.4rem, 5vw, 4rem); }
-.cod-section__head--left { text-align: left; }
-
-.cod-center { text-align: center; }
-.cod-mt { margin-top: 2.4rem; }
-.cod-mt-sm { margin-top: 1.2rem; }
-
-.cod-divider {
-  height: 0.4rem;
-  width: 6rem;
-  margin: 1.2rem auto 0;
-  border-radius: var(--cod-radius-pill);
-  background: rgb(var(--cod-primary));
-}
-
-.cod-section__head--left .cod-divider { margin-left: 0; }
-
-@media screen and (max-width: 749px) {
-  .cod-hide-mobile { display: none !important; }
-}
-
-@media screen and (min-width: 750px) {
-  .cod-hide-desktop { display: none !important; }
-}
-
-/* --------------------------------------------------------------------------
-   19. Piezas de la ficha de producto
-   (antes repartidas en bloques {% style %} dentro de cada snippet)
-   -------------------------------------------------------------------------- */
-
-.cod-price-block__note {
-  margin: -0.4rem 0 0;
-  font-size: 1.35rem;
-  font-weight: 700;
-  color: rgb(var(--cod-success));
-}
-
-.cod-checklist__heading {
-  margin: 0 0 0.4rem;
-  font-size: 1.5rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.03rem;
-}
 
 .cod-buy-note {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.6rem;
-  margin: 1rem 0 0;
-  font-size: 1.25rem;
-  font-weight: 700;
-  opacity: 0.75;
+  gap: 0.7rem;
+  margin: 1.4rem 0 0;
+  font-size: 1.3rem;
+  color: rgba(var(--color-foreground), 0.6);
   text-align: center;
 }
 
-.cod-buy-note svg {
-  width: 1.5rem;
-  height: 1.5rem;
-  flex: 0 0 auto;
-}
+.cod-buy-note svg { width: 1.5rem; height: 1.5rem; flex: 0 0 auto; }
 
 .cod-delivery {
   display: flex;
-  gap: 1.2rem;
+  gap: 1.4rem;
   align-items: flex-start;
-  padding: 1.4rem;
+  padding: 1.8rem;
   border-radius: var(--cod-radius);
-  border: 1px dashed rgba(var(--cod-success), 0.5);
-  background: rgba(var(--cod-success), 0.05);
-  font-size: 1.35rem;
-  line-height: 1.5;
+  border: 1px solid rgba(var(--cod-success), 0.25);
+  background: rgba(var(--cod-success), 0.04);
+  font-size: 1.4rem;
+  line-height: 1.6;
 }
 
 .cod-delivery__icon {
@@ -1111,59 +1010,205 @@ fieldset.product-form__input input[type='radio'] + label {
   color: rgb(var(--cod-success));
 }
 
-.cod-delivery__icon svg {
-  width: 2.4rem;
-  height: 2.4rem;
-}
-
-.cod-delivery__note {
-  opacity: 0.75;
-  font-size: 1.25rem;
-}
+.cod-delivery__icon svg { width: 2.2rem; height: 2.2rem; }
+.cod-delivery strong { font-weight: 600; }
+.cod-delivery__note { opacity: 0.7; font-size: 1.3rem; }
 
 .cod-mini-guarantee {
   display: flex;
-  gap: 1.2rem;
+  gap: 1.4rem;
   align-items: center;
-  padding: 1.4rem;
+  padding: 1.8rem;
   border-radius: var(--cod-radius);
-  background: rgba(var(--color-foreground), 0.05);
-  font-size: 1.35rem;
-  line-height: 1.45;
+  border: var(--cod-hairline);
+  font-size: 1.4rem;
+  line-height: 1.55;
 }
 
 .cod-mini-guarantee__icon {
   flex: 0 0 auto;
-  width: 4rem;
-  height: 4rem;
+  width: 3.6rem;
+  height: 3.6rem;
   display: grid;
   place-items: center;
   border-radius: 50%;
+  border: 1px solid rgba(var(--cod-success), 0.3);
+  background: rgba(var(--cod-success), 0.07);
+  color: rgb(var(--cod-success));
+}
+
+.cod-mini-guarantee__icon svg { width: 1.9rem; height: 1.9rem; }
+.cod-mini-guarantee strong { font-weight: 600; }
+.cod-mini-guarantee__text { color: rgba(var(--color-foreground), 0.7); }
+
+/* Selectores de variante: cómodos para el dedo, sin gritar */
+.product__info-container > * + * { margin-top: 1.8rem; }
+
+.product-form__input .form__label {
+  font-weight: 600;
+  font-size: 1.35rem;
+  letter-spacing: 0.02em;
+}
+
+fieldset.product-form__input input[type='radio'] + label {
+  min-height: 4.6rem;
+  min-width: 4.6rem;
+  font-weight: 500;
+  font-size: 1.45rem;
+}
+
+.quantity { min-height: 5rem; }
+
+/* --------------------------------------------------------------------------
+   17. Utilidades de sección
+   -------------------------------------------------------------------------- */
+
+.cod-section { padding: clamp(5rem, 9vw, 9rem) 0; }
+
+.cod-section__inner {
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: 0 var(--cod-gutter);
+}
+
+.cod-section__inner--narrow { max-width: 82rem; }
+
+.cod-section__head {
+  text-align: center;
+  margin-bottom: clamp(3.2rem, 6vw, 5.6rem);
+}
+
+.cod-section__head--left { text-align: left; }
+
+.cod-center { text-align: center; }
+.cod-mt { margin-top: 3.2rem; }
+.cod-mt-sm { margin-top: 1.4rem; }
+
+/* Filete dorado fino en lugar de barra gruesa */
+.cod-divider {
+  height: 1px;
+  width: 5rem;
+  margin: 2rem auto 0;
+  background: rgb(var(--cod-accent));
+}
+
+.cod-section__head--left .cod-divider { margin-left: 0; }
+
+@media screen and (max-width: 749px) {
+  .cod-hide-mobile { display: none !important; }
+  :root { --cod-gutter: 1.6rem; }
+}
+
+@media screen and (min-width: 750px) {
+  .cod-hide-desktop { display: none !important; }
+}
+
+/* --------------------------------------------------------------------------
+   18. Urgencia (secciones opcionales, desactivadas por defecto)
+   --------------------------------------------------------------------------
+   Estas secciones siguen disponibles en el editor por si hay una promoción
+   real que comunicar. El estilo es deliberadamente sobrio: informan, no
+   presionan.
+   -------------------------------------------------------------------------- */
+
+.cod-countdown {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  font-family: var(--font-heading-family);
+  font-variant-numeric: tabular-nums;
+}
+
+.cod-countdown__unit { text-align: center; }
+
+.cod-countdown__value {
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.cod-countdown__label {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  font-family: var(--font-body-family);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.55;
+}
+
+.cod-countdown__sep {
+  font-size: 2rem;
+  font-weight: 300;
+  opacity: 0.35;
+}
+
+.cod-stock { margin: 2rem 0; }
+
+.cod-stock__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1.2rem;
+  font-size: 1.3rem;
+  color: rgba(var(--color-foreground), 0.7);
+  margin-bottom: 0.9rem;
+}
+
+.cod-stock__bar {
+  position: relative;
+  height: 3px;
+  border-radius: var(--cod-radius-pill);
+  background: rgba(var(--color-foreground), 0.1);
+  overflow: hidden;
+}
+
+.cod-stock__fill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  border-radius: inherit;
   background: rgb(var(--cod-success));
-  color: #fff;
+  transition: width 0.8s ease;
 }
 
-.cod-mini-guarantee__icon svg {
-  width: 2.2rem;
-  height: 2.2rem;
+.cod-stock__note {
+  margin: 0.9rem 0 0;
+  font-size: 1.3rem;
+  color: rgba(var(--color-foreground), 0.6);
 }
 
-.cod-mini-guarantee__text {
-  opacity: 0.78;
+.cod-livecount {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 1.3rem;
+  color: rgba(var(--color-foreground), 0.6);
+}
+
+.cod-livecount__dot {
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  background: rgb(var(--cod-success));
 }
 
 .cod-product-countdown {
-  margin-top: 1.4rem;
-  padding: 1.2rem;
+  margin-top: 1.8rem;
+  padding: 1.6rem;
   border-radius: var(--cod-radius);
-  background: rgba(var(--cod-primary), 0.07);
+  border: var(--cod-hairline);
   text-align: center;
 }
 
 .cod-product-countdown__label {
   display: block;
-  margin-bottom: 0.8rem;
-  font-size: 1.3rem;
-  font-weight: 800;
-  color: rgb(var(--cod-primary));
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(var(--color-foreground), 0.55);
 }
+
+.cod-countdown-bar__inner { gap: 1.6rem 2.4rem; }
+.cod-countdown-bar__text { font-size: 1.45rem; font-weight: 500; }
+.cod-countdown-bar__icon svg { width: 1.8rem; height: 1.8rem; opacity: 0.6; }

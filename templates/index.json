@@ -3,10 +3,10 @@
     "hero": {
       "type": "cod-hero",
       "settings": {
-        "overlay_opacity": 45,
-        "min_height": 80,
-        "badge": "OFERTA POR TIEMPO LIMITADO",
-        "eyebrow": "ENVÍOS A TODA COLOMBIA",
+        "overlay_opacity": 55,
+        "min_height": 75,
+        "badge": "Pago contra entrega",
+        "eyebrow": "Envíos a todo el país",
         "heading": "Pídelo hoy y paga cuando llegue a tu casa",
         "subheading": "<p>Sin tarjeta, sin anticipos y sin riesgo. Recibes primero, pagas después.</p>",
         "footnote": "Despachamos el mismo día · Entrega de 1 a 4 días hábiles",
@@ -14,54 +14,11 @@
         "show_cod_badges": true,
         "show_rating": true,
         "rating_value": 4.8,
-        "rating_text": "4.8/5 · clientes satisfechos en todo el país",
-        "cta_label": "VER LA OFERTA",
+        "rating_text": "4.8 de 5 · clientes satisfechos en todo el país",
+        "cta_label": "Ver la oferta",
         "cta_sublabel": "Pago contra entrega · Envío gratis",
         "cta_link": "shopify://collections/all",
-        "cta_pulse": true,
-        "color_scheme": "scheme-3"
-      }
-    },
-    "marquee": {
-      "type": "cod-marquee",
-      "blocks": {
-        "m1": {
-          "type": "item",
-          "settings": {
-            "text": "PAGO CONTRA ENTREGA EN TODA COLOMBIA",
-            "icon": "cash"
-          }
-        },
-        "m2": {
-          "type": "item",
-          "settings": {
-            "text": "ENVÍO GRATIS",
-            "icon": "truck"
-          }
-        },
-        "m3": {
-          "type": "item",
-          "settings": {
-            "text": "GARANTÍA DE 30 DÍAS",
-            "icon": "shield"
-          }
-        },
-        "m4": {
-          "type": "item",
-          "settings": {
-            "text": "DESPACHO EL MISMO DÍA",
-            "icon": "zap"
-          }
-        }
-      },
-      "block_order": [
-        "m1",
-        "m2",
-        "m3",
-        "m4"
-      ],
-      "settings": {
-        "speed": 26,
+        "cta_pulse": false,
         "color_scheme": "scheme-3"
       }
     },
@@ -172,12 +129,12 @@
         "s3"
       ],
       "settings": {
-        "eyebrow": "ASÍ DE FÁCIL",
+        "eyebrow": "Así de fácil",
         "heading": "Comprar aquí toma 1 minuto",
         "subheading": "<p>No necesitas tarjeta ni cuenta bancaria.</p>",
-        "cta_label": "VER PRODUCTOS",
+        "cta_label": "Ver productos",
         "cta_link": "shopify://collections/all",
-        "cta_pulse": true,
+        "cta_pulse": false,
         "color_scheme": "scheme-2",
         "padding_top": 48,
         "padding_bottom": 48
@@ -223,14 +180,14 @@
         "r3"
       ],
       "settings": {
-        "eyebrow": "MILES DE COLOMBIANOS YA COMPRARON",
+        "eyebrow": "Clientes en todo el país",
         "heading": "Opiniones reales",
         "show_summary": true,
         "rating_value": 4.8,
         "summary_text": "4.8 de 5 · basado en reseñas verificadas",
-        "cta_label": "VER LA OFERTA",
+        "cta_label": "Ver la oferta",
         "cta_link": "shopify://collections/all",
-        "cta_pulse": true,
+        "cta_pulse": false,
         "mobile_carousel": true,
         "disclaimer": "Reseñas enviadas por clientes reales. Reemplázalas por las tuyas.",
         "color_scheme": "scheme-1",
@@ -245,7 +202,7 @@
         "days_label": "días",
         "heading": "Compra sin riesgo: 30 días de garantía",
         "text": "<p>Si el producto no es lo que esperabas, escríbenos por WhatsApp dentro de los 30 días siguientes a la entrega y coordinamos el cambio o la devolución.</p>",
-        "cta_label": "COMPRAR AHORA",
+        "cta_label": "Comprar ahora",
         "cta_link": "shopify://collections/all",
         "color_scheme": "scheme-2",
         "padding_top": 40,
@@ -292,9 +249,9 @@
         "f4"
       ],
       "settings": {
-        "eyebrow": "RESOLVEMOS TUS DUDAS",
+        "eyebrow": "Resolvemos tus dudas",
         "heading": "Preguntas frecuentes",
-        "cta_label": "VER PRODUCTOS",
+        "cta_label": "Ver productos",
         "cta_link": "shopify://collections/all",
         "color_scheme": "scheme-1",
         "padding_top": 48,
@@ -304,7 +261,6 @@
   },
   "order": [
     "hero",
-    "marquee",
     "trust_bar",
     "featured_collection",
     "steps",
