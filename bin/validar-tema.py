@@ -4,6 +4,7 @@
 
 Shopify rechaza un archivo entero (y a veces lo sustituye por '[]') cuando:
   - un valor de range no cae exactamente en su min/max/step;
+  - un range declara más de 101 pasos: (max - min) / step > 100;
   - un valor de select no está entre sus opciones;
   - un checkbox no es booleano;
   - theme_name / theme_author pasan de 25 caracteres;
@@ -79,6 +80,25 @@ if isinstance(data.get('current'), dict):
 for preset, values in targets.items():
     clean = {k: v for k, v in values.items() if k not in ('color_schemes', 'sections')}
     check_settings('settings_data[%s]' % preset, clean, global_specs)
+
+# ------------------------------------------------ ranges con demasiados pasos
+def check_range_steps(where, settings):
+    for s in settings:
+        if s.get('type') != 'range':
+            continue
+        steps = (s['max'] - s['min']) / float(s['step'])
+        if steps > 100:
+            problems.append('%s > %s: %d pasos (máximo 101) con min=%s max=%s step=%s'
+                            % (where, s['id'], steps, s['min'], s['max'], s['step']))
+
+
+for path in sorted(glob.glob('sections/*.liquid')):
+    sch = section_schema(os.path.basename(path)[:-7])
+    if not sch:
+        continue
+    check_range_steps(path, sch.get('settings', []))
+    for b in sch.get('blocks', []):
+        check_range_steps('%s > bloque %s' % (path, b.get('type')), b.get('settings', []))
 
 # ------------------------------------------------ nombres de sección
 for path in sorted(glob.glob('sections/*.liquid')):
