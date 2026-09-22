@@ -1,0 +1,34 @@
+{% comment %}
+  Botón adicional que lleva al formulario de contra entrega o a WhatsApp.
+
+  Acepta:
+  - product: {Object}
+  - block: {Object}
+{% endcomment %}
+
+{%- liquid
+  assign wa_number = settings.cod_whatsapp_number | remove: ' ' | remove: '+' | remove: '-'
+  assign wa_text = block.settings.whatsapp_message | append: ' — ' | append: product.title
+  assign wa_href = 'https://wa.me/' | append: wa_number | append: '?text=' | append: wa_text | url_param_escape
+-%}
+
+<div class="cod-product-cta" {{ block.shopify_attributes }}>
+  {%- if block.settings.style == 'whatsapp' and wa_number != blank -%}
+    <a class="cod-btn cod-btn--whatsapp" href="{{ wa_href }}" target="_blank" rel="noopener">
+      {% render 'cod-icon', icon: 'whatsapp' %}
+      {{ block.settings.label }}
+    </a>
+  {%- else -%}
+    <a
+      class="cod-btn{% if block.settings.pulse %} cod-btn--pulse{% endif %}"
+      href="{{ block.settings.link | default: '#CodOrderForm' }}"
+      {% if block.settings.scroll_target != blank %}data-cod-scroll="{{ block.settings.scroll_target }}"{% endif %}
+      data-cod-primary-cta
+    >
+      {{ block.settings.label }}
+      {%- if block.settings.sublabel != blank -%}
+        <span class="cod-btn__sub">{{ block.settings.sublabel }}</span>
+      {%- endif -%}
+    </a>
+  {%- endif -%}
+</div>

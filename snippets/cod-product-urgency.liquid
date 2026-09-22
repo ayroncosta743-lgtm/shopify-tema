@@ -1,0 +1,80 @@
+{% comment %}
+  Escasez y prueba social en vivo dentro de la ficha de producto.
+
+  Acepta:
+  - product: {Object}
+  - block: {Object}
+  - section_id: {String}
+{% endcomment %}
+
+{%- liquid
+  assign variant = product.selected_or_first_available_variant
+
+  assign stock_left = block.settings.manual_stock
+  if block.settings.stock_source == 'real' and variant.inventory_management == 'shopify'
+    assign stock_left = variant.inventory_quantity | at_least: 0
+  endif
+
+  assign stock_total = block.settings.stock_total | at_least: 1
+  assign percent_left = stock_left | times: 100 | divided_by: stock_total
+  if percent_left > 100
+    assign percent_left = 100
+  endif
+-%}
+
+<div {{ block.shopify_attributes }}>
+  {%- if block.settings.show_live_count -%}
+    <cod-live-count
+      class="cod-livecount"
+      data-min="{{ block.settings.live_min }}"
+      data-max="{{ block.settings.live_max }}"
+      data-interval="{{ block.settings.live_interval }}"
+    >
+      <span class="cod-livecount__dot" aria-hidden="true"></span>
+      <span><strong data-count>0</strong> {{ block.settings.live_text }}</span>
+    </cod-live-count>
+  {%- endif -%}
+
+  {%- if block.settings.show_stock and stock_left > 0 -%}
+    <cod-stock-bar class="cod-stock" data-percent="{{ percent_left }}">
+      <div class="cod-stock__head">
+        <span>{{ block.settings.stock_label }}</span>
+        <span>{{ 'cod.urgency.units_left' | t: count: stock_left }}</span>
+      </div>
+      <div class="cod-stock__bar"><div class="cod-stock__fill"></div></div>
+    </cod-stock-bar>
+  {%- endif -%}
+
+  {%- if block.settings.show_countdown -%}
+    <div class="cod-product-countdown">
+      {%- if block.settings.countdown_text != blank -%}
+        <span class="cod-product-countdown__label">{{ block.settings.countdown_text }}</span>
+      {%- endif -%}
+      {% render 'cod-countdown',
+        mode: block.settings.countdown_mode,
+        minutes: block.settings.countdown_minutes,
+        reset_hour: block.settings.countdown_reset_hour,
+        flat: true,
+        uid: section_id
+      %}
+    </div>
+  {%- endif -%}
+</div>
+
+{%- style -%}
+  .cod-product-countdown {
+    margin-top: 1.4rem;
+    padding: 1.2rem;
+    border-radius: var(--cod-radius);
+    background: rgba(var(--cod-primary), 0.07);
+    text-align: center;
+  }
+
+  .cod-product-countdown__label {
+    display: block;
+    margin-bottom: 0.8rem;
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: rgb(var(--cod-primary));
+  }
+{%- endstyle -%}

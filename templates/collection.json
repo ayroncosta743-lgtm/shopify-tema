@@ -14,23 +14,119 @@
         "products_per_page": 16,
         "columns_desktop": 4,
         "color_scheme": "scheme-1",
-        "image_ratio": "adapt",
+        "image_ratio": "square",
         "image_shape": "default",
-        "show_secondary_image": false,
+        "show_secondary_image": true,
         "show_vendor": false,
         "show_rating": false,
         "quick_add": "none",
-        "enable_filtering": true,
+        "enable_filtering": false,
         "filter_type": "horizontal",
-        "enable_sorting": true,
+        "enable_sorting": false,
         "columns_mobile": "2",
         "padding_top": 36,
-        "padding_bottom": 36
+        "padding_bottom": 36,
+        "enable_quick_add": false
+      }
+    },
+    "marquee": {
+      "type": "cod-marquee",
+      "blocks": {
+        "m1": {
+          "type": "item",
+          "settings": {
+            "text": "PAGO CONTRA ENTREGA",
+            "icon": "cash"
+          }
+        },
+        "m2": {
+          "type": "item",
+          "settings": {
+            "text": "ENVÍO GRATIS A TODA COLOMBIA",
+            "icon": "truck"
+          }
+        },
+        "m3": {
+          "type": "item",
+          "settings": {
+            "text": "GARANTÍA DE 30 DÍAS",
+            "icon": "shield"
+          }
+        },
+        "m4": {
+          "type": "item",
+          "settings": {
+            "text": "DESPACHO EL MISMO DÍA",
+            "icon": "zap"
+          }
+        }
+      },
+      "block_order": [
+        "m1",
+        "m2",
+        "m3",
+        "m4"
+      ],
+      "settings": {
+        "speed": 26,
+        "color_scheme": "scheme-3"
+      }
+    },
+    "trust_bar": {
+      "type": "cod-trust-bar",
+      "blocks": {
+        "b1": {
+          "type": "item",
+          "settings": {
+            "icon": "cash",
+            "title": "Pago contra entrega",
+            "text": "Pagas en efectivo al recibir"
+          }
+        },
+        "b2": {
+          "type": "item",
+          "settings": {
+            "icon": "truck",
+            "title": "Envío gratis",
+            "text": "A toda Colombia"
+          }
+        },
+        "b3": {
+          "type": "item",
+          "settings": {
+            "icon": "return",
+            "title": "Cambios fáciles",
+            "text": "30 días para cambiar"
+          }
+        },
+        "b4": {
+          "type": "item",
+          "settings": {
+            "icon": "chat",
+            "title": "Te acompañamos",
+            "text": "Soporte real por WhatsApp"
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3",
+        "b4"
+      ],
+      "settings": {
+        "heading": "",
+        "show_divider": true,
+        "color_scheme": "scheme-2",
+        "padding_top": 32,
+        "padding_bottom": 32
       }
     }
   },
   "order": [
+    "marquee",
     "banner",
-    "product-grid"
+    "product-grid",
+    "trust_bar"
   ]
 }

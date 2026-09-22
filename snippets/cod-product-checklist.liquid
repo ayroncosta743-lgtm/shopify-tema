@@ -1,0 +1,32 @@
+{% comment %}
+  Lista de argumentos de venta con palomita verde.
+
+  Acepta:
+  - block: {Object}
+{% endcomment %}
+
+<div {{ block.shopify_attributes }}>
+  {%- if block.settings.heading != blank -%}
+    <p class="cod-checklist__heading">{{ block.settings.heading }}</p>
+  {%- endif -%}
+
+  <ul class="cod-checklist">
+    {%- assign items = block.settings.items | newline_to_br | split: '<br />' -%}
+    {%- for item in items -%}
+      {%- assign line = item | strip -%}
+      {%- if line != blank -%}
+        <li>{{ line }}</li>
+      {%- endif -%}
+    {%- endfor -%}
+  </ul>
+</div>
+
+{%- style -%}
+  .cod-checklist__heading {
+    margin: 0 0 0.4rem;
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.03rem;
+  }
+{%- endstyle -%}
