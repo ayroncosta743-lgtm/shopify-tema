@@ -49,59 +49,47 @@
       },
       {
         "type": "paragraph",
-        "content": "Paleta serena: un verde profundo para los botones, crema de fondo y dorado para los detalles. Transmite confianza sin gritar."
+        "content": "Paleta minimalista: blanco de fondo, casi negro en el texto y un solo naranja para todo lo accionable."
       },
       {
         "type": "color",
         "id": "cod_primary",
-        "default": "#1B5E4A",
+        "default": "#CC4A15",
         "label": "Color principal (botones y urgencia)"
       },
       {
         "type": "color",
         "id": "cod_primary_contrast",
-        "default": "#FAF8F4",
+        "default": "#FFFFFF",
         "label": "Texto sobre el color principal"
       },
       {
         "type": "color",
-        "id": "cod_accent",
-        "default": "#C9A961",
-        "label": "Color de acento (resaltados)"
-      },
-      {
-        "type": "color",
-        "id": "cod_success",
-        "default": "#3D7A5F",
-        "label": "Color de confianza (contra entrega, garantías)"
-      },
-      {
-        "type": "color",
         "id": "cod_dark",
-        "default": "#16302B",
+        "default": "#141414",
         "label": "Color oscuro (portadas y fondos)"
       },
       {
         "type": "header",
-        "content": "Botón flotante de WhatsApp"
+        "content": "Soporte por WhatsApp"
       },
       {
         "type": "checkbox",
         "id": "cod_whatsapp_enabled",
         "default": true,
-        "label": "Mostrar botón de WhatsApp"
+        "label": "Mostrar botón de soporte por WhatsApp"
       },
       {
         "type": "text",
         "id": "cod_whatsapp_number",
         "default": "573001112233",
         "label": "Número de WhatsApp",
-        "info": "Formato internacional sin + ni espacios. Colombia: 57 + número. Ej: 573001112233"
+        "info": "Canal de soporte, no de pedidos: los pedidos se toman por el formulario. Formato internacional sin + ni espacios. Ej: 573001112233"
       },
       {
         "type": "text",
         "id": "cod_whatsapp_message",
-        "default": "Hola! Quiero hacer un pedido con pago contra entrega 😊",
+        "default": "Hola! Tengo una duda sobre mi pedido",
         "label": "Mensaje previo"
       },
       {
@@ -123,7 +111,7 @@
       {
         "type": "text",
         "id": "cod_whatsapp_label",
-        "default": "Pedir por WhatsApp",
+        "default": "Soporte",
         "label": "Texto del botón"
       },
       {
@@ -159,7 +147,7 @@
       {
         "type": "text",
         "id": "cod_sticky_label",
-        "default": "PEDIR AHORA",
+        "default": "Pedir ahora",
         "label": "Texto del botón"
       },
       {

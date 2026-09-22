@@ -1,5 +1,3 @@
-{{ 'cod-theme.css' | asset_url | stylesheet_tag }}
-
 {%- liquid
   assign form_product = section.settings.product | default: product
   assign app_blocks = section.blocks | where: 'type', '@app'
@@ -81,20 +79,19 @@
         </ul>
       {%- endif -%}
 
-      {%- if section.settings.show_whatsapp_fallback and settings.cod_whatsapp_number != blank -%}
+      {%- comment -%}
+        El pedido se toma aquí, no por WhatsApp. Este enlace es solo para
+        resolver dudas antes de completar el formulario.
+      {%- endcomment -%}
+      {%- if section.settings.show_help and settings.cod_whatsapp_number != blank -%}
         {%- liquid
           assign wa_number = settings.cod_whatsapp_number | remove: ' ' | remove: '+' | remove: '-'
-          assign wa_text = section.settings.whatsapp_message
-          if form_product != blank
-            assign wa_text = wa_text | append: ' — ' | append: form_product.title
-          endif
-          assign wa_href = 'https://wa.me/' | append: wa_number | append: '?text=' | append: wa_text | url_param_escape
+          assign wa_href = 'https://wa.me/' | append: wa_number | append: '?text=' | append: section.settings.help_message | url_param_escape
         -%}
-        <p class="cod-form-shell__or">{{ 'cod.order_form.or' | t }}</p>
-        <a class="cod-btn cod-btn--whatsapp" href="{{ wa_href }}" target="_blank" rel="noopener">
-          {% render 'cod-icon', icon: 'whatsapp' %}
-          {{ section.settings.whatsapp_label }}
-        </a>
+        <p class="cod-form-shell__help">
+          {{ section.settings.help_text }}
+          <a href="{{ wa_href }}" target="_blank" rel="noopener">{{ section.settings.help_link_label }}</a>
+        </p>
       {%- endif -%}
     </div>
   </div>
@@ -157,6 +154,18 @@
 
   #shopify-section-{{ section.id }} .cod-form-shell__trust { margin: 1.8rem 0 0; font-size: 1.35rem; }
 
+  #shopify-section-{{ section.id }} .cod-form-shell__help {
+    margin: 2rem 0 0;
+    text-align: center;
+    font-size: 1.35rem;
+    color: rgba(var(--color-foreground), 0.6);
+  }
+
+  #shopify-section-{{ section.id }} .cod-form-shell__help a {
+    color: rgb(var(--cod-primary));
+    text-underline-offset: 3px;
+  }
+
   #shopify-section-{{ section.id }} .cod-form-shell__or {
     margin: 1.6rem 0 1rem;
     text-align: center;
@@ -176,32 +185,164 @@
       "type": "paragraph",
       "content": "Agrega aquí el bloque de tu app de contra entrega (Agregar bloque > Apps > EasySell COD Form). El resto de la sección le da marco, confianza y respaldo por WhatsApp."
     },
-    { "type": "text", "id": "anchor_id", "default": "CodOrderForm", "label": "ID del ancla", "info": "Úsalo en los botones de las otras secciones: #CodOrderForm" },
-    { "type": "header", "content": "Encabezado" },
-    { "type": "text", "id": "badge", "default": "Pago contra entrega", "label": "Etiqueta" },
-    { "type": "text", "id": "heading", "default": "Completa tus datos y recíbelo en casa", "label": "Título" },
-    { "type": "text", "id": "note", "default": "Solo necesitamos tu nombre, celular y dirección. Pagas en efectivo al recibir.", "label": "Texto de apoyo" },
-    { "type": "header", "content": "Resumen del producto" },
-    { "type": "checkbox", "id": "show_summary", "default": true, "label": "Mostrar resumen" },
-    { "type": "product", "id": "product", "label": "Producto", "info": "En una página de producto se usa automáticamente el producto actual." },
-    { "type": "text", "id": "shipping_note", "default": "Envío gratis a toda Colombia", "label": "Nota de envío" },
-    { "type": "header", "content": "Refuerzo de confianza" },
-    { "type": "checkbox", "id": "show_trust", "default": true, "label": "Mostrar lista de confianza" },
-    { "type": "text", "id": "trust_1", "default": "No pagas nada ahora", "label": "Punto 1" },
-    { "type": "text", "id": "trust_2", "default": "Confirmamos tu pedido por WhatsApp", "label": "Punto 2" },
-    { "type": "text", "id": "trust_3", "default": "Pagas en efectivo cuando lo recibes", "label": "Punto 3" },
-    { "type": "header", "content": "Respaldo por WhatsApp" },
-    { "type": "checkbox", "id": "show_whatsapp_fallback", "default": true, "label": "Mostrar botón de WhatsApp" },
-    { "type": "text", "id": "whatsapp_label", "default": "Prefiero pedir por WhatsApp", "label": "Texto del botón" },
-    { "type": "text", "id": "whatsapp_message", "default": "Hola! Quiero pedir con pago contra entrega", "label": "Mensaje previo" },
-    { "type": "header", "content": "Alternativa manual" },
-    { "type": "liquid", "id": "custom_code", "label": "Código personalizado", "info": "Solo si tu app no ofrece bloque. Pega aquí su código de inserción." },
-    { "type": "header", "content": "Estilo" },
-    { "type": "color_scheme", "id": "color_scheme", "default": "scheme-1", "label": "Esquema de color" },
-    { "type": "range", "id": "padding_top", "min": 0, "max": 120, "step": 4, "default": 40, "unit": "px", "label": "Espaciado superior" },
-    { "type": "range", "id": "padding_bottom", "min": 0, "max": 120, "step": 4, "default": 40, "unit": "px", "label": "Espaciado inferior" }
+    {
+      "type": "text",
+      "id": "anchor_id",
+      "default": "CodOrderForm",
+      "label": "ID del ancla",
+      "info": "Úsalo en los botones de las otras secciones: #CodOrderForm"
+    },
+    {
+      "type": "header",
+      "content": "Encabezado"
+    },
+    {
+      "type": "text",
+      "id": "badge",
+      "default": "Pago contra entrega",
+      "label": "Etiqueta"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "default": "Completa tus datos y recíbelo en casa",
+      "label": "Título"
+    },
+    {
+      "type": "text",
+      "id": "note",
+      "default": "Solo necesitamos tu nombre, celular y dirección. Pagas en efectivo al recibir.",
+      "label": "Texto de apoyo"
+    },
+    {
+      "type": "header",
+      "content": "Resumen del producto"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_summary",
+      "default": true,
+      "label": "Mostrar resumen"
+    },
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Producto",
+      "info": "En una página de producto se usa automáticamente el producto actual."
+    },
+    {
+      "type": "text",
+      "id": "shipping_note",
+      "default": "Envío gratis a toda Colombia",
+      "label": "Nota de envío"
+    },
+    {
+      "type": "header",
+      "content": "Refuerzo de confianza"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_trust",
+      "default": true,
+      "label": "Mostrar lista de confianza"
+    },
+    {
+      "type": "text",
+      "id": "trust_1",
+      "default": "No pagas nada ahora",
+      "label": "Punto 1"
+    },
+    {
+      "type": "text",
+      "id": "trust_2",
+      "default": "Confirmamos tu pedido por WhatsApp",
+      "label": "Punto 2"
+    },
+    {
+      "type": "text",
+      "id": "trust_3",
+      "default": "Pagas en efectivo cuando lo recibes",
+      "label": "Punto 3"
+    },
+    {
+      "type": "header",
+      "content": "¿Dudas antes de pedir?"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_help",
+      "default": true,
+      "label": "Mostrar enlace de ayuda",
+      "info": "Es soporte, no un canal de pedido: el pedido se completa en este formulario."
+    },
+    {
+      "type": "text",
+      "id": "help_text",
+      "default": "¿Tienes alguna duda?",
+      "label": "Texto"
+    },
+    {
+      "type": "text",
+      "id": "help_link_label",
+      "default": "Escríbenos",
+      "label": "Texto del enlace"
+    },
+    {
+      "type": "text",
+      "id": "help_message",
+      "default": "Hola! Tengo una duda antes de hacer mi pedido",
+      "label": "Mensaje previo"
+    },
+    {
+      "type": "header",
+      "content": "Alternativa manual"
+    },
+    {
+      "type": "liquid",
+      "id": "custom_code",
+      "label": "Código personalizado",
+      "info": "Solo si tu app no ofrece bloque. Pega aquí su código de inserción."
+    },
+    {
+      "type": "header",
+      "content": "Estilo"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "default": "scheme-1",
+      "label": "Esquema de color"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "default": 40,
+      "unit": "px",
+      "label": "Espaciado superior"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "default": 40,
+      "unit": "px",
+      "label": "Espaciado inferior"
+    }
   ],
-  "blocks": [{ "type": "@app" }],
-  "presets": [{ "name": "COD · Formulario" }]
+  "blocks": [
+    {
+      "type": "@app"
+    }
+  ],
+  "presets": [
+    {
+      "name": "COD · Formulario"
+    }
+  ]
 }
 {% endschema %}

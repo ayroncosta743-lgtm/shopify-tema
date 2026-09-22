@@ -44,16 +44,6 @@
             "cod_button_pulse": false
           }
         },
-        "cod_cta_whatsapp": {
-          "type": "cod_cta",
-          "settings": {
-            "style": "whatsapp",
-            "label": "Pedir por WhatsApp",
-            "sublabel": "",
-            "whatsapp_message": "Hola! Quiero pedir este producto con pago contra entrega",
-            "pulse": false
-          }
-        },
         "cod_delivery": {
           "type": "cod_delivery",
           "settings": {
@@ -88,7 +78,6 @@
         "cod_badges",
         "variant_picker",
         "buy_buttons",
-        "cod_cta_whatsapp",
         "cod_delivery",
         "cod_checklist",
         "cod_guarantee",
@@ -339,12 +328,13 @@
         "trust_1": "No pagas nada ahora",
         "trust_2": "Confirmamos tu pedido por WhatsApp",
         "trust_3": "Pagas en efectivo cuando lo recibes",
-        "show_whatsapp_fallback": true,
-        "whatsapp_label": "Prefiero pedir por WhatsApp",
-        "whatsapp_message": "Hola! Quiero pedir con pago contra entrega",
         "color_scheme": "scheme-2",
         "padding_top": 40,
-        "padding_bottom": 40
+        "padding_bottom": 40,
+        "show_help": true,
+        "help_text": "¿Tienes alguna duda?",
+        "help_link_label": "Escríbenos",
+        "help_message": "Hola! Tengo una duda antes de hacer mi pedido"
       }
     },
     "guarantee": {

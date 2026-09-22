@@ -5,86 +5,86 @@
     "color_schemes": {
       "scheme-1": {
         "settings": {
-          "background": "#FAF8F4",
+          "background": "#FFFFFF",
           "background_gradient": "",
-          "text": "#232823",
-          "button": "#1B5E4A",
-          "button_label": "#FAF8F4",
-          "secondary_button_label": "#1B5E4A",
-          "shadow": "#16302B"
+          "text": "#141414",
+          "button": "#CC4A15",
+          "button_label": "#FFFFFF",
+          "secondary_button_label": "#141414",
+          "shadow": "#141414"
         }
       },
       "scheme-2": {
         "settings": {
-          "background": "#F2EDE4",
+          "background": "#F7F5F3",
           "background_gradient": "",
-          "text": "#232823",
-          "button": "#1B5E4A",
-          "button_label": "#FAF8F4",
-          "secondary_button_label": "#1B5E4A",
-          "shadow": "#16302B"
+          "text": "#141414",
+          "button": "#CC4A15",
+          "button_label": "#FFFFFF",
+          "secondary_button_label": "#141414",
+          "shadow": "#141414"
         }
       },
       "scheme-3": {
         "settings": {
-          "background": "#16302B",
+          "background": "#141414",
           "background_gradient": "",
-          "text": "#F5F2EC",
-          "button": "#C9A961",
-          "button_label": "#16302B",
-          "secondary_button_label": "#F5F2EC",
-          "shadow": "#0B1A17"
+          "text": "#FFFFFF",
+          "button": "#CC4A15",
+          "button_label": "#FFFFFF",
+          "secondary_button_label": "#FFFFFF",
+          "shadow": "#000000"
         }
       },
       "scheme-4": {
         "settings": {
-          "background": "#C9A961",
+          "background": "#CC4A15",
           "background_gradient": "",
-          "text": "#231F16",
-          "button": "#16302B",
-          "button_label": "#FAF8F4",
-          "secondary_button_label": "#231F16",
-          "shadow": "#8A7238"
+          "text": "#FFFFFF",
+          "button": "#FFFFFF",
+          "button_label": "#CC4A15",
+          "secondary_button_label": "#FFFFFF",
+          "shadow": "#7A2C0D"
         }
       },
       "scheme-5": {
         "settings": {
-          "background": "#1B5E4A",
+          "background": "#FFFFFF",
           "background_gradient": "",
-          "text": "#F5F2EC",
-          "button": "#FAF8F4",
-          "button_label": "#1B5E4A",
-          "secondary_button_label": "#F5F2EC",
-          "shadow": "#0E3327"
+          "text": "#141414",
+          "button": "#141414",
+          "button_label": "#FFFFFF",
+          "secondary_button_label": "#141414",
+          "shadow": "#141414"
         }
       }
     },
-    "type_header_font": "playfair_display_n5",
+    "type_header_font": "jost_n5",
     "heading_scale": 100,
-    "type_body_font": "dm_sans_n4",
+    "type_body_font": "jost_n4",
     "body_scale": 100,
     "page_width": 1400,
     "spacing_sections": 0,
     "spacing_grid_horizontal": 24,
     "spacing_grid_vertical": 24,
-    "animations_reveal_on_scroll": true,
+    "animations_reveal_on_scroll": false,
     "animations_hover_elements": "default",
     "buttons_border_thickness": 0,
     "buttons_border_opacity": 0,
-    "buttons_radius": 10,
+    "buttons_radius": 8,
     "buttons_shadow_opacity": 0,
     "buttons_shadow_horizontal_offset": 0,
     "buttons_shadow_vertical_offset": 0,
     "buttons_shadow_blur": 0,
     "variant_pills_border_thickness": 1,
-    "variant_pills_border_opacity": 40,
+    "variant_pills_border_opacity": 30,
     "variant_pills_radius": 8,
     "variant_pills_shadow_opacity": 0,
     "variant_pills_shadow_horizontal_offset": 0,
     "variant_pills_shadow_vertical_offset": 4,
     "variant_pills_shadow_blur": 5,
     "inputs_border_thickness": 1,
-    "inputs_border_opacity": 35,
+    "inputs_border_opacity": 30,
     "inputs_radius": 8,
     "inputs_shadow_opacity": 0,
     "inputs_shadow_horizontal_offset": 0,
@@ -125,7 +125,7 @@
     "blog_card_shadow_blur": 5,
     "text_boxes_border_thickness": 0,
     "text_boxes_border_opacity": 10,
-    "text_boxes_radius": 10,
+    "text_boxes_radius": 8,
     "text_boxes_shadow_opacity": 0,
     "text_boxes_shadow_horizontal_offset": 0,
     "text_boxes_shadow_vertical_offset": 4,
@@ -139,7 +139,7 @@
     "media_shadow_blur": 5,
     "popup_border_thickness": 1,
     "popup_border_opacity": 10,
-    "popup_corner_radius": 12,
+    "popup_corner_radius": 10,
     "popup_shadow_opacity": 5,
     "popup_shadow_horizontal_offset": 0,
     "popup_shadow_vertical_offset": 4,
@@ -193,15 +193,13 @@
     "cod_hide_cart_icon": true,
     "cod_hide_dynamic_checkout": true,
     "cod_hide_search": true,
-    "cod_primary": "#1B5E4A",
-    "cod_primary_contrast": "#FAF8F4",
-    "cod_accent": "#C9A961",
-    "cod_success": "#3D7A5F",
+    "cod_primary": "#CC4A15",
+    "cod_primary_contrast": "#FFFFFF",
     "cod_whatsapp_enabled": true,
     "cod_whatsapp_number": "573001112233",
-    "cod_whatsapp_message": "Hola! Quiero hacer un pedido con pago contra entrega 😊",
+    "cod_whatsapp_message": "Hola! Tengo una duda sobre mi pedido",
     "cod_whatsapp_style": "icon",
-    "cod_whatsapp_label": "Escríbenos",
+    "cod_whatsapp_label": "Soporte",
     "cod_sticky_enabled": true,
     "cod_sticky_visibility": "mobile",
     "cod_sticky_label": "Pedir ahora",
@@ -209,7 +207,9 @@
     "cod_exit_intent_title": "¿Te quedó alguna duda?",
     "cod_exit_intent_text": "Pagas cuando lo recibes en tu casa. Sin tarjeta, sin anticipos.",
     "cod_exit_intent_cta": "Volver a mi pedido",
-    "cod_dark": "#16302B"
+    "cod_dark": "#141414",
+    "logo": "shopify://shop_images/ChatGPT_Image_2_de_set._de_2026_14_18_54.png",
+    "favicon": "shopify://shop_images/savena-favicon-claro.png"
   },
   "presets": {
     "Dawn COD Colombia": {
@@ -218,86 +218,86 @@
       "color_schemes": {
         "scheme-1": {
           "settings": {
-            "background": "#FAF8F4",
+            "background": "#FFFFFF",
             "background_gradient": "",
-            "text": "#232823",
-            "button": "#1B5E4A",
-            "button_label": "#FAF8F4",
-            "secondary_button_label": "#1B5E4A",
-            "shadow": "#16302B"
+            "text": "#141414",
+            "button": "#CC4A15",
+            "button_label": "#FFFFFF",
+            "secondary_button_label": "#141414",
+            "shadow": "#141414"
           }
         },
         "scheme-2": {
           "settings": {
-            "background": "#F2EDE4",
+            "background": "#F7F5F3",
             "background_gradient": "",
-            "text": "#232823",
-            "button": "#1B5E4A",
-            "button_label": "#FAF8F4",
-            "secondary_button_label": "#1B5E4A",
-            "shadow": "#16302B"
+            "text": "#141414",
+            "button": "#CC4A15",
+            "button_label": "#FFFFFF",
+            "secondary_button_label": "#141414",
+            "shadow": "#141414"
           }
         },
         "scheme-3": {
           "settings": {
-            "background": "#16302B",
+            "background": "#141414",
             "background_gradient": "",
-            "text": "#F5F2EC",
-            "button": "#C9A961",
-            "button_label": "#16302B",
-            "secondary_button_label": "#F5F2EC",
-            "shadow": "#0B1A17"
+            "text": "#FFFFFF",
+            "button": "#CC4A15",
+            "button_label": "#FFFFFF",
+            "secondary_button_label": "#FFFFFF",
+            "shadow": "#000000"
           }
         },
         "scheme-4": {
           "settings": {
-            "background": "#C9A961",
+            "background": "#CC4A15",
             "background_gradient": "",
-            "text": "#231F16",
-            "button": "#16302B",
-            "button_label": "#FAF8F4",
-            "secondary_button_label": "#231F16",
-            "shadow": "#8A7238"
+            "text": "#FFFFFF",
+            "button": "#FFFFFF",
+            "button_label": "#CC4A15",
+            "secondary_button_label": "#FFFFFF",
+            "shadow": "#7A2C0D"
           }
         },
         "scheme-5": {
           "settings": {
-            "background": "#1B5E4A",
+            "background": "#FFFFFF",
             "background_gradient": "",
-            "text": "#F5F2EC",
-            "button": "#FAF8F4",
-            "button_label": "#1B5E4A",
-            "secondary_button_label": "#F5F2EC",
-            "shadow": "#0E3327"
+            "text": "#141414",
+            "button": "#141414",
+            "button_label": "#FFFFFF",
+            "secondary_button_label": "#141414",
+            "shadow": "#141414"
           }
         }
       },
-      "type_header_font": "playfair_display_n5",
+      "type_header_font": "jost_n5",
       "heading_scale": 100,
-      "type_body_font": "dm_sans_n4",
+      "type_body_font": "jost_n4",
       "body_scale": 100,
       "page_width": 1400,
       "spacing_sections": 0,
       "spacing_grid_horizontal": 24,
       "spacing_grid_vertical": 24,
-      "animations_reveal_on_scroll": true,
+      "animations_reveal_on_scroll": false,
       "animations_hover_elements": "default",
       "buttons_border_thickness": 0,
       "buttons_border_opacity": 0,
-      "buttons_radius": 10,
+      "buttons_radius": 8,
       "buttons_shadow_opacity": 0,
       "buttons_shadow_horizontal_offset": 0,
       "buttons_shadow_vertical_offset": 0,
       "buttons_shadow_blur": 0,
       "variant_pills_border_thickness": 1,
-      "variant_pills_border_opacity": 40,
+      "variant_pills_border_opacity": 30,
       "variant_pills_radius": 8,
       "variant_pills_shadow_opacity": 0,
       "variant_pills_shadow_horizontal_offset": 0,
       "variant_pills_shadow_vertical_offset": 4,
       "variant_pills_shadow_blur": 5,
       "inputs_border_thickness": 1,
-      "inputs_border_opacity": 35,
+      "inputs_border_opacity": 30,
       "inputs_radius": 8,
       "inputs_shadow_opacity": 0,
       "inputs_shadow_horizontal_offset": 0,
@@ -338,7 +338,7 @@
       "blog_card_shadow_blur": 5,
       "text_boxes_border_thickness": 0,
       "text_boxes_border_opacity": 10,
-      "text_boxes_radius": 10,
+      "text_boxes_radius": 8,
       "text_boxes_shadow_opacity": 0,
       "text_boxes_shadow_horizontal_offset": 0,
       "text_boxes_shadow_vertical_offset": 4,
@@ -352,7 +352,7 @@
       "media_shadow_blur": 5,
       "popup_border_thickness": 1,
       "popup_border_opacity": 10,
-      "popup_corner_radius": 12,
+      "popup_corner_radius": 10,
       "popup_shadow_opacity": 5,
       "popup_shadow_horizontal_offset": 0,
       "popup_shadow_vertical_offset": 4,
@@ -406,15 +406,13 @@
       "cod_hide_cart_icon": true,
       "cod_hide_dynamic_checkout": true,
       "cod_hide_search": true,
-      "cod_primary": "#1B5E4A",
-      "cod_primary_contrast": "#FAF8F4",
-      "cod_accent": "#C9A961",
-      "cod_success": "#3D7A5F",
+      "cod_primary": "#CC4A15",
+      "cod_primary_contrast": "#FFFFFF",
       "cod_whatsapp_enabled": true,
       "cod_whatsapp_number": "573001112233",
-      "cod_whatsapp_message": "Hola! Quiero hacer un pedido con pago contra entrega 😊",
+      "cod_whatsapp_message": "Hola! Tengo una duda sobre mi pedido",
       "cod_whatsapp_style": "icon",
-      "cod_whatsapp_label": "Escríbenos",
+      "cod_whatsapp_label": "Soporte",
       "cod_sticky_enabled": true,
       "cod_sticky_visibility": "mobile",
       "cod_sticky_label": "Pedir ahora",
@@ -422,7 +420,7 @@
       "cod_exit_intent_title": "¿Te quedó alguna duda?",
       "cod_exit_intent_text": "Pagas cuando lo recibes en tu casa. Sin tarjeta, sin anticipos.",
       "cod_exit_intent_cta": "Volver a mi pedido",
-      "cod_dark": "#16302B"
+      "cod_dark": "#141414"
     }
   }
 }

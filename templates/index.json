@@ -19,7 +19,8 @@
         "cta_sublabel": "Pago contra entrega · Envío gratis",
         "cta_link": "shopify://collections/all",
         "cta_pulse": false,
-        "color_scheme": "scheme-3"
+        "color_scheme": "scheme-3",
+        "image": "shopify://shop_images/ChatGPT_Image_2_de_set._de_2026_14_02_27.png"
       }
     },
     "trust_bar": {

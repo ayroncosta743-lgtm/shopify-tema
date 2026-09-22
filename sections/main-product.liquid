@@ -692,8 +692,6 @@
                   {% render 'cod-product-price', product: product, block: block %}
                 {%- when 'cod_badges' -%}
                   {% render 'cod-product-badges', block: block %}
-                {%- when 'cod_urgency' -%}
-                  {% render 'cod-product-urgency', product: product, block: block, section_id: section.id %}
                 {%- when 'cod_checklist' -%}
                   {% render 'cod-product-checklist', block: block %}
                 {%- when 'cod_delivery' -%}
@@ -2507,158 +2505,6 @@
       ]
     },
     {
-      "type": "cod_urgency",
-      "name": "COD · Urgencia",
-      "limit": 1,
-      "settings": [
-        {
-          "type": "paragraph",
-          "content": "Usa datos reales. Mostrar existencias o visitantes falsos es publicidad engañosa (SIC)."
-        },
-        {
-          "type": "checkbox",
-          "id": "show_live_count",
-          "default": true,
-          "label": "Mostrar visitantes en vivo"
-        },
-        {
-          "type": "text",
-          "id": "live_text",
-          "default": "personas están viendo esto ahora",
-          "label": "Texto"
-        },
-        {
-          "type": "range",
-          "id": "live_min",
-          "min": 1,
-          "max": 200,
-          "step": 1,
-          "default": 12,
-          "label": "Mínimo"
-        },
-        {
-          "type": "range",
-          "id": "live_max",
-          "min": 2,
-          "max": 400,
-          "step": 1,
-          "default": 47,
-          "label": "Máximo"
-        },
-        {
-          "type": "range",
-          "id": "live_interval",
-          "min": 3,
-          "max": 30,
-          "step": 1,
-          "default": 7,
-          "unit": "s",
-          "label": "Cada cuánto cambia"
-        },
-        {
-          "type": "header",
-          "content": "Existencias"
-        },
-        {
-          "type": "checkbox",
-          "id": "show_stock",
-          "default": true,
-          "label": "Mostrar barra de existencias"
-        },
-        {
-          "type": "select",
-          "id": "stock_source",
-          "default": "real",
-          "label": "Origen",
-          "options": [
-            {
-              "value": "real",
-              "label": "Inventario real de Shopify"
-            },
-            {
-              "value": "manual",
-              "label": "Valor manual"
-            }
-          ]
-        },
-        {
-          "type": "range",
-          "id": "manual_stock",
-          "min": 1,
-          "max": 200,
-          "step": 1,
-          "default": 12,
-          "label": "Unidades (manual)"
-        },
-        {
-          "type": "range",
-          "id": "stock_total",
-          "min": 1,
-          "max": 500,
-          "step": 1,
-          "default": 50,
-          "label": "Existencias de referencia"
-        },
-        {
-          "type": "text",
-          "id": "stock_label",
-          "default": "Disponibilidad",
-          "label": "Etiqueta"
-        },
-        {
-          "type": "header",
-          "content": "Cuenta regresiva"
-        },
-        {
-          "type": "checkbox",
-          "id": "show_countdown",
-          "default": false,
-          "label": "Mostrar cuenta regresiva"
-        },
-        {
-          "type": "text",
-          "id": "countdown_text",
-          "default": "Tu descuento se reserva por:",
-          "label": "Texto"
-        },
-        {
-          "type": "select",
-          "id": "countdown_mode",
-          "default": "evergreen",
-          "label": "Tipo",
-          "options": [
-            {
-              "value": "evergreen",
-              "label": "Por visitante"
-            },
-            {
-              "value": "daily",
-              "label": "Diaria"
-            }
-          ]
-        },
-        {
-          "type": "range",
-          "id": "countdown_minutes",
-          "min": 5,
-          "max": 60,
-          "step": 5,
-          "default": 15,
-          "unit": "min",
-          "label": "Minutos por visitante"
-        },
-        {
-          "type": "range",
-          "id": "countdown_reset_hour",
-          "min": 0,
-          "max": 23,
-          "step": 1,
-          "default": 0,
-          "label": "Hora de reinicio"
-        }
-      ]
-    },
-    {
       "type": "cod_checklist",
       "name": "COD · Argumentos",
       "limit": 2,
@@ -2822,22 +2668,6 @@
       "limit": 2,
       "settings": [
         {
-          "type": "select",
-          "id": "style",
-          "default": "primary",
-          "label": "Tipo de botón",
-          "options": [
-            {
-              "value": "primary",
-              "label": "Principal (al formulario)"
-            },
-            {
-              "value": "whatsapp",
-              "label": "WhatsApp"
-            }
-          ]
-        },
-        {
           "type": "text",
           "id": "label",
           "default": "PEDIR CON PAGO CONTRA ENTREGA",
@@ -2859,12 +2689,6 @@
           "id": "scroll_target",
           "default": "#CodOrderForm",
           "label": "O desplazar hasta (selector CSS)"
-        },
-        {
-          "type": "text",
-          "id": "whatsapp_message",
-          "default": "Hola! Quiero pedir este producto con pago contra entrega",
-          "label": "Mensaje de WhatsApp"
         },
         {
           "type": "checkbox",
