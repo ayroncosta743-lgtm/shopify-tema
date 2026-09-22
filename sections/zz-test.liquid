@@ -1,0 +1,745 @@
+<div></div>
+
+{% schema %}
+{
+  "name": "ZZ Test",
+  "blocks": [
+    {
+      "type": "cod_price",
+      "name": "COD · Precio",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show_savings",
+          "default": true,
+          "label": "Mostrar cuánto ahorra"
+        },
+        {
+          "type": "select",
+          "id": "savings_format",
+          "default": "amount",
+          "label": "Formato del ahorro",
+          "options": [
+            {
+              "value": "amount",
+              "label": "En pesos"
+            },
+            {
+              "value": "percent",
+              "label": "En porcentaje"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "note",
+          "default": "Pagas contra entrega · Envío gratis",
+          "label": "Nota bajo el precio"
+        }
+      ]
+    },
+    {
+      "type": "cod_badges",
+      "name": "COD · Insignias",
+      "limit": 2,
+      "settings": [
+        {
+          "type": "text",
+          "id": "badge_1",
+          "default": "Pago contra entrega",
+          "label": "Insignia 1"
+        },
+        {
+          "type": "select",
+          "id": "icon_1",
+          "default": "cash",
+          "label": "Ícono 1",
+          "options": [
+            {
+              "value": "cash",
+              "label": "Efectivo"
+            },
+            {
+              "value": "truck",
+              "label": "Envío"
+            },
+            {
+              "value": "shield",
+              "label": "Garantía"
+            },
+            {
+              "value": "return",
+              "label": "Devolución"
+            },
+            {
+              "value": "check-circle",
+              "label": "Check"
+            },
+            {
+              "value": "clock",
+              "label": "Reloj"
+            },
+            {
+              "value": "fire",
+              "label": "Fuego"
+            },
+            {
+              "value": "star",
+              "label": "Estrella"
+            },
+            {
+              "value": "zap",
+              "label": "Rayo"
+            },
+            {
+              "value": "heart",
+              "label": "Corazón"
+            },
+            {
+              "value": "gift",
+              "label": "Regalo"
+            },
+            {
+              "value": "package",
+              "label": "Paquete"
+            },
+            {
+              "value": "lock",
+              "label": "Candado"
+            },
+            {
+              "value": "users",
+              "label": "Clientes"
+            },
+            {
+              "value": "map-pin",
+              "label": "Ubicación"
+            },
+            {
+              "value": "chat",
+              "label": "Chat"
+            },
+            {
+              "value": "phone",
+              "label": "Teléfono"
+            },
+            {
+              "value": "thumbs-up",
+              "label": "Pulgar arriba"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "badge_2",
+          "default": "Envío gratis",
+          "label": "Insignia 2"
+        },
+        {
+          "type": "select",
+          "id": "icon_2",
+          "default": "truck",
+          "label": "Ícono 2",
+          "options": [
+            {
+              "value": "cash",
+              "label": "Efectivo"
+            },
+            {
+              "value": "truck",
+              "label": "Envío"
+            },
+            {
+              "value": "shield",
+              "label": "Garantía"
+            },
+            {
+              "value": "return",
+              "label": "Devolución"
+            },
+            {
+              "value": "check-circle",
+              "label": "Check"
+            },
+            {
+              "value": "clock",
+              "label": "Reloj"
+            },
+            {
+              "value": "fire",
+              "label": "Fuego"
+            },
+            {
+              "value": "star",
+              "label": "Estrella"
+            },
+            {
+              "value": "zap",
+              "label": "Rayo"
+            },
+            {
+              "value": "heart",
+              "label": "Corazón"
+            },
+            {
+              "value": "gift",
+              "label": "Regalo"
+            },
+            {
+              "value": "package",
+              "label": "Paquete"
+            },
+            {
+              "value": "lock",
+              "label": "Candado"
+            },
+            {
+              "value": "users",
+              "label": "Clientes"
+            },
+            {
+              "value": "map-pin",
+              "label": "Ubicación"
+            },
+            {
+              "value": "chat",
+              "label": "Chat"
+            },
+            {
+              "value": "phone",
+              "label": "Teléfono"
+            },
+            {
+              "value": "thumbs-up",
+              "label": "Pulgar arriba"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "badge_3",
+          "default": "Garantía 30 días",
+          "label": "Insignia 3"
+        },
+        {
+          "type": "select",
+          "id": "icon_3",
+          "default": "shield",
+          "label": "Ícono 3",
+          "options": [
+            {
+              "value": "cash",
+              "label": "Efectivo"
+            },
+            {
+              "value": "truck",
+              "label": "Envío"
+            },
+            {
+              "value": "shield",
+              "label": "Garantía"
+            },
+            {
+              "value": "return",
+              "label": "Devolución"
+            },
+            {
+              "value": "check-circle",
+              "label": "Check"
+            },
+            {
+              "value": "clock",
+              "label": "Reloj"
+            },
+            {
+              "value": "fire",
+              "label": "Fuego"
+            },
+            {
+              "value": "star",
+              "label": "Estrella"
+            },
+            {
+              "value": "zap",
+              "label": "Rayo"
+            },
+            {
+              "value": "heart",
+              "label": "Corazón"
+            },
+            {
+              "value": "gift",
+              "label": "Regalo"
+            },
+            {
+              "value": "package",
+              "label": "Paquete"
+            },
+            {
+              "value": "lock",
+              "label": "Candado"
+            },
+            {
+              "value": "users",
+              "label": "Clientes"
+            },
+            {
+              "value": "map-pin",
+              "label": "Ubicación"
+            },
+            {
+              "value": "chat",
+              "label": "Chat"
+            },
+            {
+              "value": "phone",
+              "label": "Teléfono"
+            },
+            {
+              "value": "thumbs-up",
+              "label": "Pulgar arriba"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "cod_urgency",
+      "name": "COD · Urgencia",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "Usa datos reales. Mostrar existencias o visitantes falsos es publicidad engañosa (SIC)."
+        },
+        {
+          "type": "checkbox",
+          "id": "show_live_count",
+          "default": true,
+          "label": "Mostrar visitantes en vivo"
+        },
+        {
+          "type": "text",
+          "id": "live_text",
+          "default": "personas están viendo esto ahora",
+          "label": "Texto"
+        },
+        {
+          "type": "range",
+          "id": "live_min",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "default": 12,
+          "label": "Mínimo"
+        },
+        {
+          "type": "range",
+          "id": "live_max",
+          "min": 5,
+          "max": 300,
+          "step": 5,
+          "default": 45,
+          "label": "Máximo"
+        },
+        {
+          "type": "range",
+          "id": "live_interval",
+          "min": 3,
+          "max": 30,
+          "step": 1,
+          "default": 7,
+          "unit": "s",
+          "label": "Cada cuánto cambia"
+        },
+        {
+          "type": "header",
+          "content": "Existencias"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_stock",
+          "default": true,
+          "label": "Mostrar barra de existencias"
+        },
+        {
+          "type": "select",
+          "id": "stock_source",
+          "default": "real",
+          "label": "Origen",
+          "options": [
+            {
+              "value": "real",
+              "label": "Inventario real de Shopify"
+            },
+            {
+              "value": "manual",
+              "label": "Valor manual"
+            }
+          ]
+        },
+        {
+          "type": "range",
+          "id": "manual_stock",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "default": 12,
+          "label": "Unidades (manual)"
+        },
+        {
+          "type": "range",
+          "id": "stock_total",
+          "min": 10,
+          "max": 500,
+          "step": 10,
+          "default": 50,
+          "label": "Existencias de referencia"
+        },
+        {
+          "type": "text",
+          "id": "stock_label",
+          "default": "Disponibilidad",
+          "label": "Etiqueta"
+        },
+        {
+          "type": "header",
+          "content": "Cuenta regresiva"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_countdown",
+          "default": false,
+          "label": "Mostrar cuenta regresiva"
+        },
+        {
+          "type": "text",
+          "id": "countdown_text",
+          "default": "Tu descuento se reserva por:",
+          "label": "Texto"
+        },
+        {
+          "type": "select",
+          "id": "countdown_mode",
+          "default": "evergreen",
+          "label": "Tipo",
+          "options": [
+            {
+              "value": "evergreen",
+              "label": "Por visitante"
+            },
+            {
+              "value": "daily",
+              "label": "Diaria"
+            }
+          ]
+        },
+        {
+          "type": "range",
+          "id": "countdown_minutes",
+          "min": 5,
+          "max": 60,
+          "step": 5,
+          "default": 15,
+          "unit": "min",
+          "label": "Minutos por visitante"
+        },
+        {
+          "type": "range",
+          "id": "countdown_reset_hour",
+          "min": 0,
+          "max": 23,
+          "step": 1,
+          "default": 0,
+          "label": "Hora de reinicio"
+        }
+      ]
+    },
+    {
+      "type": "cod_checklist",
+      "name": "COD · Argumentos",
+      "limit": 2,
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "default": "Por qué te va a gustar",
+          "label": "Título"
+        },
+        {
+          "type": "textarea",
+          "id": "items",
+          "default": "Calidad que se nota desde el primer uso\nNo pagas nada por adelantado\nTe lo llevamos hasta la puerta de tu casa\nSi no te queda, lo cambiamos",
+          "label": "Puntos",
+          "info": "Un punto por línea."
+        }
+      ]
+    },
+    {
+      "type": "cod_delivery",
+      "name": "COD · Entrega",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "default": "Entrega estimada",
+          "label": "Título"
+        },
+        {
+          "type": "range",
+          "id": "days_min",
+          "min": 1,
+          "max": 20,
+          "step": 1,
+          "default": 1,
+          "unit": "d",
+          "label": "Desde (días hábiles)"
+        },
+        {
+          "type": "range",
+          "id": "days_max",
+          "min": 1,
+          "max": 30,
+          "step": 1,
+          "default": 4,
+          "unit": "d",
+          "label": "Hasta (días hábiles)"
+        },
+        {
+          "type": "text",
+          "id": "note",
+          "default": "Despachamos el mismo día si pides antes de las 4 p. m.",
+          "label": "Nota"
+        }
+      ]
+    },
+    {
+      "type": "cod_guarantee",
+      "name": "COD · Garantía",
+      "limit": 2,
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "default": "Compra sin riesgo",
+          "label": "Título"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "default": "30 días para cambios. Si no te convence, escríbenos.",
+          "label": "Texto"
+        },
+        {
+          "type": "select",
+          "id": "icon",
+          "default": "shield",
+          "label": "Ícono",
+          "options": [
+            {
+              "value": "cash",
+              "label": "Efectivo"
+            },
+            {
+              "value": "truck",
+              "label": "Envío"
+            },
+            {
+              "value": "shield",
+              "label": "Garantía"
+            },
+            {
+              "value": "return",
+              "label": "Devolución"
+            },
+            {
+              "value": "check-circle",
+              "label": "Check"
+            },
+            {
+              "value": "clock",
+              "label": "Reloj"
+            },
+            {
+              "value": "fire",
+              "label": "Fuego"
+            },
+            {
+              "value": "star",
+              "label": "Estrella"
+            },
+            {
+              "value": "zap",
+              "label": "Rayo"
+            },
+            {
+              "value": "heart",
+              "label": "Corazón"
+            },
+            {
+              "value": "gift",
+              "label": "Regalo"
+            },
+            {
+              "value": "package",
+              "label": "Paquete"
+            },
+            {
+              "value": "lock",
+              "label": "Candado"
+            },
+            {
+              "value": "users",
+              "label": "Clientes"
+            },
+            {
+              "value": "map-pin",
+              "label": "Ubicación"
+            },
+            {
+              "value": "chat",
+              "label": "Chat"
+            },
+            {
+              "value": "phone",
+              "label": "Teléfono"
+            },
+            {
+              "value": "thumbs-up",
+              "label": "Pulgar arriba"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "cod_cta",
+      "name": "COD · Botón extra",
+      "limit": 2,
+      "settings": [
+        {
+          "type": "select",
+          "id": "style",
+          "default": "primary",
+          "label": "Tipo de botón",
+          "options": [
+            {
+              "value": "primary",
+              "label": "Principal (al formulario)"
+            },
+            {
+              "value": "whatsapp",
+              "label": "WhatsApp"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "default": "PEDIR CON PAGO CONTRA ENTREGA",
+          "label": "Texto"
+        },
+        {
+          "type": "text",
+          "id": "sublabel",
+          "default": "Sin tarjeta · Pagas al recibir",
+          "label": "Texto secundario"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Enlace"
+        },
+        {
+          "type": "text",
+          "id": "scroll_target",
+          "default": "#CodOrderForm",
+          "label": "O desplazar hasta (selector CSS)"
+        },
+        {
+          "type": "text",
+          "id": "whatsapp_message",
+          "default": "Hola! Quiero pedir este producto con pago contra entrega",
+          "label": "Mensaje de WhatsApp"
+        },
+        {
+          "type": "checkbox",
+          "id": "pulse",
+          "default": true,
+          "label": "Animar el botón"
+        }
+      ]
+    },
+    {
+      "type": "buy_buttons",
+      "name": "t:sections.main-product.blocks.buy_buttons.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show_dynamic_checkout",
+          "default": true,
+          "label": "t:sections.main-product.blocks.buy_buttons.settings.show_dynamic_checkout.label",
+          "info": "t:sections.main-product.blocks.buy_buttons.settings.show_dynamic_checkout.info"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_gift_card_recipient",
+          "default": true,
+          "label": "t:sections.main-product.blocks.buy_buttons.settings.show_gift_card_recipient.label",
+          "info": "t:sections.main-product.blocks.buy_buttons.settings.show_gift_card_recipient.info"
+        },
+        {
+          "type": "header",
+          "content": "⚡ Contra entrega"
+        },
+        {
+          "type": "select",
+          "id": "cod_button_action",
+          "default": "scroll_to_form",
+          "label": "Qué hace el botón principal",
+          "info": "«Ir al formulario» es lo correcto si el pedido se toma con EasySell dentro de la misma página.",
+          "options": [
+            {
+              "value": "scroll_to_form",
+              "label": "Ir al formulario de contra entrega"
+            },
+            {
+              "value": "add_to_cart",
+              "label": "Agregar al carrito (flujo normal)"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "cod_form_selector",
+          "default": "#CodOrderForm",
+          "label": "Selector del formulario",
+          "info": "Debe coincidir con el ID de la sección «COD · Formulario»."
+        },
+        {
+          "type": "text",
+          "id": "cod_button_label",
+          "default": "PEDIR AHORA · PAGO CONTRA ENTREGA",
+          "label": "Texto del botón",
+          "info": "Déjalo vacío para usar el texto estándar del tema."
+        },
+        {
+          "type": "text",
+          "id": "cod_button_note",
+          "default": "Compra protegida · No pagas nada hasta recibir",
+          "label": "Texto bajo el botón"
+        },
+        {
+          "type": "checkbox",
+          "id": "cod_button_pulse",
+          "default": true,
+          "label": "Animar el botón"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
