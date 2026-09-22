@@ -243,6 +243,9 @@ sections/
   cod-steps.liquid           cod-urgency.liquid
   cod-order-form.liquid      cod-sticky-buy-bar.liquid
 
+bin/
+  validar-tema.py            Valida as regras que o theme check não cobre
+
 snippets/
   cod-icon.liquid            Biblioteca de 22 ícones SVG
   cod-stars.liquid           cod-countdown.liquid
@@ -278,12 +281,46 @@ Todos respeitam `prefers-reduced-motion` e funcionam sem `localStorage`
 
 ## 9. Verificar antes de publicar
 
+São **dois** comandos, e o segundo é o que evita a dor de cabeça:
+
 ```bash
-shopify theme check
+shopify theme check          # sintaxe Liquid, traduções, acessibilidade
+python3 bin/validar-tema.py  # regras de validação da Shopify
 ```
 
-Estado atual: **0 erros**, 9 avisos — todos herdados do Dawn original
-(complexidade de Liquid e snippets órfãos do tema base).
+Estado atual: **0 erros** no theme check (9 avisos, todos herdados do Dawn
+original) e **0 problemas** no validador.
+
+### Por que existe o segundo comando
+
+O `shopify theme check` **não** cobre as regras que a Shopify aplica quando
+você sobe o tema. Se você violar uma delas, a Shopify não avisa com clareza:
+ela **descarta o arquivo inteiro** e o substitui por `[]`. Foi o que aconteceu
+no primeiro upload deste tema — o `settings_schema.json` virou `[]`, o
+`settings_data.json` nem foi criado, e o editor mostrou:
+
+> *"Para visualizar suas alterações, os esquemas de cores devem ser definidos
+> nos arquivos settings_data e settings_schema."*
+
+A causa era um `theme_author` com 31 caracteres. O limite é 25.
+
+O `bin/validar-tema.py` checa, em todos os templates, grupos de seções e
+blocos:
+
+| Regra | Sintoma se violar |
+|-------|-------------------|
+| `theme_name` / `theme_author` ≤ 25 caracteres | `settings_schema.json` vira `[]` |
+| Valor de `range` cai no `min`/`max`/`step` | Arquivo rejeitado |
+| Valor de `select` está entre as opções | Arquivo rejeitado |
+| `checkbox` é booleano | Arquivo rejeitado |
+| Todo ajuste existe no schema da seção | Arquivo rejeitado |
+| Nome de seção ≤ 25 caracteres | Erro no theme check |
+
+Exemplo do tipo de erro que ele pega: `padding_top: 14` num range de passo 4.
+Parece inofensivo, mas derruba o `header-group.json` inteiro — e aí o
+cabeçalho some do editor.
+
+Se você editar arquivos JSON na mão, rode o validador antes de subir.
 
 Checklist final:
 
