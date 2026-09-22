@@ -1,0 +1,77 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "48a61bc7-365a-4136-bce5-4aa7f7623d0a": {
+      "type": "track-order",
+      "settings": {
+        "heading_size": "h1",
+        "text": "<p>Aquí puedes seguir tu pedido. Escribe el número de guía que te enviamos en el correo de confirmación y verás en qué va tu entrega. Gracias por comprar con nosotros. Si tienes alguna duda, escríbenos.</p>",
+        "button_label": "TRACK",
+        "button_full_width": true,
+        "color_scheme": "background-1",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "fd57cce8-d801-473c-9554-025221fb7723": {
+      "type": "image-with-text",
+      "blocks": {
+        "template--18472096104777__fd57cce8-d801-473c-9554-025221fb7723-1679865021003cfb75-0": {
+          "type": "heading",
+          "settings": {
+            "heading_size": "h1"
+          }
+        },
+        "template--18472096104777__fd57cce8-d801-473c-9554-025221fb7723-1679865021003cfb75-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Acompaña el texto con una imagen para destacar un producto, una colección o una entrada del blog. Agrega detalles de disponibilidad, estilo o una reseña.</p>",
+            "text_style": "body"
+          }
+        },
+        "template--18472096104777__fd57cce8-d801-473c-9554-025221fb7723-1679865021003cfb75-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "Contáctanos",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--18472096104777__fd57cce8-d801-473c-9554-025221fb7723-1679865021003cfb75-0",
+        "template--18472096104777__fd57cce8-d801-473c-9554-025221fb7723-1679865021003cfb75-1",
+        "template--18472096104777__fd57cce8-d801-473c-9554-025221fb7723-1679865021003cfb75-2"
+      ],
+      "settings": {
+        "height": "adapt",
+        "color_scheme": "background-1",
+        "content_layout": "overlap",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "48a61bc7-365a-4136-bce5-4aa7f7623d0a",
+    "fd57cce8-d801-473c-9554-025221fb7723"
+  ]
+}

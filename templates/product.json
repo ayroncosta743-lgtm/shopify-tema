@@ -1,499 +1,633 @@
 {
   "sections": {
+    "announcement_bar_QhNTwL": {
+      "type": "announcement-bar",
+      "blocks": {
+        "announcement_En7NRC": {
+          "type": "announcement",
+          "disabled": true,
+          "settings": {
+            "text": "ENVÍO GRATIS A TODA COLOMBIA",
+            "text_alignment": "center",
+            "mobile_text_size": 15,
+            "desktop_text_size": 15,
+            "icon": "storefront",
+            "filled_icon": false,
+            "mobile_icon_size": 20,
+            "desktop_icon_size": 26,
+            "desktop_layout": "horizontal",
+            "mobile_layout": "horizontal",
+            "hidden_products": "",
+            "enable_specific_display": false,
+            "displayed_products": ""
+          }
+        },
+        "announcement_p8kjX4": {
+          "type": "announcement",
+          "settings": {
+            "text": "PAGO CONTRA ENTREGA",
+            "text_alignment": "center",
+            "mobile_text_size": 15,
+            "desktop_text_size": 15,
+            "icon": "storefront",
+            "filled_icon": false,
+            "mobile_icon_size": 20,
+            "desktop_icon_size": 26,
+            "desktop_layout": "horizontal",
+            "mobile_layout": "horizontal",
+            "hidden_products": "",
+            "enable_specific_display": false,
+            "displayed_products": ""
+          }
+        },
+        "announcement_rXcdzk": {
+          "type": "announcement",
+          "settings": {
+            "text": "LLEVA 2 PARES Y AHORRA EN EL SEGUNDO",
+            "text_alignment": "center",
+            "mobile_text_size": 15,
+            "desktop_text_size": 15,
+            "icon": "storefront",
+            "filled_icon": false,
+            "mobile_icon_size": 20,
+            "desktop_icon_size": 26,
+            "desktop_layout": "horizontal",
+            "mobile_layout": "horizontal",
+            "hidden_products": "",
+            "enable_specific_display": false,
+            "displayed_products": ""
+          }
+        }
+      },
+      "block_order": [
+        "announcement_En7NRC",
+        "announcement_p8kjX4",
+        "announcement_rXcdzk"
+      ],
+      "disabled": true,
+      "name": "t:sections.announcement-bar.name",
+      "settings": {
+        "columns_desktop": 3,
+        "columns_mobile": 1,
+        "desktop_spacing": 28,
+        "mobile_spacing": 16,
+        "show_separator": false,
+        "color_scheme": "accent-1",
+        "slider_mobile": true,
+        "slider_desktop": false,
+        "type": "loop",
+        "autoplay": false,
+        "autoplay_speed": 3,
+        "hidden_products": "",
+        "enable_specific_display": false,
+        "displayed_products": "",
+        "padding_top": 16,
+        "padding_bottom": 16,
+        "custom_colors_background": "#dd1d1d",
+        "custom_gradient_background": "",
+        "custom_colors_text": "#ffffff"
+      }
+    },
     "main": {
       "type": "main-product",
       "blocks": {
         "title": {
-          "type": "title"
-        },
-        "cod_price": {
-          "type": "cod_price",
+          "type": "title",
           "settings": {
-            "show_savings": true,
-            "savings_format": "amount",
-            "note": "Pago contra entrega · Envío gratis a toda Colombia"
+            "text_size": "h2",
+            "title_alignment": "left",
+            "uppercase_title": false,
+            "margin_top": 0,
+            "margin_bottom": 15
           }
         },
-        "cod_badges": {
-          "type": "cod_badges",
+        "rating_stars_CxM9HU": {
+          "type": "rating_stars",
           "settings": {
-            "badge_1": "Pago contra entrega",
-            "icon_1": "cash",
-            "badge_2": "Envío gratis",
-            "icon_2": "truck",
-            "badge_3": "Garantía 30 días",
-            "icon_3": "shield"
+            "rating": 4.7,
+            "star_color": "#ffcc00",
+            "bg_stars_style": "full",
+            "bg_star_color": "#ececec",
+            "label": " <strong>4.7/5 </strong>+1536 Reseñas",
+            "size": 16,
+            "alignment": "flex-start",
+            "scroll_id": "",
+            "margin_top": 15,
+            "margin_bottom": 15
           }
         },
-        "variant_picker": {
+        "price": {
+          "type": "price",
+          "settings": {
+            "layout": "price_first",
+            "price_color": "accent-1",
+            "compare_price_color": "text",
+            "displayed_badge": "sale",
+            "icon_scale": 140,
+            "custom_badge_text": "[icon_1] SPECIAL OFFER",
+            "icon_1": "redeem",
+            "filled_icon_1": false,
+            "icon_2": "check_circle",
+            "filled_icon_2": false,
+            "margin_top": 9,
+            "margin_bottom": 15
+          }
+        },
+        "5fcc0428-e768-4cb7-bea3-eb0274198dd1": {
           "type": "variant_picker",
           "settings": {
-            "picker_type": "button",
-            "swatch_shape": "circle"
+            "picker_types": "swatches",
+            "custom_labels": "[name] - [selected]",
+            "skip_unavailable": false,
+            "swatches_size": "small",
+            "swatches_custom_colors": "disabled",
+            "swatches_custom_colors_list": "#000000, #6D388B, #0000FF, #FFCC00",
+            "full_width_dropdowns": false,
+            "breaks_style": "normal",
+            "breaks_headline": "COMPRA MÁS Y AHORRA",
+            "breaks_color_scheme": "accent-1",
+            "breaks_badges": "[empty], Most popular, [empty]",
+            "breaks_displayed_images": "variant_images",
+            "breaks_custom_images": "",
+            "breaks_image_width": 70,
+            "breaks_space_images": true,
+            "breaks_labels": "[name], [name], [name]",
+            "breaks_benefits": "[empty], Envío gratis, Envío gratis",
+            "breaks_captions": "Variant 1 caption, Variant 2 caption, Variant 3 caption",
+            "breaks_price_texts": "[price], [price], [price]",
+            "breaks_compare_price_texts": "[compare_price], [compare_price], [compare_price]",
+            "margin_top": 6,
+            "margin_bottom": 6
           }
         },
-        "buy_buttons": {
-          "type": "buy_buttons",
+        "sizing_chart_Ajn9CK": {
+          "type": "sizing_chart",
           "settings": {
-            "show_dynamic_checkout": false,
-            "show_gift_card_recipient": false,
-            "cod_button_action": "scroll_to_form",
-            "cod_form_selector": "#CodOrderForm",
-            "cod_button_label": "Pedir ahora · Pago contra entrega",
-            "cod_button_note": "Compra protegida · No pagas nada hasta recibir",
-            "cod_button_pulse": false
+            "test_mode": false,
+            "append": "none",
+            "button_label": "<span style=\"text-decoration:underline\">VER GUÍA DE TALLAS</span>",
+            "button_icon": "straighten",
+            "button_filled_icon": false,
+            "text_size": 17,
+            "button_alignment": "start",
+            "button_underline": false,
+            "headline": "",
+            "heading_size": "h3",
+            "close_button_style": "minimalistic",
+            "color_scheme": "background-1",
+            "table_header_content": "",
+            "table_header_color_scheme": "inverse",
+            "table_content": "",
+            "caption_text": "",
+            "caption_size": "1.45rem",
+            "caption_color": "#121212",
+            "caption_alignment": "left",
+            "top_image": "shopify://shop_images/Copia_de_Inserir_um_titulo_7.webp",
+            "margin_top": 15,
+            "margin_bottom": 15
           }
         },
-        "cod_delivery": {
-          "type": "cod_delivery",
+        "quantity_selector_rwUqDg": {
+          "type": "quantity_selector",
           "settings": {
-            "heading": "Entrega estimada",
-            "days_min": 1,
-            "days_max": 4,
-            "note": "Despachamos el mismo día si pides antes de las 4 p. m."
+            "full_width_classic": false,
+            "atc_append": "none",
+            "atc_append_heights": "stretch-quantity",
+            "enable_quantity_discounts": false,
+            "style": "normal",
+            "headline": "COMPRA MÁS Y AHORRA",
+            "preselected": "option_1",
+            "display_selected_indicator": true,
+            "border_radius": 10,
+            "border_width": 2,
+            "color_scheme": "accent-1",
+            "enable_variant_selectors": true,
+            "enable_variant_selectors_on_quantity_of_1": false,
+            "update_prices": false,
+            "skip_unavailable": false,
+            "full_width_pickers": false,
+            "hide_pickers_overlay": true,
+            "pickers_label": "",
+            "image_width": 70,
+            "space_images": true,
+            "vertical_images_position": "top",
+            "vertical_prices_layout": "vertical",
+            "option_1_quantity": 1,
+            "option_1_badge": "",
+            "option_1_badge_style": "1",
+            "option_1_badge_color": "accent-1",
+            "option_1_label": "Lleva [quantity]",
+            "option_1_benefit": "",
+            "option_1_benefit_position": "top",
+            "option_1_benefit_style": "outlined",
+            "option_1_benefit_color": "accent-1",
+            "option_1_caption": "Ahorras [amount_saved]",
+            "option_1_percentage_off_text": "0",
+            "option_1_fixed_amount_off": "0",
+            "option_1_price_text": "[price]",
+            "option_1_compare_price": "compare_price",
+            "option_1_compare_price_text": "[compare_price]",
+            "option_2_quantity": 2,
+            "option_2_badge": "",
+            "option_2_badge_style": "1",
+            "option_2_badge_color": "accent-1",
+            "option_2_label": "Lleva [quantity]",
+            "option_2_benefit": "",
+            "option_2_benefit_style": "outlined",
+            "option_2_benefit_color": "accent-1",
+            "option_2_caption": "Ahorras [amount_saved]",
+            "option_2_percentage_off_text": "0",
+            "option_2_fixed_amount_off": "0",
+            "option_2_price_text": "[price]",
+            "option_2_compare_price": "compare_price",
+            "option_2_compare_price_text": "[compare_price]",
+            "option_3_quantity": 3,
+            "option_3_badge": "",
+            "option_3_badge_style": "1",
+            "option_3_badge_color": "accent-1",
+            "option_3_label": "Lleva [quantity]",
+            "option_3_benefit": "",
+            "option_3_benefit_style": "outlined",
+            "option_3_benefit_color": "accent-1",
+            "option_3_caption": "Ahorras [amount_saved]",
+            "option_3_percentage_off_text": "0",
+            "option_3_fixed_amount_off": "0",
+            "option_3_price_text": "[price]",
+            "option_3_compare_price": "compare_price",
+            "option_3_compare_price_text": "[compare_price]",
+            "option_4_quantity": 4,
+            "option_4_badge": "",
+            "option_4_badge_style": "1",
+            "option_4_badge_color": "accent-1",
+            "option_4_label": "Lleva [quantity]",
+            "option_4_benefit": "",
+            "option_4_benefit_style": "outlined",
+            "option_4_benefit_color": "accent-1",
+            "option_4_caption": "Ahorras [amount_saved]",
+            "option_4_percentage_off_text": "0",
+            "option_4_fixed_amount_off": "0",
+            "option_4_price_text": "[price]",
+            "option_4_compare_price": "compare_price",
+            "option_4_compare_price_text": "[compare_price]",
+            "margin_top": 15,
+            "margin_bottom": 15
           }
         },
-        "cod_checklist": {
-          "type": "cod_checklist",
+        "e7a28cbe-03cb-4c9d-a2c4-0e3e76ffb3e5": {
+          "type": "sticky_atc",
           "settings": {
-            "heading": "Por qué te va a gustar",
-            "items": "Calidad que se nota desde el primer uso\nNo pagas nada por adelantado\nTe lo llevamos hasta la puerta de tu casa\nSi no te queda la talla, lo cambiamos"
+            "function": "add_to_cart",
+            "display_when": "after_scroll",
+            "button_label": "Agregar al carrito",
+            "enable_custom_btn_color": false,
+            "custom_btn_color": "#dd1d1d",
+            "color_scheme": "background-1",
+            "star_color": "#ffcc00",
+            "stars_label": "(xxxx reseñas)",
+            "picker_type": "combined",
+            "desktop_show_image": true,
+            "desktop_show_title": true,
+            "desktop_rating_stars": false,
+            "desktop_show_price": true,
+            "desktop_show_sale_badge": true,
+            "desktop_variant_picker": true,
+            "desktop_full_button_width": false,
+            "desktop_show_price_in_button": false,
+            "desktop_transparent_bg": false,
+            "mobile_show_image": false,
+            "mobile_show_title": true,
+            "mobile_rating_stars": false,
+            "mobile_show_price": true,
+            "mobile_show_sale_badge": true,
+            "mobile_variant_picker": false,
+            "mobile_full_button_width": false,
+            "mobile_show_price_in_button": false,
+            "mobile_transparent_bg": false
           }
         },
-        "cod_guarantee": {
-          "type": "cod_guarantee",
+        "custom_liquid_zPf76r": {
+          "type": "custom_liquid",
+          "name": "Liquid personalizado - trust",
+          "disabled": true,
           "settings": {
-            "heading": "Compra sin riesgo",
-            "text": "30 días para cambios. Si no te convence, escríbenos por WhatsApp.",
-            "icon": "shield"
+            "custom_liquid": "<ul style=\"list-style: none; padding: 0; margin: 0;\">\n  <li style=\"display: flex; align-items: flex-start; gap: 12px; margin-bottom: 16px;\">\n    <img src=\"https://cdn.shopify.com/s/files/1/0949/1841/0585/files/check.png?v=1752494855\" alt=\"Icono\" style=\"width: 20px; height: 20px;\">\n    <div>\n      <strong>Pago contra entrega en toda Colombia</strong>\n    </div>\n  </li>\n\n  <li style=\"display: flex; align-items: flex-start; gap: 12px; margin-bottom: 16px;\">\n    <img src=\"https://cdn.shopify.com/s/files/1/0949/1841/0585/files/check.png?v=1752494855\" alt=\"Icono\" style=\"width: 20px; height: 20px;\">\n    <div>\n      <strong>Garantía de 30 días</strong><br>\n      Si algo sale mal, te lo cambiamos.\n\n    </div>\n  </li>\n\n  <li style=\"display: flex; align-items: flex-start; gap: 12px; margin-bottom: 16px;\">\n    <img src=\"https://cdn.shopify.com/s/files/1/0949/1841/0585/files/check.png?v=1752494855\" alt=\"Icono\" style=\"width: 20px; height: 20px;\">\n    <div>\n      <strong>Envío gratis con número de guía</strong><br>\n      Te avisamos por WhatsApp cuando salga.\n\n    </div>\n  </li>\n\n  <li style=\"display: flex; align-items: flex-start; gap: 12px;\">\n    <img src=\"https://cdn.shopify.com/s/files/1/0949/1841/0585/files/check.png?v=1752494855\" alt=\"Icono\" style=\"width: 20px; height: 20px;\">\n    <div>\n      <strong>Cómodos de verdad</strong><br>\n      Plantilla acolchada y suela antideslizante para el uso diario.\n\n    </div>\n  </li>\n</ul>"
+          }
+        },
+        "releasit_cod_form_button_app_block_keCdK7": {
+          "type": "shopify://apps/releasit-cod-form/blocks/button-app-block/72faf214-4174-4fec-886b-0d0e8d3af9a2",
+          "settings": {
+            "product": "{{product}}"
+          }
+        },
+        "shipping_checkpoints_YQAeKR": {
+          "type": "shipping_checkpoints",
+          "settings": {
+            "icon_1": "add_shopping_cart",
+            "filled_icon_1": false,
+            "top_text_1": "<strong>[start_date]</strong>",
+            "bottom_text_1": "Encargado",
+            "min_days_1": 0,
+            "max_days_1": 0,
+            "icon_2": "local_shipping",
+            "filled_icon_2": false,
+            "top_text_2": "<strong>[start_date] - [end_date]</strong>",
+            "bottom_text_2": "Pedido Listo",
+            "min_days_2": 1,
+            "max_days_2": 1,
+            "icon_3": "redeem",
+            "filled_icon_3": false,
+            "top_text_3": "<strong>[start_date] - [end_date]</strong>",
+            "bottom_text_3": "Entregado",
+            "min_days_3": 2,
+            "max_days_3": 5,
+            "icon_4": "",
+            "filled_icon_4": false,
+            "top_text_4": "",
+            "bottom_text_4": "",
+            "date_format": "dd_mm_no_dot",
+            "days_labels": "Mon, Tue, Wed, Thu, Fri, Sat, Sun",
+            "months_labels": "Ene, Feb, Mar, Abr, Mayo, Jun, Jul, Ago, Sept, Oct, Nov, Dic",
+            "color_scheme": "inverse",
+            "margin_top": 24,
+            "margin_bottom": 24
           }
         },
         "description": {
-          "type": "description"
+          "type": "description",
+          "settings": {
+            "margin_top": 24,
+            "margin_bottom": 24
+          }
         }
       },
       "block_order": [
         "title",
-        "cod_price",
-        "cod_badges",
-        "variant_picker",
-        "buy_buttons",
-        "cod_delivery",
-        "cod_checklist",
-        "cod_guarantee",
+        "rating_stars_CxM9HU",
+        "price",
+        "5fcc0428-e768-4cb7-bea3-eb0274198dd1",
+        "sizing_chart_Ajn9CK",
+        "quantity_selector_rwUqDg",
+        "e7a28cbe-03cb-4c9d-a2c4-0e3e76ffb3e5",
+        "custom_liquid_zPf76r",
+        "releasit_cod_form_button_app_block_keCdK7",
+        "shipping_checkpoints_YQAeKR",
         "description"
       ],
       "settings": {
+        "display_id": false,
         "enable_sticky_info": true,
-        "color_scheme": "scheme-1",
+        "display_variant_image_first": false,
+        "disable_prepend": true,
+        "hide_variants": false,
+        "variant_image_filtering": "none",
+        "image_zoom": "none",
+        "arrows_color_scheme": "inverse",
+        "transparent_arrows": false,
+        "dots_color_scheme": "inverse",
+        "video_player": "play_btn",
+        "enable_video_looping": false,
+        "autoplay_videos_pause_btn": false,
+        "video_sound_btn": false,
+        "video_timeline": false,
+        "play_btn_color_scheme": "accent-1",
+        "sound_btn_color_scheme": "inverse",
+        "timeline_color": "accent-1",
+        "media_size": "small",
         "media_position": "left",
-        "gallery_layout": "stacked",
-        "media_size": "large",
-        "constrain_to_viewport": true,
+        "gallery_layout": "thumbnail_slider",
+        "desktop_thumbnails_count": 5,
+        "constrain_to_viewport": false,
         "media_fit": "contain",
-        "image_zoom": "lightbox",
+        "desktop_arrows_position": "hidden",
+        "mobile_media_corner_radius": 0,
+        "mobile_spacing_pixels": 0,
+        "mobile_arrows_position": "hidden",
+        "mobile_pagination": "hidden",
         "mobile_thumbnails": "show",
-        "hide_variants": true,
-        "enable_video_looping": true,
-        "padding_top": 24,
-        "padding_bottom": 12
+        "mobile_thumbnails_count": 5,
+        "mobile_scroll_padding_percentage": 0,
+        "mobile_scroll_padding_pixels": 14,
+        "enable_mobile_outher_spacing": false,
+        "mobile_slides_container_width": 100,
+        "mobile_slides_inner_width": 100,
+        "trust_badge_position": "top-right",
+        "trust_badge_size": "medium",
+        "mobile_padding_top": 0,
+        "mobile_padding_bottom": 16,
+        "desktop_padding_top": 36,
+        "desktop_padding_bottom": 36
       }
     },
-    "trust_bar": {
-      "type": "cod-trust-bar",
+    "multicolumn_8kwGyq": {
+      "type": "multicolumn",
       "blocks": {
-        "b1": {
-          "type": "item",
+        "column_WCbtFk": {
+          "type": "column",
           "settings": {
-            "icon": "cash",
-            "title": "Pago contra entrega",
-            "text": "Pagas en efectivo al recibir"
+            "image": "shopify://shop_images/Foto_01.jpg",
+            "muted_autoplay": true,
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
           }
         },
-        "b2": {
-          "type": "item",
+        "column_K4bX3m": {
+          "type": "column",
           "settings": {
-            "icon": "truck",
-            "title": "Envío gratis",
-            "text": "A toda Colombia"
+            "image": "shopify://shop_images/Foto_08.jpg",
+            "muted_autoplay": true,
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
           }
         },
-        "b3": {
-          "type": "item",
+        "column_bXmmfk": {
+          "type": "column",
           "settings": {
-            "icon": "return",
-            "title": "Cambios fáciles",
-            "text": "30 días para cambiar"
+            "image": "shopify://shop_images/Foto_05.jpg",
+            "muted_autoplay": true,
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
           }
         },
-        "b4": {
-          "type": "item",
+        "column_TMgkiz": {
+          "type": "column",
           "settings": {
-            "icon": "chat",
-            "title": "Te acompañamos",
-            "text": "Soporte real por WhatsApp"
+            "image": "shopify://shop_images/Foto_02.jpg",
+            "muted_autoplay": true,
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_4EtQdW": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Foto_03.jpg",
+            "muted_autoplay": true,
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_g9BdpU": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Foto_07.jpg",
+            "muted_autoplay": true,
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_mrqEmi": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Foto_04.jpg",
+            "muted_autoplay": true,
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
           }
         }
       },
       "block_order": [
-        "b1",
-        "b2",
-        "b3",
-        "b4"
+        "column_WCbtFk",
+        "column_K4bX3m",
+        "column_bXmmfk",
+        "column_TMgkiz",
+        "column_4EtQdW",
+        "column_g9BdpU",
+        "column_mrqEmi"
       ],
+      "name": "t:sections.multicolumn.presets.name",
       "settings": {
-        "heading": "",
-        "show_divider": true,
-        "color_scheme": "scheme-2",
-        "padding_top": 28,
-        "padding_bottom": 28
+        "display_id": false,
+        "visibility": "always-display",
+        "title": "¡A los clientes les encantan nuestros zapatos!",
+        "title_highlight_color": "#6d388b",
+        "heading_size": "h1",
+        "button_label": "+58302 Compraron nuetros Calzados",
+        "button_link": "",
+        "atc_button_label": "",
+        "atc_product": "",
+        "atc_skip_cart": false,
+        "color_scheme": "background-1",
+        "cards_color_scheme": "bg-overlay",
+        "cards_corner_radius": 20,
+        "stretch_cards": false,
+        "stretched_cards_content_alignment": "center",
+        "image_width": "full",
+        "image_ratio": "square",
+        "media_position": "top",
+        "column_alignment": "left",
+        "desktop_heading_size": 24,
+        "mobile_heading_size": 22,
+        "desktop_text_size": 16,
+        "mobile_text_size": 15,
+        "desktop_text_top_margin": 10,
+        "mobile_text_top_margin": 10,
+        "desktop_container_padding_y": 24,
+        "desktop_container_padding_x": 24,
+        "mobile_container_padding_y": 24,
+        "mobile_container_padding_x": 24,
+        "type": "slide",
+        "autoplay": false,
+        "autoplay_speed": 5,
+        "arrows_color_scheme": "inverse",
+        "transparent_arrows": true,
+        "dots_color_scheme": "inverse",
+        "desktop_full_page": false,
+        "columns_desktop": 3,
+        "slider_desktop": false,
+        "per_move_desktop": 1,
+        "desktop_spacing": 40,
+        "desktop_side_padding": 0,
+        "desktop_padding_calc": true,
+        "desktop_adaptive_height": false,
+        "desktop_dots_position": "under",
+        "desktop_arrows_position": "sides",
+        "columns_mobile": "1",
+        "slider_mobile": true,
+        "enable_mobile_preview": false,
+        "mobile_adaptive_height": false,
+        "mobile_dots_position": "under",
+        "mobile_arrows_position": "under",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "custom_colors_background": "#ffffff",
+        "custom_gradient_background": "",
+        "custom_colors_text": "#2e2a39",
+        "custom_colors_solid_button_background": "#dd1d1d",
+        "custom_colors_solid_button_text": "#ffffff",
+        "custom_colors_outline_button": "#dd1d1d",
+        "custom_cards_colors_background": "#f3f3f3",
+        "custom_cards_gradient_background": "",
+        "custom_cards_colors_heading": "#222126",
+        "custom_cards_colors_text": "#2e2a39"
       }
     },
-    "video": {
-      "type": "cod-video",
+    "related-products": {
+      "type": "related-products",
+      "disabled": true,
       "settings": {
-        "eyebrow": "Míralo en acción",
-        "heading": "Así se ve de verdad",
-        "subheading": "<p>El mismo producto que viste en TikTok, en video real y sin filtros.</p>",
-        "autoplay": true,
-        "loop": true,
-        "ratio": "9 / 16",
-        "max_width": 460,
-        "cta_label": "Pedir con pago contra entrega",
-        "cta_scroll_target": "#CodOrderForm",
-        "cta_pulse": false,
-        "color_scheme": "scheme-1",
-        "padding_top": 40,
-        "padding_bottom": 40
+        "display_id": false,
+        "title": "También te puede gustar",
+        "title_highlight_color": "#6d388b",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "color_scheme": "background-1",
+        "image_ratio": "adapt",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 24
       }
     },
-    "benefits": {
-      "type": "cod-benefits",
-      "blocks": {
-        "b1": {
-          "type": "item",
-          "settings": {
-            "icon": "cash",
-            "title": "Cero riesgo",
-            "text": "No pagas nada por adelantado. Revisas tu pedido y pagas al transportador."
-          }
-        },
-        "b2": {
-          "type": "item",
-          "settings": {
-            "icon": "truck",
-            "title": "Llega a tu puerta",
-            "text": "Enviamos a todo el país con las mejores transportadoras."
-          }
-        },
-        "b3": {
-          "type": "item",
-          "settings": {
-            "icon": "shield",
-            "title": "Calidad garantizada",
-            "text": "Si algo sale mal, te lo cambiamos sin peleas."
-          }
-        },
-        "b4": {
-          "type": "item",
-          "settings": {
-            "icon": "chat",
-            "title": "Atención real",
-            "text": "Un humano te responde por WhatsApp, no un robot."
-          }
-        }
-      },
-      "block_order": [
-        "b1",
-        "b2",
-        "b3",
-        "b4"
-      ],
+    "1629746450643786911": {
+      "type": "areviews-section",
+      "disabled": true,
       "settings": {
-        "eyebrow": "Por qué nos eligen",
-        "heading": "Lo que recibes con tu pedido",
-        "cta_label": "",
-        "color_scheme": "scheme-1",
-        "padding_top": 40,
-        "padding_bottom": 40
+        "hide_areviews_title_rating": false,
+        "areviews_theme_font": "inherit",
+        "areviews_stars_colors": "#f3c621",
+        "areviews_write_reviews_botton_color": "#373737"
       }
     },
-    "testimonials": {
-      "type": "cod-testimonials",
-      "blocks": {
-        "r1": {
-          "type": "review",
-          "settings": {
-            "rating": 5,
-            "name": "Carolina M.",
-            "city": "Bogotá",
-            "verified": true,
-            "text": "Llegó en 2 días y pagué al recibir. Súper cómodos, ya pedí otro par."
-          }
-        },
-        "r2": {
-          "type": "review",
-          "settings": {
-            "rating": 5,
-            "name": "Andrés G.",
-            "city": "Medellín",
-            "verified": true,
-            "text": "Desconfiaba porque lo vi en TikTok, pero me escribieron por WhatsApp y todo fue real."
-          }
-        },
-        "r3": {
-          "type": "review",
-          "settings": {
-            "rating": 5,
-            "name": "Daniela R.",
-            "city": "Cali",
-            "verified": true,
-            "text": "La talla quedó perfecta y la calidad es muy buena para el precio."
-          }
-        }
-      },
-      "block_order": [
-        "r1",
-        "r2",
-        "r3"
-      ],
+    "areviews_1763443681_137b16": {
+      "type": "apps",
       "settings": {
-        "eyebrow": "Lo que dicen nuestros clientes",
-        "heading": "Colombianos que ya lo recibieron",
-        "show_summary": true,
-        "rating_value": 4.8,
-        "summary_text": "4.8 de 5 · basado en reseñas verificadas",
-        "cta_label": "Quiero el mío",
-        "cta_scroll_target": "#CodOrderForm",
-        "cta_pulse": false,
-        "mobile_carousel": true,
-        "disclaimer": "Reseñas enviadas por clientes reales. Reemplázalas por las tuyas.",
-        "color_scheme": "scheme-2",
-        "padding_top": 40,
-        "padding_bottom": 40
+        "display_id": false,
+        "include_margins": true
       }
     },
-    "steps": {
-      "type": "cod-steps",
-      "blocks": {
-        "s1": {
-          "type": "step",
-          "settings": {
-            "title": "Llena el formulario",
-            "text": "Escribe tu nombre, celular y dirección. Nada más."
-          }
-        },
-        "s2": {
-          "type": "step",
-          "settings": {
-            "title": "Confirmamos por WhatsApp",
-            "text": "Te escribimos para validar tu pedido y despacharlo el mismo día."
-          }
-        },
-        "s3": {
-          "type": "step",
-          "settings": {
-            "title": "Recibes y pagas",
-            "text": "Revisas tu pedido en la puerta de tu casa y pagas en efectivo."
-          }
-        }
-      },
-      "block_order": [
-        "s1",
-        "s2",
-        "s3"
-      ],
+    "17634440465e43e362": {
+      "type": "apps",
       "settings": {
-        "eyebrow": "Así de fácil",
-        "heading": "Pedir es cuestión de 1 minuto",
-        "subheading": "<p>No necesitas tarjeta ni cuenta bancaria. Solo tus datos y listo.</p>",
-        "cta_label": "Quiero pedirlo",
-        "cta_scroll_target": "#CodOrderForm",
-        "cta_pulse": false,
-        "color_scheme": "scheme-1",
-        "padding_top": 40,
-        "padding_bottom": 40
-      }
-    },
-    "order_form": {
-      "type": "cod-order-form",
-      "settings": {
-        "anchor_id": "CodOrderForm",
-        "badge": "Pago contra entrega",
-        "heading": "Completa tus datos y recíbelo en casa",
-        "note": "Solo necesitamos tu nombre, celular y dirección. Pagas en efectivo al recibir.",
-        "show_summary": true,
-        "shipping_note": "Envío gratis a toda Colombia",
-        "show_trust": true,
-        "trust_1": "No pagas nada ahora",
-        "trust_2": "Confirmamos tu pedido por WhatsApp",
-        "trust_3": "Pagas en efectivo cuando lo recibes",
-        "color_scheme": "scheme-2",
-        "padding_top": 40,
-        "padding_bottom": 40,
-        "show_help": true,
-        "help_text": "¿Tienes alguna duda?",
-        "help_link_label": "Escríbenos",
-        "help_message": "Hola! Tengo una duda antes de hacer mi pedido"
-      }
-    },
-    "guarantee": {
-      "type": "cod-guarantee",
-      "settings": {
-        "days": 30,
-        "days_label": "días",
-        "heading": "Garantía de 30 días o te devolvemos tu dinero",
-        "text": "<p>Si el producto no es lo que esperabas, escríbenos por WhatsApp dentro de los 30 días siguientes a la entrega y coordinamos el cambio o la devolución. Sin letra pequeña.</p>",
-        "cta_label": "Pedir sin riesgo",
-        "cta_scroll_target": "#CodOrderForm",
-        "color_scheme": "scheme-1",
-        "padding_top": 32,
-        "padding_bottom": 32
-      }
-    },
-    "comparison": {
-      "type": "cod-comparison",
-      "blocks": {
-        "c1": {
-          "type": "row",
-          "settings": {
-            "feature": "Pagas al recibir",
-            "us_value": "",
-            "them_value": "Pago por adelantado"
-          }
-        },
-        "c2": {
-          "type": "row",
-          "settings": {
-            "feature": "Envío a toda Colombia",
-            "us_value": "Gratis",
-            "them_value": "Con costo"
-          }
-        },
-        "c3": {
-          "type": "row",
-          "settings": {
-            "feature": "Confirmación por WhatsApp",
-            "us_value": "",
-            "them_value": ""
-          }
-        },
-        "c4": {
-          "type": "row",
-          "settings": {
-            "feature": "Garantía de 30 días",
-            "us_value": "",
-            "them_value": ""
-          }
-        },
-        "c5": {
-          "type": "row",
-          "settings": {
-            "feature": "Tiempo de entrega",
-            "us_value": "1 a 4 días",
-            "them_value": "15 a 30 días"
-          }
-        }
-      },
-      "block_order": [
-        "c1",
-        "c2",
-        "c3",
-        "c4",
-        "c5"
-      ],
-      "settings": {
-        "eyebrow": "La diferencia",
-        "heading": "Por qué comprar aquí y no en cualquier página",
-        "feature_label": "Característica",
-        "us_label": "Nuestra tienda",
-        "them_label": "Otras páginas",
-        "cta_label": "Pedir ahora",
-        "cta_scroll_target": "#CodOrderForm",
-        "cta_pulse": false,
-        "color_scheme": "scheme-2",
-        "padding_top": 40,
-        "padding_bottom": 40
-      }
-    },
-    "faq": {
-      "type": "cod-faq",
-      "blocks": {
-        "f1": {
-          "type": "faq",
-          "settings": {
-            "open_by_default": true,
-            "question": "¿De verdad pago cuando lo recibo?",
-            "answer": "<p>Sí. No pedimos tarjeta ni transferencia. Haces el pedido, nosotros lo despachamos y pagas en efectivo al transportador cuando te lo entrega en tu casa.</p>"
-          }
-        },
-        "f2": {
-          "type": "faq",
-          "settings": {
-            "question": "¿Cuánto tarda en llegar?",
-            "answer": "<p>Entre 1 y 4 días hábiles según tu ciudad. Las ciudades principales suelen recibir en 24 a 48 horas.</p>"
-          }
-        },
-        "f3": {
-          "type": "faq",
-          "settings": {
-            "question": "¿Hacen envíos a todo el país?",
-            "answer": "<p>Sí, enviamos a toda Colombia: Bogotá, Medellín, Cali, Barranquilla, Bucaramanga, Cartagena, Pereira y municipios.</p>"
-          }
-        },
-        "f4": {
-          "type": "faq",
-          "settings": {
-            "question": "¿Y si no me queda la talla?",
-            "answer": "<p>Escríbenos por WhatsApp y coordinamos el cambio. Tienes 30 días desde que recibes el pedido.</p>"
-          }
-        },
-        "f5": {
-          "type": "faq",
-          "settings": {
-            "question": "¿Cómo sé que esto es real?",
-            "answer": "<p>Somos una tienda registrada, te confirmamos el pedido por WhatsApp con una persona real y solo pagas cuando el producto está en tus manos.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "f1",
-        "f2",
-        "f3",
-        "f4",
-        "f5"
-      ],
-      "settings": {
-        "eyebrow": "Resolvemos tus dudas",
-        "heading": "Preguntas frecuentes",
-        "cta_label": "Pedir con pago contra entrega",
-        "cta_scroll_target": "#CodOrderForm",
-        "color_scheme": "scheme-1",
-        "padding_top": 40,
-        "padding_bottom": 40
-      }
-    },
-    "sticky_bar": {
-      "type": "cod-sticky-buy-bar",
-      "settings": {
-        "watch_selector": ".product-form__submit",
-        "target_selector": "#CodOrderForm",
-        "trigger_add_to_cart": false,
-        "pulse": false
+        "display_id": false,
+        "include_margins": true
       }
     }
   },
   "order": [
+    "announcement_bar_QhNTwL",
     "main",
-    "trust_bar",
-    "video",
-    "benefits",
-    "testimonials",
-    "steps",
-    "order_form",
-    "guarantee",
-    "comparison",
-    "faq",
-    "sticky_bar"
+    "multicolumn_8kwGyq",
+    "related-products",
+    "1629746450643786911",
+    "areviews_1763443681_137b16",
+    "17634440465e43e362"
   ]
 }

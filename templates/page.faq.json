@@ -1,40 +1,89 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
-    "faq": {
-      "type": "cod-faq",
-      "blocks": {
-        "f1": { "type": "faq", "settings": { "open_by_default": true, "question": "¿Cómo funciona el pago contra entrega?", "answer": "<p>Haces tu pedido en la página, nosotros lo despachamos y pagas en efectivo al transportador cuando te lo entrega en tu casa. No pedimos tarjeta, transferencia ni anticipos.</p>" } },
-        "f2": { "type": "faq", "settings": { "question": "¿Cuánto tarda mi pedido?", "answer": "<p>Entre 1 y 4 días hábiles según tu ciudad. Las ciudades principales suelen recibir en 24 a 48 horas. Si pides antes de las 4 p. m., despachamos el mismo día.</p>" } },
-        "f3": { "type": "faq", "settings": { "question": "¿A qué ciudades envían?", "answer": "<p>Enviamos a toda Colombia: Bogotá, Medellín, Cali, Barranquilla, Cartagena, Bucaramanga, Pereira, Manizales, Cúcuta, Ibagué, Santa Marta, Villavicencio y municipios.</p>" } },
-        "f4": { "type": "faq", "settings": { "question": "¿Cuánto cuesta el envío?", "answer": "<p>El envío es gratis. El precio que ves en la página es el precio final que pagas al recibir.</p>" } },
-        "f5": { "type": "faq", "settings": { "question": "¿Puedo cambiar el producto?", "answer": "<p>Sí. Tienes 30 días desde la entrega para solicitar un cambio. Escríbenos por WhatsApp y coordinamos la recogida.</p>" } },
-        "f6": { "type": "faq", "settings": { "question": "¿Qué pasa si el producto llega dañado?", "answer": "<p>No lo recibas y avísanos de inmediato por WhatsApp. Te enviamos uno nuevo sin costo.</p>" } },
-        "f7": { "type": "faq", "settings": { "question": "¿Cómo confirmo mi pedido?", "answer": "<p>Después de llenar el formulario te escribimos por WhatsApp para confirmar tus datos y la fecha estimada de entrega.</p>" } },
-        "f8": { "type": "faq", "settings": { "question": "¿Puedo pedir más de un producto?", "answer": "<p>Claro. Escríbenos por WhatsApp y armamos tu pedido con varias unidades en un solo envío.</p>" } }
-      },
-      "block_order": ["f1", "f2", "f3", "f4", "f5", "f6", "f7", "f8"],
+    "main": {
+      "type": "main-page",
+      "disabled": true,
       "settings": {
-        "eyebrow": "Centro de ayuda",
-        "heading": "Preguntas frecuentes",
-        "subheading": "<p>Si tu duda no está aquí, escríbenos por WhatsApp y te respondemos de una.</p>",
-        "cta_label": "Ver productos",
-        "cta_link": "shopify://collections/all",
-        "color_scheme": "scheme-1",
-        "padding_top": 48,
-        "padding_bottom": 48
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
-    "trust_bar": {
-      "type": "cod-trust-bar",
+    "9c121ec4-42cd-4c8e-82a2-935e073db7d7": {
+      "type": "collapsible-content",
       "blocks": {
-        "b1": { "type": "item", "settings": { "icon": "cash", "title": "Pago contra entrega", "text": "Pagas en efectivo al recibir" } },
-        "b2": { "type": "item", "settings": { "icon": "truck", "title": "Envío gratis", "text": "A toda Colombia" } },
-        "b3": { "type": "item", "settings": { "icon": "return", "title": "Cambios fáciles", "text": "30 días para cambiar" } },
-        "b4": { "type": "item", "settings": { "icon": "chat", "title": "Te acompañamos", "text": "Soporte real por WhatsApp" } }
+        "template--19742927749415__9c121ec4-42cd-4c8e-82a2-935e073db7d7-16889993318614e07a-0": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Fila desplegable",
+            "icon": "check_box",
+            "filled_icon": false,
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "template--19742927749415__9c121ec4-42cd-4c8e-82a2-935e073db7d7-16889993318614e07a-1": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Fila desplegable",
+            "icon": "check_box",
+            "filled_icon": false,
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "template--19742927749415__9c121ec4-42cd-4c8e-82a2-935e073db7d7-16889993318614e07a-2": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Fila desplegable",
+            "icon": "check_box",
+            "filled_icon": false,
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "template--19742927749415__9c121ec4-42cd-4c8e-82a2-935e073db7d7-16889993318614e07a-3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Fila desplegable",
+            "icon": "check_box",
+            "filled_icon": false,
+            "row_content": "",
+            "page": ""
+          }
+        }
       },
-      "block_order": ["b1", "b2", "b3", "b4"],
-      "settings": { "heading": "", "show_divider": true, "color_scheme": "scheme-2", "padding_top": 32, "padding_bottom": 32 }
+      "block_order": [
+        "template--19742927749415__9c121ec4-42cd-4c8e-82a2-935e073db7d7-16889993318614e07a-0",
+        "template--19742927749415__9c121ec4-42cd-4c8e-82a2-935e073db7d7-16889993318614e07a-1",
+        "template--19742927749415__9c121ec4-42cd-4c8e-82a2-935e073db7d7-16889993318614e07a-2",
+        "template--19742927749415__9c121ec4-42cd-4c8e-82a2-935e073db7d7-16889993318614e07a-3"
+      ],
+      "settings": {
+        "caption": "Frequently asked questions",
+        "heading_size": "h0",
+        "heading_alignment": "center",
+        "layout": "none",
+        "color_scheme": "background-1",
+        "container_color_scheme": "background-2",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
-  "order": ["faq", "trust_bar"]
+  "order": [
+    "main",
+    "9c121ec4-42cd-4c8e-82a2-935e073db7d7"
+  ]
 }

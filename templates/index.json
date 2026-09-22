@@ -1,272 +1,694 @@
 {
   "sections": {
-    "hero": {
-      "type": "cod-hero",
+    "image_banner_nhYmEH": {
+      "type": "image-banner",
+      "disabled": true,
+      "name": "t:sections.image-banner.presets.name",
       "settings": {
-        "overlay_opacity": 55,
-        "min_height": 75,
-        "badge": "Pago contra entrega",
-        "eyebrow": "Envíos a todo el país",
-        "heading": "Pídelo hoy y paga cuando llegue a tu casa",
-        "subheading": "<p>Sin tarjeta, sin anticipos y sin riesgo. Recibes primero, pagas después.</p>",
-        "footnote": "Despachamos el mismo día · Entrega de 1 a 4 días hábiles",
-        "show_price": true,
-        "show_cod_badges": true,
-        "show_rating": true,
-        "rating_value": 4.8,
-        "rating_text": "4.8 de 5 · clientes satisfechos en todo el país",
-        "cta_label": "Ver la oferta",
-        "cta_sublabel": "Pago contra entrega · Envío gratis",
-        "cta_link": "shopify://collections/all",
-        "cta_pulse": false,
-        "color_scheme": "scheme-3",
-        "image": "shopify://shop_images/ChatGPT_Image_2_de_set._de_2026_14_02_27.png"
+        "display_id": false,
+        "visibility": "mobile-hidden",
+        "image_1_visibility": "always-display",
+        "image_2_visibility": "always-display",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "url": "",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "background-1",
+        "transparent_container_color": "white",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
       }
     },
-    "trust_bar": {
-      "type": "cod-trust-bar",
+    "image_banner_kqLHFP": {
+      "type": "image-banner",
+      "disabled": true,
+      "name": "Banner de imagem - MOBILE",
+      "settings": {
+        "display_id": false,
+        "visibility": "desktop-hidden",
+        "image_1_visibility": "always-display",
+        "image_2_visibility": "always-display",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "url": "shopify://collections/bags",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "background-1",
+        "transparent_container_color": "white",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "insta_stories_PC83NC": {
+      "type": "insta-stories",
       "blocks": {
-        "b1": {
-          "type": "item",
+        "user_JMk7f4": {
+          "type": "user",
           "settings": {
-            "icon": "cash",
-            "title": "Pago contra entrega",
-            "text": "Pagas en efectivo al recibir"
+            "username": "juan.sebastian_",
+            "verified": true,
+            "close_friends": false,
+            "story_1_media_fit": "contain",
+            "story_1_time_posted": "10m",
+            "story_1_bg": "#282828",
+            "story_2_media_fit": "contain",
+            "story_2_time_posted": "1h",
+            "story_2_bg": "#282828",
+            "story_3_media_fit": "contain",
+            "story_3_time_posted": "4h",
+            "story_3_bg": "#282828"
           }
         },
-        "b2": {
-          "type": "item",
+        "user_7pmwyL": {
+          "type": "user",
           "settings": {
-            "icon": "truck",
-            "title": "Envío gratis",
-            "text": "A toda Colombia"
+            "username": "daviidgarciaa_",
+            "verified": false,
+            "close_friends": false,
+            "story_1_media_fit": "contain",
+            "story_1_time_posted": "10m",
+            "story_1_bg": "#282828",
+            "story_2_media_fit": "contain",
+            "story_2_time_posted": "1h",
+            "story_2_bg": "#282828",
+            "story_3_media_fit": "contain",
+            "story_3_time_posted": "4h",
+            "story_3_bg": "#282828"
           }
         },
-        "b3": {
-          "type": "item",
+        "user_ApczMd": {
+          "type": "user",
           "settings": {
-            "icon": "return",
-            "title": "Cambios fáciles",
-            "text": "30 días para cambiar"
+            "username": "santiagogon_",
+            "verified": false,
+            "close_friends": false,
+            "story_1_media_fit": "contain",
+            "story_1_time_posted": "10m",
+            "story_1_bg": "#282828",
+            "story_2_media_fit": "contain",
+            "story_2_time_posted": "1h",
+            "story_2_bg": "#282828",
+            "story_3_media_fit": "contain",
+            "story_3_time_posted": "4h",
+            "story_3_bg": "#282828"
           }
         },
-        "b4": {
-          "type": "item",
+        "user_Cdqin7": {
+          "type": "user",
           "settings": {
-            "icon": "chat",
-            "title": "Te acompañamos",
-            "text": "Soporte real por WhatsApp"
+            "username": "carlossrodriguez2_",
+            "verified": false,
+            "close_friends": false,
+            "story_1_media_fit": "contain",
+            "story_1_time_posted": "10m",
+            "story_1_bg": "#282828",
+            "story_2_media_fit": "contain",
+            "story_2_time_posted": "1h",
+            "story_2_bg": "#282828",
+            "story_3_media_fit": "contain",
+            "story_3_time_posted": "4h",
+            "story_3_bg": "#282828"
+          }
+        },
+        "user_kYiUij": {
+          "type": "user",
+          "settings": {
+            "username": "josealejandroo",
+            "verified": true,
+            "close_friends": false,
+            "story_1_media_fit": "contain",
+            "story_1_time_posted": "10m",
+            "story_1_bg": "#282828",
+            "story_2_media_fit": "contain",
+            "story_2_time_posted": "1h",
+            "story_2_bg": "#282828",
+            "story_3_media_fit": "contain",
+            "story_3_time_posted": "4h",
+            "story_3_bg": "#282828"
           }
         }
       },
       "block_order": [
-        "b1",
-        "b2",
-        "b3",
-        "b4"
+        "user_JMk7f4",
+        "user_7pmwyL",
+        "user_ApczMd",
+        "user_Cdqin7",
+        "user_kYiUij"
       ],
+      "disabled": true,
+      "name": "Instagram stories",
       "settings": {
-        "heading": "",
-        "show_divider": true,
-        "color_scheme": "scheme-1",
-        "padding_top": 32,
-        "padding_bottom": 32
+        "display_id": false,
+        "visibility": "desktop-hidden",
+        "title": "Instagram",
+        "title_highlight_color": "#6d388b",
+        "heading_size": "h2",
+        "text": "Vea algunas de las reseñas de nuestros clientes de esta semana",
+        "color_scheme": "background-1",
+        "autoplay_speed": 10,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "custom_colors_background": "#ffffff",
+        "custom_gradient_background": "",
+        "custom_colors_text": "#121212"
       }
     },
-    "featured_collection": {
-      "type": "featured-collection",
+    "featured_product_UN4gFF": {
+      "type": "featured-product",
+      "blocks": {
+        "title_pnjtrY": {
+          "type": "title",
+          "settings": {
+            "text_size": "h1",
+            "title_alignment": "left",
+            "uppercase_title": false,
+            "margin_top": 0,
+            "margin_bottom": 15
+          }
+        },
+        "price_363apV": {
+          "type": "price",
+          "settings": {
+            "layout": "price_first",
+            "price_color": "accent-1",
+            "compare_price_color": "text",
+            "displayed_badge": "sale",
+            "icon_scale": 140,
+            "custom_badge_text": "[icon_1] SPECIAL OFFER",
+            "icon_1": "redeem",
+            "filled_icon_1": false,
+            "icon_2": "check_circle",
+            "filled_icon_2": false,
+            "margin_top": 15,
+            "margin_bottom": 15
+          }
+        },
+        "variant_picker_tMJBez": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_types": "pills, pills, pills",
+            "custom_labels": "",
+            "disable_prepend": false,
+            "swatches_size": "medium",
+            "swatches_border_radius": 100,
+            "swatches_custom_colors": "disabled",
+            "swatches_custom_colors_list": "#000000, #FFFFFF",
+            "breaks_style": "normal",
+            "breaks_headline": "COMPRA MÁS Y AHORRA",
+            "breaks_color_scheme": "accent-1",
+            "breaks_badges": "[empty], Most popular, [empty]",
+            "breaks_displayed_images": "variant_images",
+            "breaks_custom_images": "",
+            "breaks_image_width": 70,
+            "breaks_space_images": true,
+            "breaks_labels": "[name], [name], [name]",
+            "breaks_benefits": "[empty], Envío gratis, Envío gratis",
+            "breaks_captions": "Variant 1 caption, Variant 2 caption, Variant 3 caption",
+            "breaks_price_texts": "[price], [price], [price]",
+            "breaks_compare_price_texts": "[compare_price], [compare_price], [compare_price]",
+            "margin_top": 15,
+            "margin_bottom": 15
+          }
+        },
+        "quantity_selector_9PwRzU": {
+          "type": "quantity_selector",
+          "settings": {
+            "full_width_classic": false,
+            "atc_append": "none",
+            "atc_append_heights": "stretch-quantity",
+            "enable_quantity_discounts": false,
+            "style": "normal",
+            "headline": "COMPRA MÁS Y AHORRA",
+            "preselected": "option_1",
+            "update_prices": false,
+            "enable_variant_selectors": true,
+            "enable_variant_selectors_on_quantity_of_1": false,
+            "hide_pickers_overlay": true,
+            "pickers_label": "",
+            "image_width": 70,
+            "space_images": true,
+            "color_scheme": "accent-1",
+            "option_1_quantity": 1,
+            "option_1_badge": "",
+            "option_1_label": "Lleva [quantity]",
+            "option_1_benefit": "",
+            "option_1_caption": "Ahorras [amount_saved]",
+            "option_1_percentage_off_text": "0",
+            "option_1_fixed_amount_off": "0",
+            "option_1_price_text": "[price]",
+            "option_1_compare_price": "compare_price",
+            "option_1_compare_price_text": "[compare_price]",
+            "option_2_quantity": 2,
+            "option_2_badge": "",
+            "option_2_label": "Lleva [quantity]",
+            "option_2_benefit": "",
+            "option_2_caption": "Ahorras [amount_saved]",
+            "option_2_percentage_off_text": "0",
+            "option_2_fixed_amount_off": "0",
+            "option_2_price_text": "[price]",
+            "option_2_compare_price": "compare_price",
+            "option_2_compare_price_text": "[compare_price]",
+            "option_3_quantity": 3,
+            "option_3_badge": "",
+            "option_3_label": "Lleva [quantity]",
+            "option_3_benefit": "",
+            "option_3_caption": "Ahorras [amount_saved]",
+            "option_3_percentage_off_text": "0",
+            "option_3_fixed_amount_off": "0",
+            "option_3_price_text": "[price]",
+            "option_3_compare_price": "compare_price",
+            "option_3_compare_price_text": "[compare_price]",
+            "option_4_quantity": 4,
+            "option_4_badge": "",
+            "option_4_label": "Lleva [quantity]",
+            "option_4_benefit": "",
+            "option_4_caption": "Ahorras [amount_saved]",
+            "option_4_percentage_off_text": "0",
+            "option_4_fixed_amount_off": "0",
+            "option_4_price_text": "[price]",
+            "option_4_compare_price": "compare_price",
+            "option_4_compare_price_text": "[compare_price]",
+            "margin_top": 15,
+            "margin_bottom": 15
+          }
+        },
+        "buy_buttons_wfVDtr": {
+          "type": "buy_buttons",
+          "disabled": true,
+          "settings": {
+            "show_dynamic_checkout": false,
+            "skip_cart": false,
+            "uppercase_text": true,
+            "icon_scale": 120,
+            "icon_spacing": 10,
+            "display_price": false,
+            "enable_custom_color": false,
+            "custom_color": "#dd1d1d",
+            "enable_secondary_btn": false,
+            "secondary_btn_label": "Comprar ahora",
+            "secondary_btn_enable_custom_color": false,
+            "secondary_btn_custom_color": "#dd1d1d",
+            "margin_top": 24,
+            "margin_bottom": 24
+          }
+        }
+      },
+      "block_order": [
+        "title_pnjtrY",
+        "price_363apV",
+        "variant_picker_tMJBez",
+        "quantity_selector_9PwRzU",
+        "buy_buttons_wfVDtr"
+      ],
+      "name": "t:sections.featured-product.presets.name",
       "settings": {
-        "title": "Lo más pedido esta semana",
-        "heading_size": "h1",
-        "description": "",
+        "display_id": false,
+        "visibility": "always-display",
+        "product": "promocion-calzado-deportivo-flex-air",
+        "color_scheme": "background-1",
+        "secondary_background": false,
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "mobile_media_corner_radius": 12,
+        "full_media_width": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "featured_collection_9YeF4L": {
+      "type": "featured-collection",
+      "disabled": true,
+      "name": "t:sections.featured-collection.presets.name",
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "title": "<strong>Promociones</strong>",
+        "title_highlight_color": "#111111",
+        "heading_size": "h2",
+        "description": "<p><em>Una selección cuidada de formas, materiales y estilo.</em></p>",
         "show_description": false,
-        "collection": "all",
-        "products_to_show": 8,
-        "columns_desktop": 4,
-        "full_width": false,
+        "description_style": "body",
+        "color_scheme": "background-1",
+        "collection": "bags",
+        "products_to_show": 4,
+        "stretch_cards": false,
         "show_view_all": true,
-        "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "color_scheme": "scheme-1",
-        "image_ratio": "square",
-        "image_shape": "default",
-        "show_secondary_image": true,
+        "view_all_style": "link",
+        "cards_color_scheme": "background-1",
+        "image_ratio": "adapt",
+        "show_secondary_image": false,
+        "badges": "regular",
         "show_vendor": false,
         "show_rating": false,
+        "enable_quick_add": false,
+        "swatches_option_name": "",
+        "swatches_position": "top",
+        "swatches_desktop_size": 36,
+        "swatches_mobile_size": 24,
+        "type": "slide",
+        "autoplay": false,
+        "autoplay_speed": 5,
+        "arrows_color_scheme": "inverse",
+        "transparent_arrows": true,
+        "dots_color_scheme": "inverse",
+        "desktop_full_page": false,
+        "columns_desktop": 4,
+        "slider_desktop": false,
+        "per_move_desktop": 1,
+        "desktop_spacing": 40,
+        "desktop_side_padding": 0,
+        "desktop_padding_calc": true,
+        "desktop_adaptive_height": false,
+        "desktop_dots_position": "under",
+        "desktop_arrows_position": "sides",
+        "columns_mobile": "1",
+        "slider_mobile": true,
+        "enable_mobile_preview": false,
+        "mobile_adaptive_height": false,
+        "mobile_dots_position": "under",
+        "mobile_arrows_position": "under",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "custom_colors_background": "#ffffff",
+        "custom_gradient_background": "",
+        "custom_colors_text": "#2e2a39",
+        "custom_colors_solid_button_background": "#dd1d1d",
+        "custom_colors_solid_button_text": "#ffffff"
+      }
+    },
+    "image_banner_6r6exh": {
+      "type": "image-banner",
+      "disabled": true,
+      "name": "Banner de imagem - MOBILE",
+      "settings": {
+        "display_id": false,
+        "visibility": "desktop-hidden",
+        "image_1_visibility": "always-display",
+        "image_2_visibility": "always-display",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "url": "shopify://collections/jewelry",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "background-1",
+        "transparent_container_color": "white",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "image_banner_AB38Ee": {
+      "type": "image-banner",
+      "disabled": true,
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "display_id": false,
+        "visibility": "mobile-hidden",
+        "image_1_visibility": "always-display",
+        "image_2_visibility": "always-display",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "url": "",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "background-1",
+        "transparent_container_color": "white",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "image_banner_CTM7tC": {
+      "type": "image-banner",
+      "name": "Banner de imagem - MOBILE",
+      "settings": {
+        "display_id": false,
+        "visibility": "desktop-hidden",
+        "image_1_visibility": "always-display",
+        "image_2_visibility": "always-display",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "url": "shopify://collections/bags",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "background-1",
+        "transparent_container_color": "white",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "results_3UbCMx": {
+      "type": "results",
+      "blocks": {
+        "row_nxBrgm": {
+          "type": "row",
+          "settings": {
+            "percentage": 90,
+            "row_text": "<p>Notaron que este producto les cambió el día a día.</p>"
+          }
+        },
+        "row_zEKYnM": {
+          "type": "row",
+          "settings": {
+            "percentage": 90,
+            "row_text": "<p>Notaron que este producto les cambió el día a día.</p>"
+          }
+        },
+        "row_HhrBmF": {
+          "type": "row",
+          "settings": {
+            "percentage": 90,
+            "row_text": "<p>Notaron que este producto les cambió el día a día.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "row_nxBrgm",
+        "row_zEKYnM",
+        "row_HhrBmF"
+      ],
+      "disabled": true,
+      "name": "Results",
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "title": "Results",
+        "title_highlight_color": "#6d388b",
+        "heading_size": "h1",
+        "text": "<p>Cuenta los resultados de tus clientes y cómo tu producto les mejoró el día a día.</p>",
+        "video_muted_autoplay": true,
+        "color_scheme": "background-1",
+        "layout": "results_second",
+        "results_headline": "Results heading",
+        "results_title_highlight_color": "#6d388b",
+        "results_headline_size": "h2",
+        "results_text": "",
+        "results_headline_alignment": "left",
+        "caption": "<p>Describe los resultados o enlaza la prueba.</p>",
+        "button_label": "",
+        "link": "",
+        "button_style_secondary": false,
+        "atc_button_label": "",
+        "atc_product": "",
+        "atc_skip_cart": false,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "custom_colors_background": "#ffffff",
+        "custom_gradient_background": "",
+        "custom_colors_text": "#2e2a39",
+        "custom_colors_accent": "#dd1d1d",
+        "custom_colors_solid_button_background": "#dd1d1d",
+        "custom_colors_solid_button_text": "#ffffff",
+        "custom_colors_outline_button": "#dd1d1d"
+      }
+    },
+    "featured_collection_regDKa": {
+      "type": "featured-collection",
+      "disabled": true,
+      "name": "t:sections.featured-collection.presets.name",
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "title": "Productos con descuento SOLO HOY -50%",
+        "title_highlight_color": "#6d388b",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "color_scheme": "background-1",
+        "collection": "zapatos-con-descuento-hoy",
+        "products_to_show": 10,
+        "stretch_cards": true,
+        "show_view_all": true,
+        "view_all_style": "link",
+        "cards_color_scheme": "background-1",
+        "image_ratio": "adapt",
+        "show_secondary_image": false,
+        "badges": "regular",
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "swatches_option_name": "",
+        "swatches_position": "top",
+        "swatches_desktop_size": 36,
+        "swatches_mobile_size": 24,
+        "type": "slide",
+        "autoplay": false,
+        "autoplay_speed": 5,
+        "arrows_color_scheme": "inverse",
+        "transparent_arrows": true,
+        "dots_color_scheme": "inverse",
+        "desktop_full_page": false,
+        "columns_desktop": 4,
+        "slider_desktop": false,
+        "per_move_desktop": 1,
+        "desktop_spacing": 40,
+        "desktop_side_padding": 0,
+        "desktop_padding_calc": true,
+        "desktop_adaptive_height": false,
+        "desktop_dots_position": "under",
+        "desktop_arrows_position": "sides",
         "columns_mobile": "2",
-        "swipe_on_mobile": true,
-        "padding_top": 40,
-        "padding_bottom": 40
+        "slider_mobile": false,
+        "enable_mobile_preview": false,
+        "mobile_adaptive_height": true,
+        "mobile_dots_position": "under",
+        "mobile_arrows_position": "under",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "custom_colors_background": "#ffffff",
+        "custom_gradient_background": "",
+        "custom_colors_text": "#2e2a39",
+        "custom_colors_solid_button_background": "#dd1d1d",
+        "custom_colors_solid_button_text": "#ffffff"
       }
     },
-    "steps": {
-      "type": "cod-steps",
+    "image_banner_Atn3xc": {
+      "type": "image-banner",
+      "name": "Banner de imagem - MOBILE",
+      "settings": {
+        "display_id": false,
+        "visibility": "desktop-hidden",
+        "image_1_visibility": "always-display",
+        "image_2_visibility": "always-display",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "url": "shopify://collections/all-products",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "background-1",
+        "transparent_container_color": "white",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "collapsible_content_yrbF9a": {
+      "type": "collapsible-content",
       "blocks": {
-        "s1": {
-          "type": "step",
+        "collapsible_row_nVgNej": {
+          "type": "collapsible_row",
           "settings": {
-            "title": "Elige tu producto",
-            "text": "Escoge el modelo, el color y la talla que quieres."
+            "heading": "¿Cómo funciona el pago contra entrega?",
+            "icon": "check_box",
+            "filled_icon": true,
+            "row_content": "<p>Puedes hacer tu pedido en la tienda online y pagarlo en efectivo al recibirlo en tu casa. Así compras con total confianza, sin necesidad de tarjeta.</p>",
+            "page": ""
           }
         },
-        "s2": {
-          "type": "step",
+        "collapsible_row_mGC9Rn": {
+          "type": "collapsible_row",
           "settings": {
-            "title": "Llena tus datos",
-            "text": "Nombre, celular y dirección. Te confirmamos por WhatsApp."
+            "heading": "¿Cuánto tarda en llegar mi pedido?",
+            "icon": "check_box",
+            "filled_icon": true,
+            "row_content": "<p>El tiempo de entrega suele ser de <strong>2 a 5 días hábiles</strong> dependiendo de tu ciudad. Para zonas rurales, puede tardar un poco más.</p>",
+            "page": ""
           }
         },
-        "s3": {
-          "type": "step",
+        "collapsible_row_rKaHbQ": {
+          "type": "collapsible_row",
           "settings": {
-            "title": "Recibes y pagas",
-            "text": "Pagas en efectivo cuando el pedido llega a tu casa."
+            "heading": "¿Qué pasa si no estoy en casa al momento de la entrega?",
+            "icon": "check_box",
+            "filled_icon": true,
+            "row_content": "<p>La empresa de mensajería hace <strong>hasta 2 intentos de entrega</strong>. Si no logran entregarlo, tu pedido regresará a nuestra bodega y podrás reprogramarlo.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_q8dq4x": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "¿El envío tiene costo?",
+            "icon": "check_box",
+            "filled_icon": true,
+            "row_content": "<p>¡No! 🚚✨ El envío es <strong>100% gratis</strong> a todo el país.</p>",
+            "page": ""
           }
         }
       },
       "block_order": [
-        "s1",
-        "s2",
-        "s3"
+        "collapsible_row_nVgNej",
+        "collapsible_row_mGC9Rn",
+        "collapsible_row_rKaHbQ",
+        "collapsible_row_q8dq4x"
       ],
       "settings": {
-        "eyebrow": "Así de fácil",
-        "heading": "Comprar aquí toma 1 minuto",
-        "subheading": "<p>No necesitas tarjeta ni cuenta bancaria.</p>",
-        "cta_label": "Ver productos",
-        "cta_link": "shopify://collections/all",
-        "cta_pulse": false,
-        "color_scheme": "scheme-2",
-        "padding_top": 48,
-        "padding_bottom": 48
-      }
-    },
-    "testimonials": {
-      "type": "cod-testimonials",
-      "blocks": {
-        "r1": {
-          "type": "review",
-          "settings": {
-            "rating": 5,
-            "name": "Carolina M.",
-            "city": "Bogotá",
-            "verified": true,
-            "text": "Llegó en 2 días y pagué al recibir. Súper cómodos, ya pedí otro par."
-          }
-        },
-        "r2": {
-          "type": "review",
-          "settings": {
-            "rating": 5,
-            "name": "Andrés G.",
-            "city": "Medellín",
-            "verified": true,
-            "text": "Desconfiaba porque lo vi en TikTok, pero me escribieron por WhatsApp y todo fue real."
-          }
-        },
-        "r3": {
-          "type": "review",
-          "settings": {
-            "rating": 5,
-            "name": "Daniela R.",
-            "city": "Cali",
-            "verified": true,
-            "text": "La talla quedó perfecta y la calidad es muy buena para el precio."
-          }
-        }
-      },
-      "block_order": [
-        "r1",
-        "r2",
-        "r3"
-      ],
-      "settings": {
-        "eyebrow": "Clientes en todo el país",
-        "heading": "Opiniones reales",
-        "show_summary": true,
-        "rating_value": 4.8,
-        "summary_text": "4.8 de 5 · basado en reseñas verificadas",
-        "cta_label": "Ver la oferta",
-        "cta_link": "shopify://collections/all",
-        "cta_pulse": false,
-        "mobile_carousel": true,
-        "disclaimer": "Reseñas enviadas por clientes reales. Reemplázalas por las tuyas.",
-        "color_scheme": "scheme-1",
-        "padding_top": 48,
-        "padding_bottom": 48
-      }
-    },
-    "guarantee": {
-      "type": "cod-guarantee",
-      "settings": {
-        "days": 30,
-        "days_label": "días",
-        "heading": "Compra sin riesgo: 30 días de garantía",
-        "text": "<p>Si el producto no es lo que esperabas, escríbenos por WhatsApp dentro de los 30 días siguientes a la entrega y coordinamos el cambio o la devolución.</p>",
-        "cta_label": "Comprar ahora",
-        "cta_link": "shopify://collections/all",
-        "color_scheme": "scheme-2",
-        "padding_top": 40,
-        "padding_bottom": 40
-      }
-    },
-    "faq": {
-      "type": "cod-faq",
-      "blocks": {
-        "f1": {
-          "type": "faq",
-          "settings": {
-            "open_by_default": true,
-            "question": "¿De verdad pago cuando lo recibo?",
-            "answer": "<p>Sí. No pedimos tarjeta ni transferencia. Haces el pedido, nosotros lo despachamos y pagas en efectivo al transportador cuando te lo entrega en tu casa.</p>"
-          }
-        },
-        "f2": {
-          "type": "faq",
-          "settings": {
-            "question": "¿Cuánto tarda en llegar?",
-            "answer": "<p>Entre 1 y 4 días hábiles según tu ciudad. Las ciudades principales suelen recibir en 24 a 48 horas.</p>"
-          }
-        },
-        "f3": {
-          "type": "faq",
-          "settings": {
-            "question": "¿Hacen envíos a todo el país?",
-            "answer": "<p>Sí, enviamos a toda Colombia: Bogotá, Medellín, Cali, Barranquilla, Bucaramanga, Cartagena, Pereira y municipios.</p>"
-          }
-        },
-        "f4": {
-          "type": "faq",
-          "settings": {
-            "question": "¿Cómo sé que esto es real?",
-            "answer": "<p>Somos una tienda registrada, te confirmamos el pedido por WhatsApp con una persona real y solo pagas cuando el producto está en tus manos.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "f1",
-        "f2",
-        "f3",
-        "f4"
-      ],
-      "settings": {
-        "eyebrow": "Resolvemos tus dudas",
-        "heading": "Preguntas frecuentes",
-        "cta_label": "Ver productos",
-        "cta_link": "shopify://collections/all",
-        "color_scheme": "scheme-1",
-        "padding_top": 48,
-        "padding_bottom": 48
+        "display_id": false,
+        "visibility": "always-display",
+        "caption": "",
+        "title": "FAQ",
+        "title_highlight_color": "#6d388b",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "none",
+        "color_scheme": "background-1",
+        "container_color_scheme": "background-2",
+        "open_first_collapsible_row": false,
+        "video_muted_autoplay": true,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "row_heading_size": "medium",
+        "collapse_icon": "carret",
+        "display_top_border": true,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "custom_colors_background": "#ffffff",
+        "custom_gradient_background": "",
+        "custom_colors_text": "#2e2a39",
+        "custom_contaner_colors_background": "#ffffff",
+        "custom_container_gradient_background": "",
+        "custom_contaner_colors_text": "#2e2a39"
       }
     }
   },
   "order": [
-    "hero",
-    "trust_bar",
-    "featured_collection",
-    "steps",
-    "testimonials",
-    "guarantee",
-    "faq"
+    "image_banner_nhYmEH",
+    "image_banner_kqLHFP",
+    "insta_stories_PC83NC",
+    "featured_product_UN4gFF",
+    "featured_collection_9YeF4L",
+    "image_banner_6r6exh",
+    "image_banner_AB38Ee",
+    "image_banner_CTM7tC",
+    "results_3UbCMx",
+    "featured_collection_regDKa",
+    "image_banner_Atn3xc",
+    "collapsible_content_yrbF9a"
   ]
 }
