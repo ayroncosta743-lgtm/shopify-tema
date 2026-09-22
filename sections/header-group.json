@@ -18,8 +18,6 @@
           "type": "announcement",
           "settings": {
             "text": "🚚 ENVÍO GRATIS A TODA COLOMBIA · PAGAS AL RECIBIR",
-            "text_alignment": "center",
-            "color_scheme": "scheme-4",
             "link": ""
           }
         },
@@ -27,8 +25,6 @@
           "type": "announcement",
           "settings": {
             "text": "💵 PAGO CONTRA ENTREGA · SIN TARJETA NI ANTICIPOS",
-            "text_alignment": "center",
-            "color_scheme": "scheme-4",
             "link": ""
           }
         },
@@ -36,8 +32,6 @@
           "type": "announcement",
           "settings": {
             "text": "🔥 OFERTA POR TIEMPO LIMITADO · ÚLTIMAS UNIDADES",
-            "text_alignment": "center",
-            "color_scheme": "scheme-4",
             "link": ""
           }
         }
@@ -62,8 +56,8 @@
         "enable_language_selector": false,
         "mobile_logo_position": "center",
         "margin_bottom": 0,
-        "padding_top": 14,
-        "padding_bottom": 14
+        "padding_top": 16,
+        "padding_bottom": 16
       }
     }
   },
