@@ -1,0 +1,32 @@
+{% comment %}
+  Estrellas de calificación.
+
+  Acepta:
+  - rating: {Number} de 0 a 5 (admite medios, ej. 4.5).
+  - size: {String} 'lg' para estrellas grandes (opcional).
+  - label: {String} texto accesible (opcional).
+{% endcomment %}
+
+{%- liquid
+  assign value = rating | default: 5 | times: 1.0
+  assign full = value | floor
+  assign remainder = value | minus: full
+  assign has_half = false
+  if remainder >= 0.25 and remainder < 0.75
+    assign has_half = true
+  elsif remainder >= 0.75
+    assign full = full | plus: 1
+  endif
+  assign empty = 5 | minus: full
+  if has_half
+    assign empty = empty | minus: 1
+  endif
+-%}
+
+<span class="cod-stars{% if size == 'lg' %} cod-stars--lg{% endif %}" role="img" aria-label="{{ label | default: value | escape }}">
+  {%- for i in (1..full) -%}{% render 'cod-icon', icon: 'star' %}{%- endfor -%}
+  {%- if has_half -%}{% render 'cod-icon', icon: 'star-half' %}{%- endif -%}
+  {%- if empty > 0 -%}
+    {%- for i in (1..empty) -%}{% render 'cod-icon', icon: 'star-outline' %}{%- endfor -%}
+  {%- endif -%}
+</span>

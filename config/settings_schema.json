@@ -1,11 +1,190 @@
 [
   {
     "name": "theme_info",
-    "theme_name": "Dawn",
-    "theme_version": "16.0.0",
-    "theme_author": "Shopify",
+    "theme_name": "Dawn COD Colombia",
+    "theme_version": "1.0.0",
+    "theme_author": "Personalizado sobre Dawn 16.0.0",
     "theme_documentation_url": "https://help.shopify.com/manual/online-store/themes",
     "theme_support_url": "https://support.shopify.com/"
+  },
+  {
+    "name": "⚡ Conversión COD",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Modo pago contra entrega"
+      },
+      {
+        "type": "paragraph",
+        "content": "Activa el flujo de venta contra entrega: oculta el carrito, el checkout de Shopify y los botones de pago rápido para que el cliente solo pueda pedir por el formulario (EasySell) o por WhatsApp."
+      },
+      {
+        "type": "checkbox",
+        "id": "cod_mode_enabled",
+        "default": true,
+        "label": "Activar modo contra entrega"
+      },
+      {
+        "type": "checkbox",
+        "id": "cod_hide_cart_icon",
+        "default": true,
+        "label": "Ocultar ícono del carrito en el encabezado"
+      },
+      {
+        "type": "checkbox",
+        "id": "cod_hide_dynamic_checkout",
+        "default": true,
+        "label": "Ocultar botones de pago rápido (Shop Pay, PayPal…)"
+      },
+      {
+        "type": "checkbox",
+        "id": "cod_hide_search",
+        "default": true,
+        "label": "Ocultar la búsqueda en el encabezado",
+        "info": "Menos distracciones para tráfico frío de TikTok."
+      },
+      {
+        "type": "header",
+        "content": "Colores de conversión"
+      },
+      {
+        "type": "paragraph",
+        "content": "Usa un color primario fuerte (rojo/naranja) para los botones de acción y un verde para las señales de confianza."
+      },
+      {
+        "type": "color",
+        "id": "cod_primary",
+        "default": "#E5322D",
+        "label": "Color principal (botones y urgencia)"
+      },
+      {
+        "type": "color",
+        "id": "cod_primary_contrast",
+        "default": "#FFFFFF",
+        "label": "Texto sobre el color principal"
+      },
+      {
+        "type": "color",
+        "id": "cod_accent",
+        "default": "#FFD233",
+        "label": "Color de acento (resaltados)"
+      },
+      {
+        "type": "color",
+        "id": "cod_success",
+        "default": "#16A34A",
+        "label": "Color de confianza (contra entrega, garantías)"
+      },
+      {
+        "type": "header",
+        "content": "Botón flotante de WhatsApp"
+      },
+      {
+        "type": "checkbox",
+        "id": "cod_whatsapp_enabled",
+        "default": true,
+        "label": "Mostrar botón de WhatsApp"
+      },
+      {
+        "type": "text",
+        "id": "cod_whatsapp_number",
+        "default": "573001112233",
+        "label": "Número de WhatsApp",
+        "info": "Formato internacional sin + ni espacios. Colombia: 57 + número. Ej: 573001112233"
+      },
+      {
+        "type": "text",
+        "id": "cod_whatsapp_message",
+        "default": "Hola! Quiero hacer un pedido con pago contra entrega 😊",
+        "label": "Mensaje previo"
+      },
+      {
+        "type": "select",
+        "id": "cod_whatsapp_style",
+        "default": "icon",
+        "label": "Estilo del botón",
+        "options": [
+          {
+            "value": "icon",
+            "label": "Solo ícono"
+          },
+          {
+            "value": "full",
+            "label": "Ícono + texto"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "id": "cod_whatsapp_label",
+        "default": "Pedir por WhatsApp",
+        "label": "Texto del botón"
+      },
+      {
+        "type": "header",
+        "content": "Barra fija de compra (móvil)"
+      },
+      {
+        "type": "paragraph",
+        "content": "Aparece al hacer scroll en la página de producto y lleva al cliente de vuelta al botón de compra."
+      },
+      {
+        "type": "checkbox",
+        "id": "cod_sticky_enabled",
+        "default": true,
+        "label": "Activar barra fija de compra"
+      },
+      {
+        "type": "select",
+        "id": "cod_sticky_visibility",
+        "default": "mobile",
+        "label": "Mostrar en",
+        "options": [
+          {
+            "value": "mobile",
+            "label": "Solo móvil"
+          },
+          {
+            "value": "all",
+            "label": "Móvil y escritorio"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "id": "cod_sticky_label",
+        "default": "PEDIR AHORA",
+        "label": "Texto del botón"
+      },
+      {
+        "type": "header",
+        "content": "Anti-abandono"
+      },
+      {
+        "type": "checkbox",
+        "id": "cod_exit_intent_enabled",
+        "default": false,
+        "label": "Mostrar recordatorio al intentar salir (escritorio)"
+      },
+      {
+        "type": "text",
+        "id": "cod_exit_intent_title",
+        "default": "¡Espera! Aún puedes pedirlo",
+        "label": "Título"
+      },
+      {
+        "type": "text",
+        "id": "cod_exit_intent_text",
+        "default": "Pagas cuando lo recibes en tu casa. Sin tarjeta, sin anticipos.",
+        "label": "Texto"
+      },
+      {
+        "type": "text",
+        "id": "cod_exit_intent_cta",
+        "default": "Volver a mi pedido",
+        "label": "Texto del botón"
+      }
+    ]
   },
   {
     "name": "t:settings_schema.logo.name",

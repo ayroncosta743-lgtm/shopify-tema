@@ -1,0 +1,28 @@
+{% comment %}
+  Botón flotante de WhatsApp.
+  Se configura en Personalizar > Configuración > ⚡ Conversión COD.
+{% endcomment %}
+
+{%- if settings.cod_whatsapp_enabled and settings.cod_whatsapp_number != blank -%}
+  {%- liquid
+    assign wa_number = settings.cod_whatsapp_number | remove: ' ' | remove: '+' | remove: '-' | remove: '(' | remove: ')'
+    assign wa_message = settings.cod_whatsapp_message
+
+    if template.name == 'product' and product != blank
+      assign wa_message = wa_message | append: ' — ' | append: product.title | append: ' ' | append: shop.url | append: product.url
+    endif
+
+    assign wa_href = 'https://wa.me/' | append: wa_number | append: '?text=' | append: wa_message | url_param_escape
+  -%}
+
+  <a
+    class="cod-whatsapp{% if settings.cod_whatsapp_style == 'icon' %} cod-whatsapp--icon-only{% endif %}"
+    href="{{ wa_href }}"
+    target="_blank"
+    rel="noopener"
+    aria-label="{{ settings.cod_whatsapp_label | default: 'WhatsApp' | escape }}"
+  >
+    {% render 'cod-icon', icon: 'whatsapp' %}
+    <span class="cod-whatsapp__label">{{ settings.cod_whatsapp_label }}</span>
+  </a>
+{%- endif -%}

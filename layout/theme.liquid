@@ -58,6 +58,7 @@
     <script src="{{ 'details-modal.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'search-form.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'standard-actions-override.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'cod-theme.js' | asset_url }}" defer="defer"></script>
 
     {%- if settings.animations_reveal_on_scroll -%}
       <script src="{{ 'animations.js' | asset_url }}" defer="defer"></script>
@@ -244,6 +245,13 @@
         --variant-pills-shadow-horizontal-offset: {{ settings.variant_pills_shadow_horizontal_offset }}px;
         --variant-pills-shadow-vertical-offset: {{ settings.variant_pills_shadow_vertical_offset }}px;
         --variant-pills-shadow-blur-radius: {{ settings.variant_pills_shadow_blur }}px;
+
+        /* --- Conversión COD --- */
+        --cod-primary: {{ settings.cod_primary.red }}, {{ settings.cod_primary.green }}, {{ settings.cod_primary.blue }};
+        --cod-primary-contrast: {{ settings.cod_primary_contrast.red }}, {{ settings.cod_primary_contrast.green }}, {{ settings.cod_primary_contrast.blue }};
+        --cod-accent: {{ settings.cod_accent.red }}, {{ settings.cod_accent.green }}, {{ settings.cod_accent.blue }};
+        --cod-success: {{ settings.cod_success.red }}, {{ settings.cod_success.green }}, {{ settings.cod_success.blue }};
+        --cod-check-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
       }
 
       *,
@@ -279,6 +287,7 @@
     {% endstyle %}
 
     {{ 'base.css' | asset_url | stylesheet_tag }}
+    {{ 'cod-theme.css' | asset_url | stylesheet_tag }}
     <link rel="stylesheet" href="{{ 'component-cart-items.css' | asset_url }}" media="print" onload="this.media='all'">
 
     {%- if settings.cart_type == 'drawer' -%}
@@ -321,7 +330,7 @@
     </script>
   </head>
 
-  <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
+  <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}{% if settings.cod_mode_enabled %} cod-mode{% endif %}{% if settings.cod_mode_enabled and settings.cod_hide_cart_icon %} cod-hide-cart-icon{% endif %}{% if settings.cod_mode_enabled and settings.cod_hide_search %} cod-hide-search{% endif %}">
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
       {{ 'accessibility.skip_to_text' | t }}
     </a>
@@ -343,6 +352,9 @@
     </main>
 
     {% sections 'footer-group' %}
+
+    {%- render 'cod-whatsapp-button' -%}
+    {%- render 'cod-exit-intent' -%}
 
     <ul hidden>
       <li id="a11y-refresh-page-message">{{ 'accessibility.refresh_page' | t }}</li>

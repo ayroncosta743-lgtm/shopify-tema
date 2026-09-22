@@ -1,0 +1,152 @@
+{{ 'cod-theme.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign hero_product = section.settings.product
+  assign overlay = section.settings.overlay_opacity | divided_by: 100.0
+-%}
+
+<div class="cod-hero color-{{ section.settings.color_scheme }}" style="min-height: {{ section.settings.min_height }}vh;">
+  {%- if section.settings.video != blank -%}
+    <div class="cod-hero__media">
+      {{
+        section.settings.video
+        | video_tag: image_size: '1100x', autoplay: true, loop: true, muted: true, controls: false, playsinline: true
+      }}
+    </div>
+  {%- elsif section.settings.image != blank -%}
+    <div class="cod-hero__media">
+      {{
+        section.settings.image
+        | image_url: width: 1600
+        | image_tag: loading: 'eager', fetchpriority: 'high', sizes: '100vw', widths: '400,600,800,1000,1200,1600'
+      }}
+    </div>
+  {%- endif -%}
+
+  {%- if section.settings.image != blank or section.settings.video != blank -%}
+    <div class="cod-hero__overlay" style="opacity: {{ overlay }};"></div>
+  {%- endif -%}
+
+  <div class="cod-hero__content">
+    {%- if section.settings.badge != blank -%}
+      <span class="cod-badge cod-badge--accent">
+        {% render 'cod-icon', icon: 'fire' %}
+        {{ section.settings.badge }}
+      </span>
+    {%- endif -%}
+
+    {%- if section.settings.eyebrow != blank -%}
+      <p class="cod-eyebrow cod-mt-sm">{{ section.settings.eyebrow }}</p>
+    {%- endif -%}
+
+    {%- if section.settings.heading != blank -%}
+      <h1 class="cod-title">{{ section.settings.heading }}</h1>
+    {%- endif -%}
+
+    {%- if section.settings.subheading != blank -%}
+      <div class="cod-subtitle">{{ section.settings.subheading }}</div>
+    {%- endif -%}
+
+    {%- if section.settings.show_rating -%}
+      <div class="cod-rating-line" style="justify-content: center;">
+        {% render 'cod-stars', rating: section.settings.rating_value, size: 'lg' %}
+        <span>{{ section.settings.rating_text }}</span>
+      </div>
+    {%- endif -%}
+
+    {%- if hero_product != blank and section.settings.show_price -%}
+      <div class="cod-hero__price">
+        {%- if hero_product.compare_at_price > hero_product.price -%}
+          <span class="cod-hero__price-was">{{ hero_product.compare_at_price | money }}</span>
+        {%- endif -%}
+        <span class="cod-hero__price-now">{{ hero_product.price | money }}</span>
+        {%- if hero_product.compare_at_price > hero_product.price -%}
+          {%- assign saved = hero_product.compare_at_price | minus: hero_product.price -%}
+          <span class="cod-price-block__save">
+            {{ 'cod.product.you_save' | t: amount: saved | money }}
+          </span>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    {%- if section.settings.show_cod_badges -%}
+      <div class="cod-badge-row" style="justify-content: center;">
+        <span class="cod-badge cod-badge--cod">
+          {% render 'cod-icon', icon: 'cash' %}
+          {{ 'cod.badges.cash_on_delivery' | t }}
+        </span>
+        <span class="cod-badge cod-badge--cod">
+          {% render 'cod-icon', icon: 'truck' %}
+          {{ 'cod.badges.free_shipping' | t }}
+        </span>
+        <span class="cod-badge cod-badge--cod">
+          {% render 'cod-icon', icon: 'shield' %}
+          {{ 'cod.badges.guarantee' | t }}
+        </span>
+      </div>
+    {%- endif -%}
+
+    {%- if section.settings.cta_label != blank -%}
+      <div class="cod-hero__cta-wrap cod-mt">
+        <a
+          class="cod-btn{% if section.settings.cta_pulse %} cod-btn--pulse{% endif %}"
+          href="{{ section.settings.cta_link | default: hero_product.url | default: '#' }}"
+          {% if section.settings.cta_scroll_target != blank %}
+            data-cod-scroll="{{ section.settings.cta_scroll_target }}"
+          {% endif %}
+          data-cod-primary-cta
+        >
+          {{ section.settings.cta_label }}
+          {%- if section.settings.cta_sublabel != blank -%}
+            <span class="cod-btn__sub">{{ section.settings.cta_sublabel }}</span>
+          {%- endif -%}
+        </a>
+      </div>
+    {%- endif -%}
+
+    {%- if section.settings.footnote != blank -%}
+      <p class="cod-mt-sm" style="font-size: 1.3rem; opacity: 0.8;">{{ section.settings.footnote }}</p>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "COD · Portada",
+  "tag": "section",
+  "class": "cod-section-hero",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Portada pensada para tráfico frío de TikTok: video vertical o imagen, promesa clara, precio y un solo botón."
+    },
+    { "type": "video", "id": "video", "label": "Video de fondo", "info": "Ideal: el mismo creativo del anuncio de TikTok. Se reproduce sin sonido y en bucle." },
+    { "type": "image_picker", "id": "image", "label": "Imagen de fondo", "info": "Se usa si no hay video." },
+    { "type": "range", "id": "overlay_opacity", "min": 0, "max": 90, "step": 5, "default": 45, "unit": "%", "label": "Oscurecer fondo" },
+    { "type": "range", "id": "min_height", "min": 40, "max": 100, "step": 5, "default": 75, "unit": "vh", "label": "Alto de la portada" },
+    { "type": "header", "content": "Contenido" },
+    { "type": "text", "id": "badge", "default": "OFERTA POR TIEMPO LIMITADO", "label": "Etiqueta superior" },
+    { "type": "text", "id": "eyebrow", "default": "ENVÍO A TODA COLOMBIA", "label": "Línea pequeña" },
+    { "type": "text", "id": "heading", "default": "Pídelo hoy y paga cuando llegue a tu casa", "label": "Titular" },
+    { "type": "richtext", "id": "subheading", "default": "<p>Sin tarjeta, sin anticipos y sin riesgo. Recibes primero, pagas después.</p>", "label": "Subtítulo" },
+    { "type": "text", "id": "footnote", "default": "Despachamos el mismo día · Entrega de 1 a 4 días hábiles", "label": "Nota al pie" },
+    { "type": "header", "content": "Producto y precio" },
+    { "type": "product", "id": "product", "label": "Producto destacado" },
+    { "type": "checkbox", "id": "show_price", "default": true, "label": "Mostrar precio" },
+    { "type": "checkbox", "id": "show_cod_badges", "default": true, "label": "Mostrar insignias de contra entrega" },
+    { "type": "header", "content": "Calificación" },
+    { "type": "checkbox", "id": "show_rating", "default": true, "label": "Mostrar estrellas" },
+    { "type": "range", "id": "rating_value", "min": 3, "max": 5, "step": 0.1, "default": 4.8, "label": "Calificación" },
+    { "type": "text", "id": "rating_text", "default": "4.8/5 · +2.400 clientes felices", "label": "Texto junto a las estrellas" },
+    { "type": "header", "content": "Botón" },
+    { "type": "text", "id": "cta_label", "default": "LO QUIERO AHORA", "label": "Texto del botón" },
+    { "type": "text", "id": "cta_sublabel", "default": "Pago contra entrega · Envío gratis", "label": "Texto secundario del botón" },
+    { "type": "url", "id": "cta_link", "label": "Enlace del botón" },
+    { "type": "text", "id": "cta_scroll_target", "label": "O desplazar hasta (selector CSS)", "info": "Ej: #CodOrderForm para bajar al formulario de pedido." },
+    { "type": "checkbox", "id": "cta_pulse", "default": true, "label": "Animar el botón" },
+    { "type": "header", "content": "Estilo" },
+    { "type": "color_scheme", "id": "color_scheme", "default": "scheme-3", "label": "Esquema de color" }
+  ],
+  "presets": [{ "name": "COD · Portada" }]
+}
+{% endschema %}

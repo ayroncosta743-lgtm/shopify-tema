@@ -1,0 +1,89 @@
+{% comment %}
+  Recordatorio al intentar abandonar la página (solo escritorio, una vez por sesión).
+{% endcomment %}
+
+{%- if settings.cod_exit_intent_enabled -%}
+
+<dialog class="cod-exit-modal" id="CodExitIntent" aria-labelledby="CodExitIntentTitle">
+  <button class="cod-exit-modal__close" type="button" data-cod-exit-close aria-label="{{ 'cod.general.close' | t }}">
+    {% render 'cod-icon', icon: 'x' %}
+  </button>
+  <div class="cod-exit-modal__body">
+    <span class="cod-exit-modal__icon">{% render 'cod-icon', icon: 'cash' %}</span>
+    <h2 class="cod-exit-modal__title" id="CodExitIntentTitle">{{ settings.cod_exit_intent_title }}</h2>
+    <p class="cod-exit-modal__text">{{ settings.cod_exit_intent_text }}</p>
+    <button class="cod-btn cod-btn--pulse" type="button" data-cod-exit-close>
+      {{ settings.cod_exit_intent_cta }}
+    </button>
+  </div>
+</dialog>
+
+{%- style -%}
+  .cod-exit-modal {
+    border: 0;
+    padding: 0;
+    max-width: 44rem;
+    width: calc(100% - 3.2rem);
+    border-radius: var(--cod-radius-lg);
+    box-shadow: var(--cod-shadow-lg);
+    background: rgb(var(--color-background));
+    color: rgb(var(--color-foreground));
+    position: relative;
+  }
+  .cod-exit-modal::backdrop { background: rgba(0, 0, 0, 0.6); }
+  .cod-exit-modal__body { padding: 3.2rem 2.4rem 2.4rem; text-align: center; }
+  .cod-exit-modal__icon {
+    display: grid;
+    place-items: center;
+    width: 6.4rem;
+    height: 6.4rem;
+    margin: 0 auto 1.6rem;
+    border-radius: 50%;
+    background: rgba(var(--cod-success), 0.14);
+    color: rgb(var(--cod-success));
+  }
+  .cod-exit-modal__icon svg { width: 3.2rem; height: 3.2rem; }
+  .cod-exit-modal__title { margin: 0 0 1rem; font-size: 2.2rem; font-weight: 900; line-height: 1.15; }
+  .cod-exit-modal__text { margin: 0 0 2rem; font-size: 1.5rem; line-height: 1.5; opacity: 0.85; }
+  .cod-exit-modal__close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 3.6rem;
+    height: 3.6rem;
+    display: grid;
+    place-items: center;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(var(--color-foreground), 0.07);
+    color: inherit;
+    cursor: pointer;
+  }
+  .cod-exit-modal__close svg { width: 1.8rem; height: 1.8rem; }
+{%- endstyle -%}
+
+<script>
+  (function () {
+    var modal = document.getElementById('CodExitIntent');
+    if (!modal || typeof modal.showModal !== 'function') return;
+    if (window.matchMedia('(pointer: coarse)').matches) return;
+
+    var KEY = 'cod:exit-intent:shown';
+    try {
+      if (sessionStorage.getItem(KEY)) return;
+    } catch (e) {}
+
+    function open(event) {
+      if (event.clientY > 12) return;
+      document.removeEventListener('mouseout', open);
+      try { sessionStorage.setItem(KEY, '1'); } catch (e) {}
+      modal.showModal();
+    }
+
+    document.addEventListener('mouseout', open);
+    modal.querySelectorAll('[data-cod-exit-close]').forEach(function (btn) {
+      btn.addEventListener('click', function () { modal.close(); });
+    });
+  })();
+</script>
+{%- endif -%}

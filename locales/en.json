@@ -274,7 +274,6 @@
       "announcement": "Announcement",
       "announcement_bar": "Announcement bar"
     },
-
     "header": {
       "announcement": "Announcement",
       "menu": "Menu",
@@ -527,6 +526,55 @@
       "max_characters": "{{ max_chars }} characters max",
       "send_on": "YYYY-MM-DD",
       "send_on_label": "Send on (optional)"
+    }
+  },
+  "cod": {
+    "general": {
+      "close": "Close",
+      "loading": "Loading…"
+    },
+    "countdown": {
+      "days": "Days",
+      "hours": "Hours",
+      "minutes": "Min",
+      "seconds": "Sec"
+    },
+    "badges": {
+      "cash_on_delivery": "Cash on delivery",
+      "free_shipping": "Free shipping",
+      "guarantee": "30-day guarantee",
+      "verified_store": "Verified store",
+      "nationwide": "Nationwide shipping"
+    },
+    "product": {
+      "you_save": "You save {{ amount }}",
+      "pay_on_delivery": "Pay when it arrives at your door",
+      "no_card_needed": "No card · No prepayment",
+      "order_now": "ORDER NOW",
+      "select_options": "Choose your options above",
+      "delivery_estimate": "Delivered between {{ from_date }} and {{ to_date }}"
+    },
+    "reviews": {
+      "verified": "Verified purchase",
+      "based_on": "Based on {{ count }} reviews"
+    },
+    "compare": {
+      "yes": "Yes",
+      "no": "No"
+    },
+    "urgency": {
+      "units_left": {
+        "one": "Only {{ count }} left!",
+        "other": "Only {{ count }} left!"
+      },
+      "selling_fast": "Selling fast"
+    },
+    "order_form": {
+      "or": "or if you prefer",
+      "placeholder_html": "Add your cash-on-delivery app block here: Add block > Apps. This notice only appears in the editor."
+    },
+    "video": {
+      "placeholder": "Add a video in this section's settings."
     }
   }
 }

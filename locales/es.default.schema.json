@@ -1539,7 +1539,7 @@
       }
     },
     "main-list-collections": {
-      "name": "Página de lista de colecciones",
+      "name": "Lista de colecciones",
       "settings": {
         "title": {
           "label": "Título",
@@ -1599,7 +1599,7 @@
       "name": "Página"
     },
     "main-password-footer": {
-      "name": "Pie de página de contraseña"
+      "name": "Pie de contraseña"
     },
     "main-password-header": {
       "name": "Encabezado de contraseña",
@@ -2269,7 +2269,7 @@
       }
     },
     "newsletter": {
-      "name": "Suscriptor de correo electrónico",
+      "name": "Suscripción al correo",
       "settings": {
         "full_width": {
           "label": "Ancho completo"
@@ -2637,7 +2637,7 @@
       }
     },
     "email-signup-banner": {
-      "name": "Banner de suscripción de correo electrónico",
+      "name": "Banner de suscripción",
       "settings": {
         "paragraph": {
           "content": "Suscriptores agregados [perfiles de clientes](https://help.shopify.com/manual/customers/manage-customers)"
@@ -2773,7 +2773,7 @@
       }
     },
     "slideshow": {
-      "name": "Presentación de diapositivas",
+      "name": "Diapositivas",
       "settings": {
         "layout": {
           "label": "Diseño",

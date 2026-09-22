@@ -1,0 +1,125 @@
+{{ 'cod-theme.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign urgency_product = section.settings.product | default: product
+  assign variant = urgency_product.selected_or_first_available_variant
+
+  comment
+    Existencias reales del producto cuando Shopify las controla; si no,
+    usamos el valor manual configurado por el comerciante.
+  endcomment
+  assign stock_left = section.settings.manual_stock
+  if section.settings.stock_source == 'real' and variant.inventory_management == 'shopify'
+    assign stock_left = variant.inventory_quantity | at_least: 0
+  endif
+
+  assign stock_total = section.settings.stock_total | at_least: 1
+  assign percent_left = stock_left | times: 100 | divided_by: stock_total
+  if percent_left > 100
+    assign percent_left = 100
+  endif
+-%}
+
+<div class="cod-section color-{{ section.settings.color_scheme }}" style="padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px;">
+  <div class="cod-section__inner cod-section__inner--narrow">
+    {%- if section.settings.show_live_count -%}
+      <div class="cod-center" style="margin-bottom: 1.6rem;">
+        <cod-live-count
+          class="cod-livecount"
+          data-min="{{ section.settings.live_min }}"
+          data-max="{{ section.settings.live_max }}"
+          data-interval="{{ section.settings.live_interval }}"
+        >
+          <span class="cod-livecount__dot" aria-hidden="true"></span>
+          <span><strong data-count>0</strong> {{ section.settings.live_text }}</span>
+        </cod-live-count>
+      </div>
+    {%- endif -%}
+
+    {%- if section.settings.show_stock -%}
+      <cod-stock-bar class="cod-stock" data-percent="{{ percent_left }}">
+        <div class="cod-stock__head">
+          <span>{{ section.settings.stock_label }}</span>
+          <span>{{ 'cod.urgency.units_left' | t: count: stock_left }}</span>
+        </div>
+        <div class="cod-stock__bar">
+          <div class="cod-stock__fill"></div>
+        </div>
+        {%- if section.settings.stock_note != blank -%}
+          <p class="cod-stock__note">{{ section.settings.stock_note }}</p>
+        {%- endif -%}
+      </cod-stock-bar>
+    {%- endif -%}
+
+    {%- if section.settings.show_countdown -%}
+      <div class="cod-center cod-mt">
+        {%- if section.settings.countdown_text != blank -%}
+          <p style="font-weight: 800; font-size: 1.45rem; margin: 0 0 1rem;">{{ section.settings.countdown_text }}</p>
+        {%- endif -%}
+        {% render 'cod-countdown',
+          mode: section.settings.countdown_mode,
+          minutes: section.settings.countdown_minutes,
+          reset_hour: section.settings.countdown_reset_hour,
+          flat: true,
+          uid: section.id
+        %}
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "COD · Urgencia",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Configura estos indicadores con datos reales. Mostrar existencias o visitantes falsos es publicidad engañosa y puede ser sancionado por la SIC."
+    },
+    { "type": "product", "id": "product", "label": "Producto", "info": "En una página de producto se usa automáticamente el producto actual." },
+    { "type": "header", "content": "Existencias" },
+    { "type": "checkbox", "id": "show_stock", "default": true, "label": "Mostrar barra de existencias" },
+    {
+      "type": "select",
+      "id": "stock_source",
+      "default": "real",
+      "label": "Origen de los datos",
+      "options": [
+        { "value": "real", "label": "Inventario real de Shopify" },
+        { "value": "manual", "label": "Valor manual" }
+      ]
+    },
+    { "type": "range", "id": "manual_stock", "min": 1, "max": 200, "step": 1, "default": 12, "label": "Unidades disponibles (manual)" },
+    { "type": "range", "id": "stock_total", "min": 1, "max": 500, "step": 1, "default": 50, "label": "Existencias de referencia", "info": "Se usa para calcular el porcentaje de la barra." },
+    { "type": "text", "id": "stock_label", "default": "Disponibilidad", "label": "Etiqueta" },
+    { "type": "text", "id": "stock_note", "default": "Se está agotando: despachamos por orden de pedido.", "label": "Nota" },
+    { "type": "header", "content": "Visitantes en vivo" },
+    { "type": "checkbox", "id": "show_live_count", "default": true, "label": "Mostrar contador de visitantes" },
+    { "type": "text", "id": "live_text", "default": "personas están viendo esto ahora", "label": "Texto" },
+    { "type": "range", "id": "live_min", "min": 1, "max": 200, "step": 1, "default": 12, "label": "Mínimo" },
+    { "type": "range", "id": "live_max", "min": 2, "max": 400, "step": 1, "default": 47, "label": "Máximo" },
+    { "type": "range", "id": "live_interval", "min": 3, "max": 30, "step": 1, "default": 7, "unit": "s", "label": "Cada cuánto cambia" },
+    { "type": "header", "content": "Contador" },
+    { "type": "checkbox", "id": "show_countdown", "default": false, "label": "Mostrar cuenta regresiva" },
+    { "type": "text", "id": "countdown_text", "default": "Tu descuento se reserva por:", "label": "Texto" },
+    {
+      "type": "select",
+      "id": "countdown_mode",
+      "default": "evergreen",
+      "label": "Tipo",
+      "options": [
+        { "value": "evergreen", "label": "Por visitante (minutos)" },
+        { "value": "daily", "label": "Diaria" }
+      ]
+    },
+    { "type": "range", "id": "countdown_minutes", "min": 5, "max": 60, "step": 5, "default": 15, "unit": "min", "label": "Minutos por visitante" },
+    { "type": "range", "id": "countdown_reset_hour", "min": 0, "max": 23, "step": 1, "default": 0, "label": "Hora de reinicio diario" },
+    { "type": "header", "content": "Estilo" },
+    { "type": "color_scheme", "id": "color_scheme", "default": "scheme-1", "label": "Esquema de color" },
+    { "type": "range", "id": "padding_top", "min": 0, "max": 100, "step": 4, "default": 24, "unit": "px", "label": "Espaciado superior" },
+    { "type": "range", "id": "padding_bottom", "min": 0, "max": 100, "step": 4, "default": 24, "unit": "px", "label": "Espaciado inferior" }
+  ],
+  "presets": [{ "name": "COD · Urgencia" }]
+}
+{% endschema %}

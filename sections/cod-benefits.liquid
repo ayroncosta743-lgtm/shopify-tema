@@ -1,0 +1,102 @@
+{{ 'cod-theme.css' | asset_url | stylesheet_tag }}
+
+<div class="cod-section color-{{ section.settings.color_scheme }}" style="padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px;">
+  <div class="cod-section__inner">
+    <div class="cod-section__head">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="cod-eyebrow">{{ section.settings.eyebrow }}</p>
+      {%- endif -%}
+      {%- if section.settings.heading != blank -%}
+        <h2 class="cod-title cod-title--sm">{{ section.settings.heading }}</h2>
+      {%- endif -%}
+      {%- if section.settings.subheading != blank -%}
+        <div class="cod-subtitle">{{ section.settings.subheading }}</div>
+      {%- endif -%}
+    </div>
+
+    <div class="cod-benefits">
+      {%- for block in section.blocks -%}
+        <div class="cod-benefit" {{ block.shopify_attributes }}>
+          <span class="cod-benefit__icon">{% render 'cod-icon', icon: block.settings.icon %}</span>
+          <div>
+            <h3 class="cod-benefit__title">{{ block.settings.title }}</h3>
+            <p class="cod-benefit__text">{{ block.settings.text }}</p>
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+
+    {%- if section.settings.cta_label != blank -%}
+      <div class="cod-center cod-mt">
+        <a
+          class="cod-btn cod-btn--auto"
+          href="{{ section.settings.cta_link | default: '#' }}"
+          {% if section.settings.cta_scroll_target != blank %}data-cod-scroll="{{ section.settings.cta_scroll_target }}"{% endif %}
+        >{{ section.settings.cta_label }}</a>
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "COD · Beneficios",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "default": "POR QUÉ NOS ELIGEN", "label": "Línea pequeña" },
+    { "type": "text", "id": "heading", "default": "Lo que recibes con tu pedido", "label": "Título" },
+    { "type": "richtext", "id": "subheading", "label": "Subtítulo" },
+    { "type": "header", "content": "Botón" },
+    { "type": "text", "id": "cta_label", "label": "Texto del botón" },
+    { "type": "url", "id": "cta_link", "label": "Enlace" },
+    { "type": "text", "id": "cta_scroll_target", "label": "O desplazar hasta (selector CSS)" },
+    { "type": "header", "content": "Estilo" },
+    { "type": "color_scheme", "id": "color_scheme", "default": "scheme-1", "label": "Esquema de color" },
+    { "type": "range", "id": "padding_top", "min": 0, "max": 120, "step": 4, "default": 48, "unit": "px", "label": "Espaciado superior" },
+    { "type": "range", "id": "padding_bottom", "min": 0, "max": 120, "step": 4, "default": 48, "unit": "px", "label": "Espaciado inferior" }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Beneficio",
+      "settings": [
+        { "type": "text", "id": "title", "default": "Beneficio", "label": "Título" },
+        { "type": "text", "id": "text", "default": "Explica en una frase por qué le importa al cliente.", "label": "Texto" },
+        {
+          "type": "select",
+          "id": "icon",
+          "default": "check-circle",
+          "label": "Ícono",
+          "options": [
+            { "value": "check-circle", "label": "Check" },
+            { "value": "cash", "label": "Efectivo" },
+            { "value": "truck", "label": "Envío" },
+            { "value": "shield", "label": "Garantía" },
+            { "value": "return", "label": "Devolución" },
+            { "value": "heart", "label": "Corazón" },
+            { "value": "zap", "label": "Rayo" },
+            { "value": "star", "label": "Estrella" },
+            { "value": "gift", "label": "Regalo" },
+            { "value": "package", "label": "Paquete" },
+            { "value": "thumbs-up", "label": "Pulgar arriba" },
+            { "value": "clock", "label": "Reloj" },
+            { "value": "users", "label": "Clientes" },
+            { "value": "chat", "label": "Chat" }
+          ]
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "COD · Beneficios",
+      "blocks": [
+        { "type": "item", "settings": { "icon": "cash", "title": "Cero riesgo", "text": "No pagas nada por adelantado. Revisas tu pedido y pagas al transportador." } },
+        { "type": "item", "settings": { "icon": "truck", "title": "Llega a tu puerta", "text": "Enviamos a todo el país con las mejores transportadoras." } },
+        { "type": "item", "settings": { "icon": "shield", "title": "Calidad garantizada", "text": "Si algo sale mal, te lo cambiamos sin peleas." } },
+        { "type": "item", "settings": { "icon": "chat", "title": "Atención real", "text": "Un humano te responde por WhatsApp, no un robot." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

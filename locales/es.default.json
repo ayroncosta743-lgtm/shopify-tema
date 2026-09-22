@@ -28,7 +28,7 @@
         "tiktok": "TikTok"
       }
     },
-    "continue_shopping": "Seguir comprando",
+    "continue_shopping": "Seguir viendo",
     "pagination": {
       "label": "Paginación",
       "page": "Página {{ number }}",
@@ -36,7 +36,7 @@
       "previous": "Pagina anterior"
     },
     "search": {
-      "search": "Búsqueda",
+      "search": "Buscar",
       "reset": "Borrar término de búsqueda"
     },
     "cart": {
@@ -58,9 +58,9 @@
     }
   },
   "newsletter": {
-    "label": "Correo electrónico",
-    "success": "Gracias por suscribirte",
-    "button_label": "Suscribirse"
+    "label": "Tu correo",
+    "success": "¡Listo! Te avisamos de las próximas ofertas.",
+    "button_label": "Quiero mis ofertas"
   },
   "accessibility": {
     "skip_to_text": "Ir directamente al contenido",
@@ -107,9 +107,9 @@
   },
   "products": {
     "product": {
-      "add_to_cart": "Agregar al carrito",
+      "add_to_cart": "PEDIR AHORA · PAGO CONTRA ENTREGA",
       "description": "Descripción",
-      "on_sale": "Oferta",
+      "on_sale": "En oferta",
       "quantity": {
         "label": "Cantidad",
         "input_label": "Cantidad para {{ product }}",
@@ -131,7 +131,7 @@
         "unit_price": "Precio unitario"
       },
       "share": "Compartir este producto",
-      "sold_out": "Agotado",
+      "sold_out": "AGOTADO POR AHORA",
       "unavailable": "No disponible",
       "vendor": "Proveedor",
       "video_exit_message": "{{ title }} abre el video en pantalla completa en la misma ventana.",
@@ -159,15 +159,15 @@
       "nested_label": "{{ title }} para {{ parent_title }}",
       "view_full_details": "Ver todos los detalles",
       "shipping_policy_html": "Los <a href=\"{{ link }}\">gastos de envío</a> se calculan en la pantalla de pago.",
-      "choose_options": "Seleccionar opciones",
+      "choose_options": "Elegir opciones",
       "choose_product_options": "Elegir opciones para {{ product_name }}",
-      "value_unavailable": "{{ option_value }}: no disponible",
+      "value_unavailable": "{{ option_value }} — agotado",
       "variant_sold_out_or_unavailable": "Variante agotada o no disponible",
-      "inventory_in_stock": "En existencias",
-      "inventory_in_stock_show_count": "{{ quantity }} en existencias",
-      "inventory_low_stock": "Bajas existencias",
-      "inventory_low_stock_show_count": "Bajas existencias: quedan {{ quantity }}",
-      "inventory_out_of_stock": "Agotado",
+      "inventory_in_stock": "Disponible para envío inmediato",
+      "inventory_in_stock_show_count": "{{ quantity }} disponibles · despacho inmediato",
+      "inventory_low_stock": "¡Últimas unidades!",
+      "inventory_low_stock_show_count": "¡Solo quedan {{ quantity }} unidades!",
+      "inventory_out_of_stock": "Agotado temporalmente",
       "inventory_out_of_stock_continue_selling": "En existencias",
       "sku": "SKU",
       "volume_pricing": {
@@ -286,12 +286,12 @@
       }
     },
     "cart": {
-      "title": "Tu carrito",
+      "title": "Tu pedido",
       "caption": "Artículos en el carrito",
       "remove_title": "Eliminar {{ title }}",
       "note": "Instrucciones especiales del pedido",
-      "checkout": "Pagar pedido",
-      "empty": "Tu carrito esta vacío",
+      "checkout": "FINALIZAR PEDIDO",
+      "empty": "Aún no has agregado nada",
       "product_disclosure": "Aviso sobre el producto",
       "product_disclosures": "Avisos sobre el producto",
       "cart_error": "Hubo un error al actualizar tu carrito de compra. Inténtalo de nuevo.",
@@ -538,6 +538,55 @@
       "send_on_label": "Enviar el (opcional)",
       "expanded": "Formulario del destinatario de la tarjeta de regalo expandido",
       "collapsed": "Formulario del destinatario de tarjeta de regalo contraído"
+    }
+  },
+  "cod": {
+    "general": {
+      "close": "Cerrar",
+      "loading": "Cargando…"
+    },
+    "countdown": {
+      "days": "Días",
+      "hours": "Horas",
+      "minutes": "Min",
+      "seconds": "Seg"
+    },
+    "badges": {
+      "cash_on_delivery": "Pago contra entrega",
+      "free_shipping": "Envío gratis",
+      "guarantee": "Garantía 30 días",
+      "verified_store": "Tienda verificada",
+      "nationwide": "Envíos a toda Colombia"
+    },
+    "product": {
+      "you_save": "Ahorras {{ amount }}",
+      "pay_on_delivery": "Pagas cuando lo recibes en tu casa",
+      "no_card_needed": "Sin tarjeta · Sin anticipos",
+      "order_now": "PEDIR AHORA",
+      "select_options": "Elige tus opciones arriba",
+      "delivery_estimate": "Recíbelo entre el {{ from_date }} y el {{ to_date }}"
+    },
+    "reviews": {
+      "verified": "Compra verificada",
+      "based_on": "Basado en {{ count }} reseñas"
+    },
+    "compare": {
+      "yes": "Sí",
+      "no": "No"
+    },
+    "urgency": {
+      "units_left": {
+        "one": "¡Queda {{ count }} unidad!",
+        "other": "¡Quedan {{ count }} unidades!"
+      },
+      "selling_fast": "Se está agotando rápido"
+    },
+    "order_form": {
+      "or": "o si prefieres",
+      "placeholder_html": "Agrega aquí el bloque de tu app de pago contra entrega: Agregar bloque > Apps > EasySell COD Form. Este aviso solo se ve en el editor."
+    },
+    "video": {
+      "placeholder": "Agrega un video en la configuración de esta sección."
     }
   }
 }

@@ -1,0 +1,207 @@
+{{ 'cod-theme.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign form_product = section.settings.product | default: product
+  assign app_blocks = section.blocks | where: 'type', '@app'
+-%}
+
+<div class="cod-section color-{{ section.settings.color_scheme }}" style="padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px;">
+  <div class="cod-section__inner cod-section__inner--narrow">
+    <div class="cod-form-shell" id="{{ section.settings.anchor_id | default: 'CodOrderForm' }}">
+      <div class="cod-form-shell__head">
+        {%- if section.settings.badge != blank -%}
+          <span class="cod-badge cod-badge--cod">
+            {% render 'cod-icon', icon: 'cash' %}
+            {{ section.settings.badge }}
+          </span>
+        {%- endif -%}
+
+        {%- if section.settings.heading != blank -%}
+          <h2 class="cod-form-shell__title cod-mt-sm">{{ section.settings.heading }}</h2>
+        {%- endif -%}
+
+        {%- if section.settings.note != blank -%}
+          <p class="cod-form-shell__note">{{ section.settings.note }}</p>
+        {%- endif -%}
+      </div>
+
+      {%- comment -%}
+        Resumen del producto: recuerda al cliente qué está pidiendo mientras llena los datos.
+      {%- endcomment -%}
+      {%- if section.settings.show_summary and form_product != blank -%}
+        <div class="cod-order-summary">
+          {%- if form_product.featured_image -%}
+            {{
+              form_product.featured_image
+              | image_url: width: 200
+              | image_tag: class: 'cod-order-summary__img', loading: 'lazy', alt: form_product.title
+            }}
+          {%- endif -%}
+          <div class="cod-order-summary__body">
+            <span class="cod-order-summary__title">{{ form_product.title }}</span>
+            <span class="cod-order-summary__price">
+              {{ form_product.price | money }}
+              {%- if form_product.compare_at_price > form_product.price -%}
+                <s class="cod-order-summary__compare">{{ form_product.compare_at_price | money }}</s>
+              {%- endif -%}
+            </span>
+            {%- if section.settings.shipping_note != blank -%}
+              <span class="cod-order-summary__ship">
+                {% render 'cod-icon', icon: 'truck' %}
+                {{ section.settings.shipping_note }}
+              </span>
+            {%- endif -%}
+          </div>
+        </div>
+      {%- endif -%}
+
+      {%- comment -%}
+        Aquí se inserta el bloque de la app de contra entrega (EasySell).
+        En el editor: Agregar bloque > Apps > EasySell COD Form.
+      {%- endcomment -%}
+      {%- if app_blocks.size > 0 -%}
+        {%- for block in app_blocks -%}
+          <div class="cod-form-shell__app" {{ block.shopify_attributes }}>
+            {% render block %}
+          </div>
+        {%- endfor -%}
+      {%- elsif section.settings.custom_code != blank -%}
+        <div class="cod-form-shell__app">{{ section.settings.custom_code }}</div>
+      {%- elsif request.design_mode -%}
+        <div class="cod-form-shell__placeholder">
+          {{ 'cod.order_form.placeholder_html' | t }}
+        </div>
+      {%- endif -%}
+
+      {%- if section.settings.show_trust -%}
+        <ul class="cod-checklist cod-form-shell__trust">
+          {%- if section.settings.trust_1 != blank -%}<li>{{ section.settings.trust_1 }}</li>{%- endif -%}
+          {%- if section.settings.trust_2 != blank -%}<li>{{ section.settings.trust_2 }}</li>{%- endif -%}
+          {%- if section.settings.trust_3 != blank -%}<li>{{ section.settings.trust_3 }}</li>{%- endif -%}
+        </ul>
+      {%- endif -%}
+
+      {%- if section.settings.show_whatsapp_fallback and settings.cod_whatsapp_number != blank -%}
+        {%- liquid
+          assign wa_number = settings.cod_whatsapp_number | remove: ' ' | remove: '+' | remove: '-'
+          assign wa_text = section.settings.whatsapp_message
+          if form_product != blank
+            assign wa_text = wa_text | append: ' — ' | append: form_product.title
+          endif
+          assign wa_href = 'https://wa.me/' | append: wa_number | append: '?text=' | append: wa_text | url_param_escape
+        -%}
+        <p class="cod-form-shell__or">{{ 'cod.order_form.or' | t }}</p>
+        <a class="cod-btn cod-btn--whatsapp" href="{{ wa_href }}" target="_blank" rel="noopener">
+          {% render 'cod-icon', icon: 'whatsapp' %}
+          {{ section.settings.whatsapp_label }}
+        </a>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{%- style -%}
+  #shopify-section-{{ section.id }} .cod-order-summary {
+    display: flex;
+    gap: 1.4rem;
+    align-items: center;
+    padding: 1.4rem;
+    margin-bottom: 1.8rem;
+    border-radius: var(--cod-radius);
+    background: rgba(var(--color-foreground), 0.05);
+  }
+
+  #shopify-section-{{ section.id }} .cod-order-summary__img {
+    width: 7rem;
+    height: 7rem;
+    object-fit: cover;
+    border-radius: var(--cod-radius);
+    flex: 0 0 auto;
+  }
+
+  #shopify-section-{{ section.id }} .cod-order-summary__body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    min-width: 0;
+  }
+
+  #shopify-section-{{ section.id }} .cod-order-summary__title { font-weight: 800; font-size: 1.45rem; }
+
+  #shopify-section-{{ section.id }} .cod-order-summary__price {
+    font-size: 1.9rem;
+    font-weight: 900;
+    color: rgb(var(--cod-primary));
+    display: flex;
+    align-items: baseline;
+    gap: 0.8rem;
+  }
+
+  #shopify-section-{{ section.id }} .cod-order-summary__compare {
+    font-size: 1.3rem;
+    font-weight: 600;
+    opacity: 0.5;
+    color: rgb(var(--color-foreground));
+  }
+
+  #shopify-section-{{ section.id }} .cod-order-summary__ship {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: rgb(var(--cod-success));
+  }
+
+  #shopify-section-{{ section.id }} .cod-order-summary__ship svg { width: 1.6rem; height: 1.6rem; }
+
+  #shopify-section-{{ section.id }} .cod-form-shell__trust { margin: 1.8rem 0 0; font-size: 1.35rem; }
+
+  #shopify-section-{{ section.id }} .cod-form-shell__or {
+    margin: 1.6rem 0 1rem;
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 700;
+    opacity: 0.6;
+    text-transform: uppercase;
+  }
+{%- endstyle -%}
+
+{% schema %}
+{
+  "name": "COD · Formulario",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Agrega aquí el bloque de tu app de contra entrega (Agregar bloque > Apps > EasySell COD Form). El resto de la sección le da marco, confianza y respaldo por WhatsApp."
+    },
+    { "type": "text", "id": "anchor_id", "default": "CodOrderForm", "label": "ID del ancla", "info": "Úsalo en los botones de las otras secciones: #CodOrderForm" },
+    { "type": "header", "content": "Encabezado" },
+    { "type": "text", "id": "badge", "default": "PAGO CONTRA ENTREGA", "label": "Etiqueta" },
+    { "type": "text", "id": "heading", "default": "Completa tus datos y recíbelo en casa", "label": "Título" },
+    { "type": "text", "id": "note", "default": "Solo necesitamos tu nombre, celular y dirección. Pagas en efectivo al recibir.", "label": "Texto de apoyo" },
+    { "type": "header", "content": "Resumen del producto" },
+    { "type": "checkbox", "id": "show_summary", "default": true, "label": "Mostrar resumen" },
+    { "type": "product", "id": "product", "label": "Producto", "info": "En una página de producto se usa automáticamente el producto actual." },
+    { "type": "text", "id": "shipping_note", "default": "Envío gratis a toda Colombia", "label": "Nota de envío" },
+    { "type": "header", "content": "Refuerzo de confianza" },
+    { "type": "checkbox", "id": "show_trust", "default": true, "label": "Mostrar lista de confianza" },
+    { "type": "text", "id": "trust_1", "default": "No pagas nada ahora", "label": "Punto 1" },
+    { "type": "text", "id": "trust_2", "default": "Confirmamos tu pedido por WhatsApp", "label": "Punto 2" },
+    { "type": "text", "id": "trust_3", "default": "Pagas en efectivo cuando lo recibes", "label": "Punto 3" },
+    { "type": "header", "content": "Respaldo por WhatsApp" },
+    { "type": "checkbox", "id": "show_whatsapp_fallback", "default": true, "label": "Mostrar botón de WhatsApp" },
+    { "type": "text", "id": "whatsapp_label", "default": "Prefiero pedir por WhatsApp", "label": "Texto del botón" },
+    { "type": "text", "id": "whatsapp_message", "default": "Hola! Quiero pedir con pago contra entrega", "label": "Mensaje previo" },
+    { "type": "header", "content": "Alternativa manual" },
+    { "type": "liquid", "id": "custom_code", "label": "Código personalizado", "info": "Solo si tu app no ofrece bloque. Pega aquí su código de inserción." },
+    { "type": "header", "content": "Estilo" },
+    { "type": "color_scheme", "id": "color_scheme", "default": "scheme-1", "label": "Esquema de color" },
+    { "type": "range", "id": "padding_top", "min": 0, "max": 120, "step": 4, "default": 40, "unit": "px", "label": "Espaciado superior" },
+    { "type": "range", "id": "padding_bottom", "min": 0, "max": 120, "step": 4, "default": 40, "unit": "px", "label": "Espaciado inferior" }
+  ],
+  "blocks": [{ "type": "@app" }],
+  "presets": [{ "name": "COD · Formulario" }]
+}
+{% endschema %}
