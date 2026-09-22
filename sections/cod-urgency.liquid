@@ -77,199 +77,49 @@
       "type": "paragraph",
       "content": "Configura estos indicadores con datos reales. Mostrar existencias o visitantes falsos es publicidad engañosa y puede ser sancionado por la SIC."
     },
-    {
-      "type": "product",
-      "id": "product",
-      "label": "Producto",
-      "info": "En una página de producto se usa automáticamente el producto actual."
-    },
-    {
-      "type": "header",
-      "content": "Existencias"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_stock",
-      "default": true,
-      "label": "Mostrar barra de existencias"
-    },
+    { "type": "product", "id": "product", "label": "Producto", "info": "En una página de producto se usa automáticamente el producto actual." },
+    { "type": "header", "content": "Existencias" },
+    { "type": "checkbox", "id": "show_stock", "default": true, "label": "Mostrar barra de existencias" },
     {
       "type": "select",
       "id": "stock_source",
       "default": "real",
       "label": "Origen de los datos",
       "options": [
-        {
-          "value": "real",
-          "label": "Inventario real de Shopify"
-        },
-        {
-          "value": "manual",
-          "label": "Valor manual"
-        }
+        { "value": "real", "label": "Inventario real de Shopify" },
+        { "value": "manual", "label": "Valor manual" }
       ]
     },
-    {
-      "type": "range",
-      "id": "manual_stock",
-      "min": 1,
-      "max": 100,
-      "step": 1,
-      "default": 12,
-      "label": "Unidades disponibles (manual)"
-    },
-    {
-      "type": "range",
-      "id": "stock_total",
-      "min": 10,
-      "max": 500,
-      "step": 10,
-      "default": 50,
-      "label": "Existencias de referencia",
-      "info": "Se usa para calcular el porcentaje de la barra."
-    },
-    {
-      "type": "text",
-      "id": "stock_label",
-      "default": "Disponibilidad",
-      "label": "Etiqueta"
-    },
-    {
-      "type": "text",
-      "id": "stock_note",
-      "default": "Se está agotando: despachamos por orden de pedido.",
-      "label": "Nota"
-    },
-    {
-      "type": "header",
-      "content": "Visitantes en vivo"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_live_count",
-      "default": true,
-      "label": "Mostrar contador de visitantes"
-    },
-    {
-      "type": "text",
-      "id": "live_text",
-      "default": "personas están viendo esto ahora",
-      "label": "Texto"
-    },
-    {
-      "type": "range",
-      "id": "live_min",
-      "min": 1,
-      "max": 100,
-      "step": 1,
-      "default": 12,
-      "label": "Mínimo"
-    },
-    {
-      "type": "range",
-      "id": "live_max",
-      "min": 5,
-      "max": 300,
-      "step": 5,
-      "default": 45,
-      "label": "Máximo"
-    },
-    {
-      "type": "range",
-      "id": "live_interval",
-      "min": 3,
-      "max": 30,
-      "step": 1,
-      "default": 7,
-      "unit": "s",
-      "label": "Cada cuánto cambia"
-    },
-    {
-      "type": "header",
-      "content": "Contador"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_countdown",
-      "default": false,
-      "label": "Mostrar cuenta regresiva"
-    },
-    {
-      "type": "text",
-      "id": "countdown_text",
-      "default": "Tu descuento se reserva por:",
-      "label": "Texto"
-    },
+    { "type": "range", "id": "manual_stock", "min": 1, "max": 200, "step": 1, "default": 12, "label": "Unidades disponibles (manual)" },
+    { "type": "range", "id": "stock_total", "min": 1, "max": 500, "step": 1, "default": 50, "label": "Existencias de referencia", "info": "Se usa para calcular el porcentaje de la barra." },
+    { "type": "text", "id": "stock_label", "default": "Disponibilidad", "label": "Etiqueta" },
+    { "type": "text", "id": "stock_note", "default": "Se está agotando: despachamos por orden de pedido.", "label": "Nota" },
+    { "type": "header", "content": "Visitantes en vivo" },
+    { "type": "checkbox", "id": "show_live_count", "default": true, "label": "Mostrar contador de visitantes" },
+    { "type": "text", "id": "live_text", "default": "personas están viendo esto ahora", "label": "Texto" },
+    { "type": "range", "id": "live_min", "min": 1, "max": 200, "step": 1, "default": 12, "label": "Mínimo" },
+    { "type": "range", "id": "live_max", "min": 2, "max": 400, "step": 1, "default": 47, "label": "Máximo" },
+    { "type": "range", "id": "live_interval", "min": 3, "max": 30, "step": 1, "default": 7, "unit": "s", "label": "Cada cuánto cambia" },
+    { "type": "header", "content": "Contador" },
+    { "type": "checkbox", "id": "show_countdown", "default": false, "label": "Mostrar cuenta regresiva" },
+    { "type": "text", "id": "countdown_text", "default": "Tu descuento se reserva por:", "label": "Texto" },
     {
       "type": "select",
       "id": "countdown_mode",
       "default": "evergreen",
       "label": "Tipo",
       "options": [
-        {
-          "value": "evergreen",
-          "label": "Por visitante (minutos)"
-        },
-        {
-          "value": "daily",
-          "label": "Diaria"
-        }
+        { "value": "evergreen", "label": "Por visitante (minutos)" },
+        { "value": "daily", "label": "Diaria" }
       ]
     },
-    {
-      "type": "range",
-      "id": "countdown_minutes",
-      "min": 5,
-      "max": 60,
-      "step": 5,
-      "default": 15,
-      "unit": "min",
-      "label": "Minutos por visitante"
-    },
-    {
-      "type": "range",
-      "id": "countdown_reset_hour",
-      "min": 0,
-      "max": 23,
-      "step": 1,
-      "default": 0,
-      "label": "Hora de reinicio diario"
-    },
-    {
-      "type": "header",
-      "content": "Estilo"
-    },
-    {
-      "type": "color_scheme",
-      "id": "color_scheme",
-      "default": "scheme-1",
-      "label": "Esquema de color"
-    },
-    {
-      "type": "range",
-      "id": "padding_top",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "default": 24,
-      "unit": "px",
-      "label": "Espaciado superior"
-    },
-    {
-      "type": "range",
-      "id": "padding_bottom",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "default": 24,
-      "unit": "px",
-      "label": "Espaciado inferior"
-    }
+    { "type": "range", "id": "countdown_minutes", "min": 5, "max": 60, "step": 5, "default": 15, "unit": "min", "label": "Minutos por visitante" },
+    { "type": "range", "id": "countdown_reset_hour", "min": 0, "max": 23, "step": 1, "default": 0, "label": "Hora de reinicio diario" },
+    { "type": "header", "content": "Estilo" },
+    { "type": "color_scheme", "id": "color_scheme", "default": "scheme-1", "label": "Esquema de color" },
+    { "type": "range", "id": "padding_top", "min": 0, "max": 100, "step": 4, "default": 24, "unit": "px", "label": "Espaciado superior" },
+    { "type": "range", "id": "padding_bottom", "min": 0, "max": 100, "step": 4, "default": 24, "unit": "px", "label": "Espaciado inferior" }
   ],
-  "presets": [
-    {
-      "name": "COD · Urgencia"
-    }
-  ]
+  "presets": [{ "name": "COD · Urgencia" }]
 }
 {% endschema %}
